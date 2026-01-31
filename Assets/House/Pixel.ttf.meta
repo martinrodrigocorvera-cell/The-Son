@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 138398adeb615bf40b2377c1aa17b5ae
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - DePixel
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 72f19685467923848ba3378b1d8cc7b8, type: 3}
+  - {fileID: 12800000, guid: 90daf198d1174da429f945bea3f333a9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
