@@ -370,6 +370,8 @@ public GameObject trait;
 public GameObject icc;
 public bool alone;
 public GameObject crys;
+public bool pop;
+public GameObject muf2;
 
 
     void Start()
@@ -477,7 +479,7 @@ selob.SetActive(false);
 selob2.SetActive(true);
 tvsel.SetActive(false);
 trait.SetActive(true);
-muf.SetActive(true);
+muf2.SetActive(true);
 alone = true;
 }
 if(mirais == -1 && sellers == 0)
@@ -487,6 +489,19 @@ shop1.SetActive(false);
     vendi.SetTrigger("sd1");
 icc.SetActive(true);
 crys.SetActive(true);
+}
+if(mirais == -1 && sellers == 1)
+{
+    alone = true;
+shop1.SetActive(false);
+if(pop == false)
+{
+    shop2.SetActive(true);
+    pop = true;
+}
+selob.SetActive(false);
+selob2.SetActive(true);
+tvsel.SetActive(false);
 }
 }
 
@@ -6054,7 +6069,7 @@ if(idioma == "aleman")
 }
 if(idioma == "italiano")
 {
-    textsp2 = "Fammi indovinare, papà ha chiesto al suo cliente di risolvere i suoi problemi familiari. Non ho nemmeno bisogno di usare le carte per capirlo.";
+    textsp2 = "Fammi indovinare, papa ha chiesto al suo cliente di risolvere i suoi problemi familiari. Non ho nemmeno bisogno di usare le carte per capirlo.";
 }
 if(idioma == "portugues")
 {
@@ -9449,6 +9464,7 @@ opi2 = false;
 
              if(textorder == 85 && writing == true)
              {
+                shop3.SetActive(true);
          texto.text = "";
          textoj.text = "";
          textok.text = "";
@@ -14684,6 +14700,542 @@ opi2 = false;
              }
 
 
+             if(textorder == 148 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "ミライ";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "미라이";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "未来";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Мирай";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Yace... I'm so glad you're here...";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Yace... Menos mal que estas aqui...";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Yace... Heureusement que tu es la...";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Yace... Zum Gluck bist du hier...";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Yace... Meno male che sei qui...";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Yace... Ainda bem que você está aqui...";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "ヤセ... 君がここにいてくれてよかった...";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "야세... 네가 여기 있어서 다행이야...";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "雅斯... 幸好你在这里...";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Ясе... Хорошо, что ты здесь...";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 149 && writing == true)
+             {
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Something is wrong... Very wrong... I can't find dad, and he never goes far from me...";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Algo va mal... Muy mal... No encuentro a papa, y el nunca se va muy lejos de mi...";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Quelque chose ne va pas... Vraiment pas... Je ne trouve pas papa, et il ne s'eloigne jamais de moi...";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Irgendetwas stimmt nicht... Ganz und gar nicht... Ich finde Papa nicht, und er geht nie weit weg von mir...";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Qualcosa non va... Proprio per niente... Non trovo papa, e lui non si allontana mai da me...";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Algo esta errado... Muito errado... Nao encontro o papai, e ele nunca se afasta de mim...";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "何かがおかしい… とてもおかしい… パパが見つからない。彼は僕から離れることなんてないのに…";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "뭔가 잘못됐어… 아주 심각해… 아빠가 안 보여. 아빠는 절대 내 곁을 떠나지 않는데…";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "有些不对劲…… 非常不对劲…… 我找不到爸爸，他从来不会离我太远的……";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Что-то не так… Очень не так… Я не могу найти папу, а он никогда не уходит далеко от меня…";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = false;
+             }
+
+             if(textorder == 150 && writing == false)
+             {
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Yesterday I said terrible things to him, and I wanted to apologize...";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Ayer le dije cosas terribles y queria disculparme con el...";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Hier, je lui ai dit des choses terribles et je voulais m'excuser aupres de lui...";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Gestern habe ich ihm schreckliche Dinge gesagt und wollte mich bei ihm entschuldigen...";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Ieri gli ho detto cose terribili e volevo scusarmi con lui...";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Ontem eu disse coisas terriveis para ele e queria me desculpar...";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "昨日、ひどいことを言ってしまって…謝りたかったのに…";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "어제 그에게 끔찍한 말을 했어… 그래서 사과하고 싶었는데…";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "昨天我对他说了很过分的话，本来想向他道歉的……";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Вчера я сказал ему ужасные вещи и хотел извиниться перед ним…";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 151 && writing == true)
+             {
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "I told him I hated him and that I'd be a thousand times better off without him...";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Le dije que le odiaba y que estaria mil veces mejor sin el...";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Je lui ai dit que je le detestais et que je serais mille fois mieux sans lui...";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Ich sagte ihm, dass ich ihn hasse und dass es mir tausendmal besser ohne ihn gehen wurde...";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Gli ho detto che lo odiavo e che sarei stato mille volte meglio senza di lui...";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Eu disse que o odiava e que estaria mil vezes melhor sem ele...";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "彼に「嫌いだ」って言ってしまって…「君なんていなくても千倍マシだ」って…";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "그에게 내가 그를 미워한다고, 그 없이도 천 배는 더 잘 지낼 수 있을 거라고 말해버렸어…";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "我对他说我恨他，说没有他我会好上一千倍……";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Я сказал ему, что ненавижу его и что мне было бы в тысячу раз лучше без него…";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = false;
+             }
+
+             if(textorder == 152 && writing == false)
+             {
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "...";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "...";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "...";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "...";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "...";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "...";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "...";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "...";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "...";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "...";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 153 && writing == true)
+             {
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Dad...";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Papa...";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Papa...";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Papa...";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Papa...";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Papai...";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "パパ…";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "아빠…";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "爸爸…";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Папа…";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = false;
+             }
+
+             if(textorder == 154 && writing == false)
+             {
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Tell me you didn’t listen to me...";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Dime que no me hiciste caso...";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Dis-moi que tu ne m’as pas ecoute...";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Sag mir, dass du nicht auf mich gehört hast...";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Dimmi che non mi hai ascoltato...";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Diz que voce nao me deu atencao...";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "私の言うことを聞かなかったって言って…";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "내 말 안 들었다고 말해…";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "告诉我，你没有理我…";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Скажи, что ты меня не слушал…";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 155 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
 
 
         if (!bar.activeInHierarchy)
@@ -15643,9 +16195,15 @@ armingg = true;
            controller.height += 0.1f;
            }
            controller.center = new Vector3(0f, 0f, 0f);
+        if(night == 6)
+        {
+            cardi.nrt = true;
+         shop2.SetActive(false);
+                 Invoke("shop4xxx", 0.5f);
+        }
         if(night == 5)
         {
-         shop3.SetActive(true);
+        Invoke("shop4xx", 0.5f);
         }
         if(night == 4)
         {
@@ -20953,7 +21511,19 @@ if(idioma == "ruso")
     textorder = 35;
     arming2 = false;
    }
-   public void shop4x()
+      public void shop4xxx()
+   {
+    texm = true;
+    textorder = 84;
+    armingg = false;
+   }
+   public void shop4xx()
+   {
+    texm = true;
+    textorder = 84;
+    armingg = false;
+   }
+      public void shop4x()
    {
     texm = true;
     textorder = 55;

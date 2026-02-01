@@ -661,11 +661,8 @@ else
     if(hgu == false)
     {
 //MODEF ADJ
-    if(mode != 3)
-    {
     modef = 2;
     hgu = true;
-    }
     }
      if(idk == false)
      {

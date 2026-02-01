@@ -88,6 +88,7 @@ public CharacterController controller;
 public bool crdd;
 public GameObject hng;
 public bool pre;
+public bool nrt;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -101,7 +102,7 @@ public bool pre;
         idioma = dt.idioma;
         playst = play.playst;
         xbox = play.xbox;
-              if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) && intering == true && freeze == false && cl.power <= 10 && controller.height >= 1)
+              if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) && intering == true && freeze == false && cl.power <= 10 && controller.height >= 1 && nrt == false)
               {
 if(crdd == false)
 {
@@ -113,7 +114,7 @@ play.textorder = -77;
 play.writing = false;
 }
               }
-              if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) && intering == true && freeze == false && controller.height <= 0.9f && crdd == true)
+              if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) && intering == true && freeze == false && controller.height <= 0.9f && crdd == true && nrt == false)
               {
                  play.freeze = true;
         rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
@@ -123,7 +124,7 @@ play.timestop = true;
 play.writing = false;
               }
 
-              if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) && intering == true && freeze == false && cl.power >= 11 && controller.height >= 1 && crdd == false)
+              if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) && intering == true && freeze == false && cl.power >= 11 && controller.height >= 1 && crdd == false && nrt == false)
               {
     textox.text = "";
     textojx.text = "";
@@ -9828,7 +9829,100 @@ if(c4 == 22)
         textor4.text = "+ Смерть";
     }
 }
-        if(intering == true && freeze == false && controller.height <= 0.9 && crdd == true)
+        if(intering == true && freeze == false && controller.height >= 1 && crdd == true && nrt == true)
+        {
+if (idioma == "ingles")
+{
+    textox.text = "It's not the time";
+    textojx.text = "";
+    textokx.text = "";
+    textocx.text = "";
+    textorx.text = "";
+}
+
+if (idioma == "español")
+{
+    textox.text = "No es el momento";
+    textojx.text = "";
+    textokx.text = "";
+    textocx.text = "";
+    textorx.text = "";
+}
+
+if (idioma == "frances")
+{
+    textox.text = "Ce n'est pas le moment";
+    textojx.text = "";
+    textokx.text = "";
+    textocx.text = "";
+    textorx.text = "";
+}
+
+if (idioma == "aleman")
+{
+    textox.text = "Es ist nicht der richtige Moment";
+    textojx.text = "";
+    textokx.text = "";
+    textocx.text = "";
+    textorx.text = "";
+}
+
+if (idioma == "italiano")
+{
+    textox.text = "Non e il momento";
+    textojx.text = "";
+    textokx.text = "";
+    textocx.text = "";
+    textorx.text = "";
+}
+
+if (idioma == "portugues")
+{
+    textox.text = "Nao e o momento";
+    textojx.text = "";
+    textokx.text = "";
+    textocx.text = "";
+    textorx.text = "";
+}
+
+if (idioma == "japones")
+{
+    textox.text = "";
+    textojx.text = "今はその時じゃない";
+    textokx.text = "";
+    textocx.text = "";
+    textorx.text = "";
+}
+
+if (idioma == "coreano")
+{
+    textox.text = "";
+    textojx.text = "";
+    textokx.text = "지금은 그럴 때가 아니다";
+    textocx.text = "";
+    textorx.text = "";
+}
+
+if (idioma == "chino")
+{
+    textox.text = "";
+    textojx.text = "";
+    textokx.text = "";
+    textocx.text = "现在不是时候";
+    textorx.text = "";
+}
+
+if (idioma == "ruso")
+{
+    textox.text = "";
+    textojx.text = "";
+    textokx.text = "";
+    textocx.text = "";
+    textorx.text = "Сейчас не время";
+}
+}
+
+        if(intering == true && freeze == false && controller.height <= 0.9 && crdd == true && nrt == false)
         {
 if (playst == true)
 {
@@ -10083,7 +10177,7 @@ if (playst == false && xbox == false)
 }
         }
 
-        if(intering == true && freeze == false && controller.height >= 1 && crdd == false)
+        if(intering == true && freeze == false && controller.height >= 1 && crdd == false && nrt == false)
         {
 if(playst == true)
 {
