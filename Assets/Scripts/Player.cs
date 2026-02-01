@@ -228,7 +228,7 @@ public Data but;
     public GameObject comp;
     public bool noc;
     public RectTransform larry;
-    public float speedj = 500f;
+    public float speedj = 600f;
     private Vector2 cursorPos;
     [DllImport("user32.dll")] static extern bool SetCursorPos(int X, int Y);
     [DllImport("user32.dll")]
@@ -778,7 +778,6 @@ mndwal.SetActive(true);
 if(larryx.activeInHierarchy)
 {
   Cursor.visible = false;
-    Cursor.lockState = CursorLockMode.Locked;
 }
 if(!larryx.activeInHierarchy && (wino.activeInHierarchy || (homec.activeInHierarchy && !trans.activeInHierarchy) || gam.activeInHierarchy || menu.activeInHierarchy || answ.activeInHierarchy))
 {
@@ -794,6 +793,11 @@ if(playst == true || xbox == true)
 if(wino.activeInHierarchy || homec.activeInHierarchy || gam.activeInHierarchy || menu.activeInHierarchy || answ.activeInHierarchy)
 {
 larryx.SetActive(true);
+}
+
+if(larryx.activeInHierarchy)
+{
+    
 }
 
 
