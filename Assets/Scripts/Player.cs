@@ -372,6 +372,7 @@ public bool alone;
 public GameObject crys;
 public bool pop;
 public GameObject muf2;
+public bool ovr;
 
 
     void Start()
@@ -3686,6 +3687,58 @@ if(idioma == "ruso")
          textok.text = "";
          textoc.text = "";
          textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "If you need to move La Llorona out of the room, make noise and run so she goes to your position.";
+}
+if(idioma == "español")
+{
+    textsp2 = "Si necesitas mover a La Llorona de cuarto, haz ruido y huye para que vaya a tu posicion.";
+}
+if(idioma == "frances")
+{
+    textsp2 = "Si tu as besoin de faire sortir La Llorona de la piece, fais du bruit et fuis pour qu’elle aille a ta position.";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Wenn du La Llorona aus dem Zimmer locken musst, mach Larm und flieh, damit sie zu deiner Position geht.";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Se devi spostare La Llorona dalla stanza, fai rumore e scappa cosi andra verso la tua posizione.";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Se precisar mover La Llorona do quarto, faca barulho e fuja para que ela va ate a sua posicao.";
+}
+if(idioma == "japones")
+{
+    textsp2 = "ラ・ジョローナを部屋から移動させたいなら、音を立てて逃げて、あなたの位置に向かわせて。";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "라 요로나를 방에서 이동시켜야 한다면 소음을 내고 도망쳐서 네 위치로 오게 하세요.";
+}
+if(idioma == "chino")
+{
+    textsp2 = "如果你需要把拉·洛罗娜从房间里引走，制造噪音并逃跑，让她前往你的位置。";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "Если нужно выманить Ла Йорону из комнаты, подними шум и убегай, чтобы она пошла к твоей позиции.";
+}
+             StartCoroutine(writex());
+             writing = false;
+             }
+
+             if(textorder == 13 && writing == false)
+             {
+            ovr = true;
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
          if(idioma == "ingles")
          {
          textsp2 = "Now I have to go, it's bingo time!";
@@ -3727,9 +3780,9 @@ if(idioma == "ruso")
          textsp2 = "теперь мне пора идти, пора играть в бинго!";
          }
              StartCoroutine(writex());
-             writing = false;
+             writing = true;
              }
-             if(textorder == 13 && writing == false)
+             if(textorder == 14 && writing == true && ovr == true)
              {
            tut = true;
 
@@ -3744,12 +3797,12 @@ if(idioma == "ruso")
          textor.text = "";
            texm = false;
            rsp = false;
-            writing = true;
+            writing = false;
              }
 
 
 
-             if(textorder == 14 && writing == false)
+             if(textorder == 14 && writing == false && ovr == false)
              {
          texto.text = "";
          textoj.text = "";
