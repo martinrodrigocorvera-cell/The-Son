@@ -827,13 +827,13 @@ if (sticksxx.magnitude > 0.1f)
 {
     if (Mathf.Abs(sticksxx.x) > Mathf.Abs(sticksxx.y))
     {
-        if (sticksxx.x > 0) larry.GetComponent<Image>().sprite = spder; // derecha
-        else larry.GetComponent<Image>().sprite = spizq;             // izquierda
+        if (sticksxx.x > 0) larry.GetComponent<Image>().sprite = spder;
+        else larry.GetComponent<Image>().sprite = spizq;        
     }
     else
     {
-        if (sticksxx.y > 0) larry.GetComponent<Image>().sprite = sparr; // arriba
-        else larry.GetComponent<Image>().sprite = spaba;             // abajo
+        if (sticksxx.y > 0) larry.GetComponent<Image>().sprite = sparr;
+        else larry.GetComponent<Image>().sprite = spaba;         
     }
 }
         }
@@ -1188,8 +1188,8 @@ moving = false;
          textokl.text = "";
          textocl.text = "";
          textorl.text = "";
-           texm = true;
            rsp = false;
+            texm = true;
          }
          if(Input.GetKeyDown(KeyCode.X) || (Input.GetKeyDown(KeyCode.JoystickButton2) && playst == true) || (Input.GetKeyDown(KeyCode.JoystickButton2) && xbox == true))
          {

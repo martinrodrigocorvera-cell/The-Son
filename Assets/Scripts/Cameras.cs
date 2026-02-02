@@ -858,7 +858,7 @@ basem.SetActive(false);
          }
          if(idioma == "español")
          {
-         texto3.text = "Baño 1";
+         texto3.text = "Aseo 1";
          textoj3.text = "";
          textok3.text = "";
          textoc3.text = "";
@@ -1050,7 +1050,7 @@ basem.SetActive(false);
          }
          if(idioma == "español")
          {
-         texto3.text = "Baño 2";
+         texto3.text = "Aseo 2";
          textoj3.text = "";
          textok3.text = "";
          textoc3.text = "";
