@@ -41,18 +41,20 @@ public class Texto : MonoBehaviour
         }
     }
 
-    IEnumerator AnimarTexto()
+IEnumerator AnimarTexto()
+{
+    while (true)
     {
-        while (true)
-        {
-            if (string.IsNullOrEmpty(textMesh.text))
-            {
-                yield return null;
-                continue;
-            }
+        yield return null;
 
-            textMesh.ForceMeshUpdate();
-            TMP_TextInfo textInfo = textMesh.textInfo;
+        if (string.IsNullOrEmpty(textMesh.text) || verticesBase == null)
+        {
+            yield return null;
+            continue;
+        }
+
+        textMesh.ForceMeshUpdate();
+        TMP_TextInfo textInfo = textMesh.textInfo;
 
             if (verticesBase == null)
             {

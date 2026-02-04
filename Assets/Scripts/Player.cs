@@ -3456,7 +3456,7 @@ if(idioma == "ruso")
          }
          if(idioma == "español")
          {
-         textsp2 = "Tienes una ventaja, tu tienes linterna <sprite name=\"raton\"> y ella ojos de 500 años de antiguedad. Sin embargo tiene un gran oido, haz el menor ruido posible";
+         textsp2 = "Tienes una ventaja, tu tienes linterna <sprite name=\"raton\"> y ella ojos de 5 siglos de antiguedad. Sin embargo tiene un gran oido, haz el menor ruido posible";
          }
          if(idioma == "frances")
          {
@@ -3499,7 +3499,7 @@ if(idioma == "ruso")
          }
          if(idioma == "español")
          {
-         textsp2 = "Tienes una ventaja, tu tienes linterna <sprite name=\"L1\"> y ella ojos de 500 años de antiguedad. Sin embargo tiene un gran oido, haz el menor ruido posible";
+         textsp2 = "Tienes una ventaja, tu tienes linterna <sprite name=\"L1\"> y ella ojos de 5 siglos de antiguedad. Sin embargo tiene un gran oido, haz el menor ruido posible";
          }
          if(idioma == "frances")
          {
@@ -3542,7 +3542,7 @@ if(idioma == "ruso")
          }
          if(idioma == "español")
          {
-         textsp2 = "Tienes una ventaja, tu tienes linterna <sprite name=\"LB\"> y ella ojos de 500 años de antiguedad. Sin embargo tiene un gran oido, haz el menor ruido posible";
+         textsp2 = "Tienes una ventaja, tu tienes linterna <sprite name=\"LB\"> y ella ojos de 5 siglos de antiguedad. Sin embargo tiene un gran oido, haz el menor ruido posible";
          }
          if(idioma == "frances")
          {
