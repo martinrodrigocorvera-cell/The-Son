@@ -22,10 +22,31 @@ public class Texto : MonoBehaviour
         rectTransform = textMesh.GetComponent<RectTransform>();
     }
 
-    void OnEnable()
+void OnEnable()
+{
+    // Para evitar corutinas duplicadas
+    StopAllCoroutines();
+    StartCoroutine(InicioSeguro());
+}
+
+IEnumerator InicioSeguro()
+{
+    // Espera hasta que el TMP tenga al menos 1 carácter visible
+    while (textMesh.textInfo == null || textMesh.textInfo.characterCount == 0)
     {
-        StartCoroutine(AnimarTexto());
+        textMesh.ForceMeshUpdate();
+        yield return null; // espera 1 frame
     }
+
+    // Inicializa verticesBase correctamente
+    TMP_TextInfo textInfo = textMesh.textInfo;
+    verticesBase = new Vector3[textInfo.meshInfo.Length][];
+    for (int i = 0; i < textInfo.meshInfo.Length; i++)
+        verticesBase[i] = textInfo.meshInfo[i].vertices.Clone() as Vector3[];
+
+    // Ahora arranca la animación
+    StartCoroutine(AnimarTexto());
+}
 
     void LateUpdate()
     {

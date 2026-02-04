@@ -186,6 +186,18 @@ public class Buttons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
     void Update()
     {
+
+        if(set == true || res == true || back == true)
+         {
+            if(!gameObject.activeInHierarchy)
+            {
+            texto.color = colorNormal;
+            textoj.color = colorNormal;
+            textok.color = colorNormal;
+            textoc.color = colorNormal;
+            textor.color = colorNormal;
+            }
+        }
 if(ans4 == true)
 {
 if(play.textorder == 74)
@@ -7136,6 +7148,11 @@ Cursor.visible = false;
             snd = true;
 Cursor.visible = false;
     Cursor.lockState = CursorLockMode.Locked;
+                texto.color = colorNormal;
+            textoj.color = colorNormal;
+            textok.color = colorNormal;
+            textoc.color = colorNormal;
+            textor.color = colorNormal;
          }
          if(set == true)
          {
@@ -7154,6 +7171,7 @@ Cursor.visible = false;
             men.SetActive(true);
             nor.SetActive(false);
             canvi.SetActive(false);
+            
             }
          }
          if(back == true)
