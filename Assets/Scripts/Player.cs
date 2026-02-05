@@ -373,10 +373,12 @@ public GameObject crys;
 public bool pop;
 public GameObject muf2;
 public bool ovr;
+public Animator mirr;
 
 
     void Start()
     {
+                            mirr.SetTrigger("mir");
             hellock = PlayerPrefs.GetFloat("Plus1");
         cursorPos = new Vector2(Screen.width / 2, Screen.height / 2);
         mandosPrevios = new List<string>(Input.GetJoystickNames());
