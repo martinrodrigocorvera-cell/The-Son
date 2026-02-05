@@ -374,11 +374,12 @@ public bool pop;
 public GameObject muf2;
 public bool ovr;
 public Animator mirr;
+public GameObject miraii;
 
 
     void Start()
     {
-                            mirr.SetTrigger("mir");
+                            mirr.SetTrigger("mirai1");
             hellock = PlayerPrefs.GetFloat("Plus1");
         cursorPos = new Vector2(Screen.width / 2, Screen.height / 2);
         mandosPrevios = new List<string>(Input.GetJoystickNames());
@@ -398,6 +399,10 @@ seller = PlayerPrefs.GetInt("sel");
 
     void Update()
     {
+    if(!mirob.activeInHierarchy)
+    {
+        miraii.SetActive(false);
+    }
 if(night == 5 && mirai == 0)
 {
 ncx = true;
@@ -1423,6 +1428,12 @@ if(idioma == "ruso")
 
              if(textorder == -131 && writing == false)
              {
+        if(opi == false)
+         {
+            mirr.SetTrigger("mirai2");
+            mirr.SetTrigger("mirs");
+        opi = true;
+         }
          textod.text = "";
          textojd.text = "";
          textokd.text = "";
@@ -1730,6 +1741,7 @@ if(idioma == "ruso")
 }
              StartCoroutine(writex());
              writing = false;
+opi = false;
              }
 
              if(textorder == -125 && writing == false)
@@ -1785,6 +1797,12 @@ if(idioma == "ruso")
 
              if(textorder == -124 && writing == true)
              {
+            if(opi == false)
+         {
+            mirr.SetTrigger("mirs2");
+            mirr.SetTrigger("mir");
+            opi = true;
+         }
          textod.text = "";
          textojd.text = "";
          textokd.text = "";
@@ -1981,6 +1999,13 @@ if(idioma == "ruso")
 
              if(textorder == -123 && writing == false)
              {
+                if(opi2 == false)
+         {
+            mirr.SetTrigger("mir2");
+            mirr.SetTrigger("mirai1");
+            opi2 = true;
+         }
+         opi = false;
 timestop = false;
 if(idioma == "ingles")
 {
@@ -2113,6 +2138,7 @@ if(idioma == "ruso")
 
              if(textorder == -122 && writing == true)
              {
+        opi2 = false;
          textod.text = "";
          textojd.text = "";
          textokd.text = "";
@@ -9474,6 +9500,12 @@ answer = true;
          textok.text = "";
          textoc.text = "";
          textor.text = "";
+         if(opi == false)
+         {
+            mirr.SetTrigger("mirai2");
+            mirr.SetTrigger("mir");
+            opi = true;
+         }
 if(idioma == "ingles")
 {
     textsp2 = "Ah- it's you... I understand we won't be seeing each other much longer... If you... want to tell me something... go ahead.";
@@ -9515,7 +9547,6 @@ if(idioma == "ruso")
     textsp2 = "А... это ты. Я понимаю, что мы больше не будем часто видеться... Если ты... хочешь мне что-то сказать... говори.";
 }
 
-opi = false;
 opi2 = false;
              StartCoroutine(writex());
              writing = true;
@@ -14846,6 +14877,12 @@ if(idioma == "ruso")
          textok.text = "";
          textoc.text = "";
          textor.text = "";
+         if(opi == false)
+         {
+            mirr.SetTrigger("mirai2");
+            mirr.SetTrigger("mirs");
+            opi = true;
+         }
 if(idioma == "ingles")
 {
     textsp2 = "Yace... I'm so glad you're here...";
@@ -14896,7 +14933,6 @@ if(idioma == "ruso")
     textsp2 = "Ясе... Хорошо, что ты здесь...";
 }
 
-opi = false;
 opi2 = false;
              StartCoroutine(writex());
              writing = true;
@@ -21573,7 +21609,7 @@ if(idioma == "ruso")
       public void shop4xxx()
    {
     texm = true;
-    textorder = 84;
+    textorder = 148;
     armingg = false;
    }
    public void shop4xx()
