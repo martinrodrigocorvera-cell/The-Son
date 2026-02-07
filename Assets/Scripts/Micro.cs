@@ -73,7 +73,7 @@ SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         {
          db = 0;
         }
-        sound.transform.localScale = new Vector3(x + (db * night * 2), y + (db * night * 2), z + (db * night * 2));
+        sound.transform.localScale = new Vector3(x + (db * night * 3), y + (db * night * 3), z + (db * night * 3));
         
 
         if(db < 1)

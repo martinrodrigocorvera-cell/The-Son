@@ -160,27 +160,27 @@ noc = play.noc;
         {
         if(night == 1)
         {
-        maxDistance = 5f;
+        maxDistance = 10f;
         }
         if(night == 2)
         {
-        maxDistance = 6f;
+        maxDistance = 11f;
         }
         if(night == 3)
         {
-        maxDistance = 7f;
+        maxDistance = 12f;
         }
         if(night == 4)
         {
-        maxDistance = 8f;
+        maxDistance = 13f;
         }
         if(night == 5)
         {
-        maxDistance = 9f * (1 - gua/10);
+        maxDistance = 14f * (1 - gua/10);
         }
         if(night == 6)
         {
-        maxDistance = 10f * (1 - gua/10);
+        maxDistance = 15f * (1 - gua/10);
         }
         }
         if(noc == true)

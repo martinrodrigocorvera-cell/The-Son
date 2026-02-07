@@ -7,9 +7,14 @@ public class Texto : MonoBehaviour
     public float intensidadRojo;
     public float intensidadOtro;
     public float velocidad;
+
+    [Range(0f, 1f)]
+    public float sombreadoInferior;
+
     string textoAnterior;
 
     public bool ex = false;
+    public bool sta;
 
     private TMP_Text textMesh;
     private RectTransform rectTransform;
@@ -18,35 +23,28 @@ public class Texto : MonoBehaviour
 
     void Awake()
     {
+        sombreadoInferior = 0.4f;
         textMesh = GetComponent<TMP_Text>();
         rectTransform = textMesh.GetComponent<RectTransform>();
     }
 
-void OnEnable()
-{
-    // Para evitar corutinas duplicadas
-    StopAllCoroutines();
-    StartCoroutine(InicioSeguro());
-}
-
-IEnumerator InicioSeguro()
-{
-    // Espera hasta que el TMP tenga al menos 1 carácter visible
-    while (textMesh.textInfo == null || textMesh.textInfo.characterCount == 0)
+    void OnEnable()
     {
-        textMesh.ForceMeshUpdate();
-        yield return null; // espera 1 frame
+        StopAllCoroutines();
+        StartCoroutine(InicioSeguro());
     }
 
-    // Inicializa verticesBase correctamente
-    TMP_TextInfo textInfo = textMesh.textInfo;
-    verticesBase = new Vector3[textInfo.meshInfo.Length][];
-    for (int i = 0; i < textInfo.meshInfo.Length; i++)
-        verticesBase[i] = textInfo.meshInfo[i].vertices.Clone() as Vector3[];
+    IEnumerator InicioSeguro()
+    {
+        while (textMesh.textInfo == null || textMesh.textInfo.characterCount == 0)
+        {
+            textMesh.ForceMeshUpdate();
+            yield return null;
+        }
 
-    // Ahora arranca la animación
-    StartCoroutine(AnimarTexto());
-}
+        InicializarVerticesBase();
+        StartCoroutine(AnimarTexto());
+    }
 
     void LateUpdate()
     {
@@ -54,88 +52,95 @@ IEnumerator InicioSeguro()
         {
             textoAnterior = textMesh.text;
             textMesh.ForceMeshUpdate();
-
-            TMP_TextInfo textInfo = textMesh.textInfo;
-            verticesBase = new Vector3[textInfo.meshInfo.Length][];
-            for (int i = 0; i < textInfo.meshInfo.Length; i++)
-                verticesBase[i] = textInfo.meshInfo[i].vertices.Clone() as Vector3[];
+            InicializarVerticesBase();
         }
     }
 
-IEnumerator AnimarTexto()
-{
-    while (true)
+    void InicializarVerticesBase()
     {
-        yield return null;
-
-        if (string.IsNullOrEmpty(textMesh.text) || verticesBase == null)
-        {
-            yield return null;
-            continue;
-        }
-
-        textMesh.ForceMeshUpdate();
         TMP_TextInfo textInfo = textMesh.textInfo;
 
-            if (verticesBase == null)
+        verticesBase = new Vector3[textInfo.meshInfo.Length][];
+        for (int i = 0; i < textInfo.meshInfo.Length; i++)
+            verticesBase[i] = textInfo.meshInfo[i].vertices.Clone() as Vector3[];
+    }
+
+    IEnumerator AnimarTexto()
+    {
+        if (sta) yield break;
+
+        while (true)
+        {
+            if (string.IsNullOrEmpty(textMesh.text) || verticesBase == null)
             {
-                verticesBase = new Vector3[textInfo.meshInfo.Length][];
-                for (int i = 0; i < textInfo.meshInfo.Length; i++)
-                    verticesBase[i] = textInfo.meshInfo[i].vertices.Clone() as Vector3[];
+                yield return null;
+                continue;
             }
 
-            Color32 color = textMesh.color;
+            textMesh.ForceMeshUpdate();
+            TMP_TextInfo textInfo = textMesh.textInfo;
+
+            Color32 colorTexto = textMesh.color;
             float intensidadActual =
-                (color.r == 255 && color.g == 0 && color.b == 0)
+                (colorTexto.r == 255 && colorTexto.g == 0 && colorTexto.b == 0)
                 ? intensidadRojo
                 : intensidadOtro;
 
             Vector3 cursorOffset = Vector3.zero;
 
-            if (ex && !(color.r == 255 && color.g == 0 && color.b == 0))
+            if (ex && !(colorTexto.r == 255 && colorTexto.g == 0 && colorTexto.b == 0))
             {
-                Vector3 mousePos;
                 RectTransformUtility.ScreenPointToWorldPointInRectangle(
-                    rectTransform, Input.mousePosition, null, out mousePos);
+                    rectTransform, Input.mousePosition, null, out Vector3 mousePos);
 
                 Vector3 dir = (rectTransform.position - mousePos).normalized;
                 cursorOffset = dir * 30f;
             }
 
-for (int i = 0; i < textInfo.characterCount; i++)
-{
-    if (!textInfo.characterInfo[i].isVisible)
-        continue;
+            for (int i = 0; i < textInfo.characterCount; i++)
+            {
+                if (!textInfo.characterInfo[i].isVisible)
+                    continue;
 
-    int materialIndex = textInfo.characterInfo[i].materialReferenceIndex;
-    int vertexIndex = textInfo.characterInfo[i].vertexIndex;
+                int materialIndex = textInfo.characterInfo[i].materialReferenceIndex;
+                int vertexIndex = textInfo.characterInfo[i].vertexIndex;
 
-    if (materialIndex >= verticesBase.Length)
-        continue;
+                Vector3[] vertices = textInfo.meshInfo[materialIndex].vertices;
+                Vector3[] baseVerts = verticesBase[materialIndex];
+                Color32[] colors = textInfo.meshInfo[materialIndex].colors32;
 
-    Vector3[] vertices = textInfo.meshInfo[materialIndex].vertices;
-    Vector3[] baseVerts = verticesBase[materialIndex];
+                Vector3 offset = new Vector3(
+                    Random.Range(-intensidadActual, intensidadActual),
+                    Random.Range(-intensidadActual, intensidadActual),
+                    0
+                ) + cursorOffset;
 
-    if (vertexIndex + 3 >= vertices.Length || vertexIndex + 3 >= baseVerts.Length)
-        continue;
+                // Movimiento glitch
+                for (int v = 0; v < 4; v++)
+                    vertices[vertexIndex + v] = baseVerts[vertexIndex + v] + offset;
 
-    Vector3 offset = new Vector3(
-        Random.Range(-intensidadActual, intensidadActual),
-        Random.Range(-intensidadActual, intensidadActual),
-        0
-    );
+                // Colores dinámicos
+                Color32 colorArriba = colorTexto;
+                Color32 colorAbajo = new Color32(
+                    (byte)(colorArriba.r * sombreadoInferior),
+                    (byte)(colorArriba.g * sombreadoInferior),
+                    (byte)(colorArriba.b * sombreadoInferior),
+                    colorArriba.a
+                );
 
-    offset += cursorOffset;
+                // Inferior
+                colors[vertexIndex + 0] = colorAbajo;
+                colors[vertexIndex + 3] = colorAbajo;
 
-    vertices[vertexIndex + 0] = baseVerts[vertexIndex + 0] + offset;
-    vertices[vertexIndex + 1] = baseVerts[vertexIndex + 1] + offset;
-    vertices[vertexIndex + 2] = baseVerts[vertexIndex + 2] + offset;
-    vertices[vertexIndex + 3] = baseVerts[vertexIndex + 3] + offset;
-}
+                // Superior
+                colors[vertexIndex + 1] = colorArriba;
+                colors[vertexIndex + 2] = colorArriba;
+            }
 
             for (int i = 0; i < textInfo.meshInfo.Length; i++)
             {
                 textInfo.meshInfo[i].mesh.vertices = textInfo.meshInfo[i].vertices;
+                textInfo.meshInfo[i].mesh.colors32 = textInfo.meshInfo[i].colors32;
                 textMesh.UpdateGeometry(textInfo.meshInfo[i].mesh, i);
             }
 

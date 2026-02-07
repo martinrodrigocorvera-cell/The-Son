@@ -24,12 +24,26 @@ public class MovementCam : MonoBehaviour
 
     public float cameraRotateSpeed = 5f;
 
+    public Material retroMaterial;
+
+    public bool ign;
+
     void Start()
     {
        spooky.SetActive(true);
     }
 
+    void OnRenderImage(RenderTexture src, RenderTexture dest)
+    {
+        if (retroMaterial != null)
+            Graphics.Blit(src, dest, retroMaterial);
+        else
+            Graphics.Blit(src, dest);
+    }
+
     void Update()
+    {
+    if(ign == false)
     {
         freeze = player.freeze;
         if(freeze == false)
@@ -80,5 +94,6 @@ public class MovementCam : MonoBehaviour
         }
         playerBody.Rotate(Vector3.up * combinedX);
         }
+    }
     }
 }

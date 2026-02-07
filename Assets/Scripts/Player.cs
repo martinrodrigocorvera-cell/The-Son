@@ -3671,11 +3671,11 @@ if(idioma == "ruso")
          }
          if(idioma == "español")
          {
-         textsp2 = "Sobrevive hasta las 6 de la mañana, para entonces su poder se habra debilitado y se ira por esta noche";
+         textsp2 = "Sobrevive hasta las 6 de la madrugada, para entonces su poder se habra debilitado y se ira por esta noche";
          }
          if(idioma == "frances")
          {
-         textsp2 = "Survivez jusqu'à 6 heures du matin, à ce moment-là, son pouvoir sera affaibli et il partira pour la nuit";
+         textsp2 = "Survivez jusqu'a 6 heures du matin, a ce moment-la, son pouvoir sera affaibli et il partira pour la nuit";
          }
          if(idioma == "aleman")
          {
