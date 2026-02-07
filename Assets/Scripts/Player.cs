@@ -399,6 +399,10 @@ seller = PlayerPrefs.GetInt("sel");
 
     void Update()
     {
+    if(night == 1)
+    {
+        selob.SetActive(false);
+    }
     if(!mirob.activeInHierarchy)
     {
         miraii.SetActive(false);

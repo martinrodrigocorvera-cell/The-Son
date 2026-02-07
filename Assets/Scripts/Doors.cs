@@ -396,7 +396,14 @@ freeze = play.freeze;
                audioSource.PlayOneShot(opend);
                sound.SetActive(true);
                ing = true;
+               if(open = false)
+               {
+               anim.SetTrigger("cl1");
+               }
+               if(open = true)
+               {
                anim.SetTrigger("op1");
+               }
                Invoke("openx", 1f);
               }
 
@@ -666,7 +673,14 @@ freeze = play.freeze;
                audioSource.PlayOneShot(closd);
                sound.SetActive(true);
                ing = true;
+               if(open = true)
+               {
                anim.SetTrigger("cl1");
+               }
+                if(open = false)
+               {
+               anim.SetTrigger("op1");
+               }
                Invoke("closex", 1f);
               }
               }

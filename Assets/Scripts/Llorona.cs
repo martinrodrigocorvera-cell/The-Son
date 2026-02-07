@@ -487,7 +487,7 @@ if (mode == 3)
     {
         if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
         {
-            mode = 1;
+            modef = 1;
             destinationSet = false;
         }
     }
@@ -776,7 +776,6 @@ else
      idk2 = false;
 ñññ = false;
      blood1.SetActive(true);
-     spawn = null;
      events += 1;
      if(cam.activeInHierarchy)
      {
@@ -933,7 +932,6 @@ else
     {
      if (!blood2.activeInHierarchy)
      {
-     spawn = null;
         if(night == 1)
         {
         Invoke("st", 40f);
@@ -1117,7 +1115,6 @@ else
     {
      if (!blood3.activeInHierarchy)
      {
-     spawn = null;
         if(night == 1)
         {
         Invoke("st", 40f);
@@ -1300,7 +1297,6 @@ else
     {
      if (!blood4.activeInHierarchy)
      {
-     spawn = null;
         if(night == 1)
         {
         Invoke("st", 40f);
@@ -1483,7 +1479,6 @@ else
     {
      if (!blood5.activeInHierarchy)
      {
-     spawn = null;
         if(night == 1)
         {
         Invoke("st", 40f);
@@ -1666,7 +1661,6 @@ else
     {
      if (!blood6.activeInHierarchy)
      {
-     spawn = null;
         if(night == 1)
         {
         Invoke("st", 40f);
@@ -1849,7 +1843,6 @@ else
     {
      if (!blood7.activeInHierarchy)
      {
-     spawn = null;
         if(night == 1)
         {
         Invoke("st", 40f);
@@ -2032,7 +2025,6 @@ else
     {
      if (!blood8.activeInHierarchy)
      {
-     spawn = null;
         if(night == 1)
         {
         Invoke("st", 40f);

@@ -73,8 +73,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PixelSize: 1000
-    - _ScanlineCount: 600
+    - _PixelSize: 750
+    - _ScanlineCount: 100
     - _ScanlineIntensity: 0.25
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
