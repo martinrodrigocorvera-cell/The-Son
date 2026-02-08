@@ -30,15 +30,15 @@ public class MovementCam : MonoBehaviour
 
     void Start()
     {
+       if(ign == false)
+       {
        spooky.SetActive(true);
+       }
     }
 
     void OnRenderImage(RenderTexture src, RenderTexture dest)
     {
-        if (retroMaterial != null)
             Graphics.Blit(src, dest, retroMaterial);
-        else
-            Graphics.Blit(src, dest);
     }
 
     void Update()

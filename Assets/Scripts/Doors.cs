@@ -27,6 +27,7 @@ public string idioma;
 public Data but;
 public Player ply;
 public AudioClip opend;
+public AudioClip slam;
 public AudioClip closd;
 public AudioSource audioSource;
 public bool stick;
@@ -145,7 +146,7 @@ public GameObject llor;
               {
          if(idioma == "ingles")
          {
-         texto.text = "Open the Door <sprite name=\"A\">";
+         texto.text = "Open <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -153,7 +154,7 @@ public GameObject llor;
          }
          if(idioma == "español")
          {
-         texto.text = "Abrir la puerta <sprite name=\"A\">";
+         texto.text = "Abrir <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -161,7 +162,7 @@ public GameObject llor;
          }
          if(idioma == "frances")
          {
-         texto.text = "ouvre la porte <sprite name=\"A\">";
+         texto.text = "ouvre <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -169,7 +170,7 @@ public GameObject llor;
          }
          if(idioma == "aleman")
          {
-         texto.text = "offne die Tur <sprite name=\"A\">";
+         texto.text = "offne <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -177,7 +178,7 @@ public GameObject llor;
          }
          if(idioma == "italiano")
          {
-         texto.text = "aprire la porta <sprite name=\"A\">";
+         texto.text = "aprire <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -185,7 +186,7 @@ public GameObject llor;
          }
          if(idioma == "portugues")
          {
-         texto.text = "abrir a porta <sprite name=\"A\">";
+         texto.text = "abrir <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -194,7 +195,7 @@ public GameObject llor;
          if(idioma == "japones")
          {
          texto.text = "";
-         textoj.text = "ドアを開けて <sprite name=\"A\">";
+         textoj.text = "開ける <sprite name=\"A\">";
          textok.text = "";
          textoc.text = "";
          textor.text = "";
@@ -203,7 +204,7 @@ public GameObject llor;
          {
          texto.text = "";
          textoj.text = "";
-         textok.text = "문을 열어라 <sprite name=\"A\">";
+         textok.text = "열려 있는 <sprite name=\"A\">";
          textoc.text = "";
          textor.text = "";
          }
@@ -212,7 +213,7 @@ public GameObject llor;
          texto.text = "";
          textoj.text = "";
          textok.text = "";
-         textoc.text = "打开门 <sprite name=\"A\">";
+         textoc.text = "打开 <sprite name=\"A\">";
          textor.text = "";
          }
          if(idioma == "ruso")
@@ -221,14 +222,14 @@ public GameObject llor;
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
-         textor.text = "открыть дверь <sprite name=\"A\">";
+         textor.text = "открыть <sprite name=\"A\">";
          }
          }
               if(ing == false && xbox == false && playst == true)
               {
          if(idioma == "ingles")
          {
-         texto.text = "Open the Door <sprite name=\"pixel_art_small\">";
+         texto.text = "Open <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -236,7 +237,7 @@ public GameObject llor;
          }
          if(idioma == "español")
          {
-         texto.text = "Abrir la puerta <sprite name=\"pixel_art_small\">";
+         texto.text = "Abrir <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -244,7 +245,7 @@ public GameObject llor;
          }
          if(idioma == "frances")
          {
-         texto.text = "ouvre la porte <sprite name=\"pixel_art_small\">";
+         texto.text = "ouvre <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -252,7 +253,7 @@ public GameObject llor;
          }
          if(idioma == "aleman")
          {
-         texto.text = "offne die Tur <sprite name=\"pixel_art_small\">";
+         texto.text = "offne <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -260,7 +261,7 @@ public GameObject llor;
          }
          if(idioma == "italiano")
          {
-         texto.text = "aprire la porta <sprite name=\"pixel_art_small\">";
+         texto.text = "aprire <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -268,7 +269,7 @@ public GameObject llor;
          }
          if(idioma == "portugues")
          {
-         texto.text = "abrir a porta <sprite name=\"pixel_art_small\">";
+         texto.text = "abrir <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -277,7 +278,7 @@ public GameObject llor;
          if(idioma == "japones")
          {
          texto.text = "";
-         textoj.text = "ドアを開けて <sprite name=\"pixel_art_small\">";
+         textoj.text = "開ける <sprite name=\"pixel_art_small\">";
          textok.text = "";
          textoc.text = "";
          textor.text = "";
@@ -286,7 +287,7 @@ public GameObject llor;
          {
          texto.text = "";
          textoj.text = "";
-         textok.text = "문을 열어라 <sprite name=\"pixel_art_small\">";
+         textok.text = "열려 있는 <sprite name=\"pixel_art_small\">";
          textoc.text = "";
          textor.text = "";
          }
@@ -295,7 +296,7 @@ public GameObject llor;
          texto.text = "";
          textoj.text = "";
          textok.text = "";
-         textoc.text = "打开门 <sprite name=\"pixel_art_small\">";
+         textoc.text = "打开 <sprite name=\"pixel_art_small\">";
          textor.text = "";
          }
          if(idioma == "ruso")
@@ -304,14 +305,14 @@ public GameObject llor;
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
-         textor.text = "открыть дверь <sprite name=\"pixel_art_small\">";
+         textor.text = "открыть <sprite name=\"pixel_art_small\">";
          }
          }
               if(ing == false && xbox == false && playst == false)
               {
          if(idioma == "ingles")
          {
-         texto.text = "Open the Door <sprite name=\"E\">";
+         texto.text = "Open <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -319,7 +320,7 @@ public GameObject llor;
          }
          if(idioma == "español")
          {
-         texto.text = "Abrir la puerta <sprite name=\"E\">";
+         texto.text = "Abrir <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -327,7 +328,7 @@ public GameObject llor;
          }
          if(idioma == "frances")
          {
-         texto.text = "ouvre la porte <sprite name=\"E\">";
+         texto.text = "ouvre <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -335,7 +336,7 @@ public GameObject llor;
          }
          if(idioma == "aleman")
          {
-         texto.text = "offne die Tur <sprite name=\"E\">";
+         texto.text = "offne <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -343,7 +344,7 @@ public GameObject llor;
          }
          if(idioma == "italiano")
          {
-         texto.text = "aprire la porta <sprite name=\"E\">";
+         texto.text = "aprire <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -351,7 +352,7 @@ public GameObject llor;
          }
          if(idioma == "portugues")
          {
-         texto.text = "abrir a porta <sprite name=\"E\">";
+         texto.text = "abrir <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -360,7 +361,7 @@ public GameObject llor;
          if(idioma == "japones")
          {
          texto.text = "";
-         textoj.text = "ドアを開けて <sprite name=\"E\">";
+         textoj.text = "開ける <sprite name=\"E\">";
          textok.text = "";
          textoc.text = "";
          textor.text = "";
@@ -369,7 +370,7 @@ public GameObject llor;
          {
          texto.text = "";
          textoj.text = "";
-         textok.text = "문을 열어라 <sprite name=\"E\">";
+         textok.text = "열려 있는 <sprite name=\"E\">";
          textoc.text = "";
          textor.text = "";
          }
@@ -378,7 +379,7 @@ public GameObject llor;
          texto.text = "";
          textoj.text = "";
          textok.text = "";
-         textoc.text = "打开门 <sprite name=\"E\">";
+         textoc.text = "打开 <sprite name=\"E\">";
          textor.text = "";
          }
          if(idioma == "ruso")
@@ -387,7 +388,7 @@ public GameObject llor;
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
-         textor.text = "открыть дверь <sprite name=\"E\">";
+         textor.text = "открыть <sprite name=\"E\">";
          }
               }
 freeze = play.freeze;
@@ -415,7 +416,7 @@ freeze = play.freeze;
               {
          if(idioma == "ingles")
          {
-         texto.text = "Close the Door <sprite name=\"A\">";
+         texto.text = "Close <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -423,7 +424,7 @@ freeze = play.freeze;
          }
          if(idioma == "español")
          {
-         texto.text = "Cerrar la puerta <sprite name=\"A\">";
+         texto.text = "Cerrar <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -431,7 +432,7 @@ freeze = play.freeze;
          }
          if(idioma == "frances")
          {
-         texto.text = "ferme la porte <sprite name=\"A\">";
+         texto.text = "ferme <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -439,7 +440,7 @@ freeze = play.freeze;
          }
          if(idioma == "aleman")
          {
-         texto.text = "schließen Sie die Tur <sprite name=\"A\">";
+         texto.text = "schließen <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -447,7 +448,7 @@ freeze = play.freeze;
          }
          if(idioma == "italiano")
          {
-         texto.text = "chiudere la porta <sprite name=\"A\">";
+         texto.text = "chiudere <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -455,7 +456,7 @@ freeze = play.freeze;
          }
          if(idioma == "portugues")
          {
-         texto.text = "feche a porta <sprite name=\"A\">";
+         texto.text = "feche <sprite name=\"A\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -464,7 +465,7 @@ freeze = play.freeze;
          if(idioma == "japones")
          {
          texto.text = "";
-         textoj.text = "ドアを閉める <sprite name=\"A\">";
+         textoj.text = "近い <sprite name=\"A\">";
          textok.text = "";
          textoc.text = "";
          textor.text = "";
@@ -473,7 +474,7 @@ freeze = play.freeze;
          {
          texto.text = "";
          textoj.text = "";
-         textok.text = "문을 닫아 <sprite name=\"A\">";
+         textok.text = "닫다 <sprite name=\"A\">";
          textoc.text = "";
          textor.text = "";
          }
@@ -482,7 +483,7 @@ freeze = play.freeze;
          texto.text = "";
          textoj.text = "";
          textok.text = "";
-         textoc.text = "关门 <sprite name=\"A\">";
+         textoc.text = "关闭 <sprite name=\"A\">";
          textor.text = "";
          }
          if(idioma == "ruso")
@@ -491,14 +492,14 @@ freeze = play.freeze;
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
-         textor.text = "закрыть дверь <sprite name=\"A\">";
+         textor.text = "закрыть <sprite name=\"A\">";
          }
               }
               if(ing == false && xbox == false && playst == true)
               {
          if(idioma == "ingles")
          {
-         texto.text = "Close the Door <sprite name=\"pixel_art_small\">";
+         texto.text = "Close <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -506,7 +507,7 @@ freeze = play.freeze;
          }
          if(idioma == "español")
          {
-         texto.text = "Cerrar la puerta <sprite name=\"pixel_art_small\">";
+         texto.text = "Cerrar <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -514,7 +515,7 @@ freeze = play.freeze;
          }
          if(idioma == "frances")
          {
-         texto.text = "ferme la porte <sprite name=\"pixel_art_small\">";
+         texto.text = "ferme <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -522,7 +523,7 @@ freeze = play.freeze;
          }
          if(idioma == "aleman")
          {
-         texto.text = "schließen Sie die Tur <sprite name=\"pixel_art_small\">";
+         texto.text = "schließen <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -530,7 +531,7 @@ freeze = play.freeze;
          }
          if(idioma == "italiano")
          {
-         texto.text = "chiudere la porta <sprite name=\"pixel_art_small\">";
+         texto.text = "chiudere <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -538,7 +539,7 @@ freeze = play.freeze;
          }
          if(idioma == "portugues")
          {
-         texto.text = "feche a porta <sprite name=\"pixel_art_small\">";
+         texto.text = "feche <sprite name=\"pixel_art_small\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -547,7 +548,7 @@ freeze = play.freeze;
          if(idioma == "japones")
          {
          texto.text = "";
-         textoj.text = "ドアを閉める <sprite name=\"pixel_art_small\">";
+         textoj.text = "近い <sprite name=\"pixel_art_small\">";
          textok.text = "";
          textoc.text = "";
          textor.text = "";
@@ -556,7 +557,7 @@ freeze = play.freeze;
          {
          texto.text = "";
          textoj.text = "";
-         textok.text = "문을 닫아 <sprite name=\"pixel_art_small\">";
+         textok.text = "닫다 <sprite name=\"pixel_art_small\">";
          textoc.text = "";
          textor.text = "";
          }
@@ -574,14 +575,14 @@ freeze = play.freeze;
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
-         textor.text = "закрыть дверь <sprite name=\"pixel_art_small\">";
+         textor.text = "закрыть <sprite name=\"pixel_art_small\">";
          }
               }
               if(ing == false && xbox == false && playst == false)
               {
          if(idioma == "ingles")
          {
-         texto.text = "Close the Door <sprite name=\"E\">";
+         texto.text = "Close <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -589,7 +590,7 @@ freeze = play.freeze;
          }
          if(idioma == "español")
          {
-         texto.text = "Cerrar la puerta <sprite name=\"E\">";
+         texto.text = "Cerrar <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -597,7 +598,7 @@ freeze = play.freeze;
          }
          if(idioma == "frances")
          {
-         texto.text = "ferme la porte <sprite name=\"E\">";
+         texto.text = "ferme <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -605,7 +606,7 @@ freeze = play.freeze;
          }
          if(idioma == "aleman")
          {
-         texto.text = "schließen Sie die Tur <sprite name=\"E\">";
+         texto.text = "schließen <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -613,7 +614,7 @@ freeze = play.freeze;
          }
          if(idioma == "italiano")
          {
-         texto.text = "chiudere la porta <sprite name=\"E\">";
+         texto.text = "chiudere <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -621,7 +622,7 @@ freeze = play.freeze;
          }
          if(idioma == "portugues")
          {
-         texto.text = "feche a porta <sprite name=\"E\">";
+         texto.text = "feche <sprite name=\"E\">";
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
@@ -630,7 +631,7 @@ freeze = play.freeze;
          if(idioma == "japones")
          {
          texto.text = "";
-         textoj.text = "ドアを閉める <sprite name=\"E\">";
+         textoj.text = "近い <sprite name=\"E\">";
          textok.text = "";
          textoc.text = "";
          textor.text = "";
@@ -639,7 +640,7 @@ freeze = play.freeze;
          {
          texto.text = "";
          textoj.text = "";
-         textok.text = "문을 닫아 <sprite name=\"E\">";
+         textok.text = "닫다 <sprite name=\"E\">";
          textoc.text = "";
          textor.text = "";
          }
@@ -657,7 +658,7 @@ freeze = play.freeze;
          textoj.text = "";
          textok.text = "";
          textoc.text = "";
-         textor.text = "закрыть дверь <sprite name=\"E\">";
+         textor.text = "закрыть <sprite name=\"E\">";
          }
               }
               if(ply.freeze == true)
@@ -692,12 +693,34 @@ void OnTriggerEnter(Collider other)
     {
         intering = true;
     }
-    if (other.gameObject.CompareTag("llorona") && sp == false)
+if (other.gameObject.CompareTag("llorona") && sp == false)
+{
+    Llorona llorona = other.gameObject.GetComponent<Llorona>();
+    float animSpeed = 1f;
+    float openDelay = 1f;
+    if (llorona.mode == 3)
     {
-       anim.SetTrigger("op1");
-       Invoke("openx", 1f);
-       me.isTrigger = true;
+        audioSource.PlayOneShot(slam);
+        animSpeed = 3f;
+        openDelay = 0.3f;
     }
+    if (llorona.mode == 2)
+    {
+        audioSource.PlayOneShot(opend);
+        animSpeed = 1.5f;
+        openDelay = 0.5f;
+    }
+    if (llorona.mode == 1)
+    {
+        audioSource.PlayOneShot(opend);
+        animSpeed = 1f;
+        openDelay = 1f;
+    }
+    anim.speed = animSpeed;
+    anim.SetTrigger("op1");
+    Invoke(nameof(openx), openDelay);
+    me.isTrigger = true;
+}
 }
 void OnCollisionEnter(Collision other2)
 {

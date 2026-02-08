@@ -139,8 +139,13 @@ timestop = play.timestop;
 gua = dt.gua;
    loseSightDelay = (night * 1.5f);
         safe = play.safe;
+if(timestop == true)
+{
+agent.enabled = false;
+}
 if(timestop == false)
 {
+        agent.enabled = true;
 if(seee == true && mode == 3)
 {
         agent.SetDestination(player.position);
@@ -511,7 +516,7 @@ else
         hj = false;
         if(seee == false)
         {
-        agent.speed = 6;
+        agent.speed = 4;
         }
       }
       if(y == true)
