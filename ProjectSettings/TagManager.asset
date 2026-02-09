@@ -55,6 +55,8 @@ TagManager:
   - shop2
   - shop3
   - cards
+  - l1
+  - l2
   layers:
   - Default
   - TransparentFX

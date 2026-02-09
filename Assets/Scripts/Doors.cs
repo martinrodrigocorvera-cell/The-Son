@@ -394,6 +394,8 @@ public GameObject llor;
 freeze = play.freeze;
               if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) && ing == false && freeze == false)
               {
+                    float animSpeed = 1f;
+    anim.speed = animSpeed;
                audioSource.PlayOneShot(opend);
                sound.SetActive(true);
                ing = true;
@@ -671,6 +673,8 @@ freeze = play.freeze;
               }
               if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) && ing == false)
               {
+    float animSpeed = 1f;
+    anim.speed = animSpeed;
                audioSource.PlayOneShot(closd);
                sound.SetActive(true);
                ing = true;

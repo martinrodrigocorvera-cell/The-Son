@@ -4992,43 +4992,43 @@ opi = false;
          textor.text = "";
 if(idioma == "ingles")
 {
-    textsp2 = "Come on! Come here and try some!";
+    textsp2 = "Oh! And could you please not use the lantern here? I'm kinda light-sensitive, you know, being made of darkness and stuff.";
 }
 if(idioma == "español")
 {
-    textsp2 = "Venga! Ven aqui y prueba un poco!";
+    textsp2 = "Oh! Y podrias no usar la linterna aqui? Soy un poco sensible a la luz, ya sabes, por estar hecho de oscuridad y esas cosas.";
 }
 if(idioma == "frances")
 {
-    textsp2 = "Allez ! Viens ici et goute un peu !";
+    textsp2 = "Oh ! Et tu pourrais eviter d’utiliser la lanterne ici ? Je suis un peu sensible a la lumiere, tu sais, etant fait d’obscurite et tout ca.";
 }
 if(idioma == "aleman")
 {
-    textsp2 = "Komm schon! Komm her und probier ein bisschen!";
+    textsp2 = "Oh! Konntest du hier bitte keine Laterne benutzen? Ich bin ein bisschen lichtempfindlich, weißt du, weil ich aus Dunkelheit gemacht bin und so.";
 }
 if(idioma == "italiano")
 {
-    textsp2 = "Dai! Vieni qui e assaggia un po'!";
+    textsp2 = "Oh! E potresti per favore non usare la lanterna qui? Sono un po’ sensibile alla luce, sai, essendo fatto di oscurita e cose del genere.";
 }
 if(idioma == "portugues")
 {
-    textsp2 = "Vamos la! Venha aqui e experimente um pouco!";
+    textsp2 = "Oh! E voce poderia, por favor, nao usar a lanterna aqui? Sou meio sensivel a luz, sabe, por ser feito de escuridao e essas coisas.";
 }
 if(idioma == "japones")
 {
-    textsp2 = "さあ！ここに来て少し味見してみなよ！";
+    textsp2 = "あっ！それと、ここでランタンを使わないでくれる？ 僕、光にちょっと弱いんだ。ほら、闇でできてるからさ。";
 }
 if(idioma == "coreano")
 {
-    textsp2 = "자! 이리 와서 조금 맛봐봐!";
+    textsp2 = "아! 그리고 여기서는 랜턴 좀 안 써줄래? 나 빛에 좀 약하거든. 어둠으로 만들어져서 말이야.";
 }
 if(idioma == "chino")
 {
-    textsp2 = "来吧！过来尝一点！";
+    textsp2 = "哦！还有，你能不能别在这里用灯笼？我对光有点敏感，你知道的，毕竟我是由黑暗构成的之类的。";
 }
 if(idioma == "ruso")
 {
-    textsp2 = "Давай! Иди сюда и попробуй немного!";
+    textsp2 = "Ой! И не мог бы ты здесь не использовать фонарь? Я немного чувствителен к свету, знаешь, всё-таки я из тьмы сделан и всё такое.";
 }
              StartCoroutine(writex());
              writing = false;
@@ -15336,6 +15336,670 @@ opi2 = false;
          timestop = false;
              }
 
+             if(textorder == 156 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+
+         if(night == 4)
+         {
+if(idioma == "ingles")
+{
+    textsp2 = "Lantern off, please. It's time for my Mexican soap opera, I need to know if they end up with Maria.";
+}
+if(idioma == "español")
+{
+    textsp2 = "Linterna fuera, porfa. Es la hora de mi telenovela mexicana, necesito saber si se quedan con Maria.";
+}
+if(idioma == "frances")
+{
+    textsp2 = "Eteins la lanterne, s’il te plait. C’est l’heure de ma telenovela mexicaine, je dois savoir s’ils finissent avec Maria.";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Laterne aus, bitte. Es ist Zeit für meine mexikanische Telenovela, ich muss wissen, ob sie bei Maria bleiben.";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Lanterna spenta, per favore. E l’ora della mia telenovela messicana, devo sapere se finiscono con Maria.";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Apaga a lanterna, por favor. Esta na hora da minha novela mexicana, preciso saber se eles ficam com a Maria.";
+}
+if(idioma == "japones")
+{
+    textsp2 = "ランタン消して、お願い。メキシコのテレノベラの時間なんだ。マリアと一緒になるのか知りたいんだよ。";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "랜턴 좀 꺼줘. 지금 멕시코 드라마 볼 시간이야. 마리아랑 같이 되는지 알아야 한다고.";
+}
+if(idioma == "chino")
+{
+    textsp2 = "把灯关掉，拜托了。现在是我看墨西哥肥皂剧的时间，我得知道他们最后会不会和玛丽亚在一起。";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "Фонарь выключи, пожалуйста. Сейчас время моей мексиканской теленовеллы, мне нужно знать, останутся ли они с Марией.";
+}
+         }
+
+         if(night == 5)
+         {
+if(idioma == "ingles")
+{
+    textsp2 = "Ah! How long have you been there?! I just wanted to try that thing they call anime, I had no idea there was so much fanservice!";
+}
+if(idioma == "español")
+{
+    textsp2 = "Ah! Cuanto llevas ahi?! Solo queria probar eso que llaman anime, no sabia que habia tanto fanservice!";
+}
+if(idioma == "frances")
+{
+    textsp2 = "Ah ! Depuis combien de temps tu es la ?! Je voulais juste essayer ce truc qu’on appelle l’anime, je ne savais pas qu’il y avait autant de fanservice !";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Ah! Wie lange stehst du schon da?! Ich wollte nur dieses Ding ausprobieren, das man Anime nennt, ich wusste nicht, dass es so viel Fanservice gibt!";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Ah! Da quanto tempo sei li?! Volevo solo provare quella cosa che chiamano anime, non sapevo ci fosse cosi tanto fanservice!";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Ah! Ha quanto tempo voce esta ai?! Eu so queria experimentar isso que chamam de anime, nao sabia que tinha tanto fanservice!";
+}
+if(idioma == "japones")
+{
+    textsp2 = "あっ！いつからそこにいたの？！アニメってやつをちょっと試してみただけなんだ。こんなにファンサービスが多いとは知らなかったよ！";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "아! 언제부터 거기 있었어?! 그냥 애니메이션이라는 걸 좀 보려던 것뿐이야. 이렇게 팬서비스가 많을 줄은 몰랐어!";
+}
+if(idioma == "chino")
+{
+    textsp2 = "啊！你在那里多久了？！我只是想试试他们说的那个动漫，没想到粉丝福利这么多！";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "А! Как давно ты тут стоишь?! Я просто хотел попробовать то, что называют аниме, и не знал, что там столько фан-сервиса!";
+}
+         }
+         if(night == 6)
+         {
+        if(sellers == 0 && mirais == 0)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "You know, this plot is actually crazy. You should give it a try.";
+}
+if(idioma == "español")
+{
+    textsp2 = "Sabes, esta trama es una locura. Deberias darle una oportunidad.";
+}
+if(idioma == "frances")
+{
+    textsp2 = "Tu sais, l’intrigue est completement folle. Tu devrais essayer.";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Weißt du, die Handlung ist echt verruckt. Du solltest es mal ausprobieren.";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Sai, la trama e davvero folle. Dovresti provarci.";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Sabe, essa historia e realmente maluca. Voce devia dar uma chance.";
+}
+if(idioma == "japones")
+{
+    textsp2 = "ねえ、このストーリー実はめちゃくちゃなんだ。ちょっと試してみるべきだよ。";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "있잖아, 이 줄거리 진짜 미쳤어. 한번 봐봐.";
+}
+if(idioma == "chino")
+{
+    textsp2 = "你知道吗，这个剧情真的很疯狂，你应该试试看。";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "Знаешь, сюжет на самом деле безумный. Тебе стоит попробовать.";
+}
+        }
+        if(sellers == 1 && mirais == 1)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "You would sure think I would be spending time with my daughter now, but I have my priorities.";
+}
+if(idioma == "español")
+{
+    textsp2 = "Seguro pensarias que estaria pasando tiempo con mi hija ahora, pero tengo mis prioridades.";
+}
+if(idioma == "frances")
+{
+    textsp2 = "On pourrait croire que je passerais du temps avec ma fille maintenant, mais j’ai mes priorites.";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Man konnte meinen, ich wurde jetzt Zeit mit meiner Tochter verbringen, aber ich habe meine Prioritaten.";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Penseresti che ora starei passando del tempo con mia figlia, ma ho le mie priorità.";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Voce poderia pensar que eu estaria passando um tempo com minha filha agora, mas eu tenho minhas prioridades.";
+}
+if(idioma == "japones")
+{
+    textsp2 = "今は娘と過ごしていると思うだろうけど、これでもちゃんと優先順位があるんだ。";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "지금쯤 딸이랑 시간을 보내고 있을 거라고 생각하겠지만, 나도 나름 우선순위가 있어.";
+}
+if(idioma == "chino")
+{
+    textsp2 = "你肯定会以为我现在应该在陪女儿，但我有我的优先事项。";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "Ты, конечно, подумаешь, что сейчас я должен проводить время с дочерью, но у меня есть свои приоритеты.";
+}
+        }
+        if(sellers == 1 && mirais == 1)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "You would sure think I would be spending time with my daughter now, but I have my priorities.";
+}
+if(idioma == "español")
+{
+    textsp2 = "Seguro pensarias que estaria pasando tiempo con mi hija ahora, pero tengo mis prioridades.";
+}
+if(idioma == "frances")
+{
+    textsp2 = "On pourrait croire que je passerais du temps avec ma fille maintenant, mais j’ai mes priorites.";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Man konnte meinen, ich wurde jetzt Zeit mit meiner Tochter verbringen, aber ich habe meine Prioritaten.";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Penseresti che ora starei passando del tempo con mia figlia, ma ho le mie priorita.";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Voce poderia pensar que eu estaria passando um tempo com minha filha agora, mas eu tenho minhas prioridades.";
+}
+if(idioma == "japones")
+{
+    textsp2 = "今は娘と過ごしていると思うだろうけど、これでもちゃんと優先順位があるんだ。";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "지금쯤 딸이랑 시간을 보내고 있을 거라고 생각하겠지만, 나도 나름 우선순위가 있어.";
+}
+if(idioma == "chino")
+{
+    textsp2 = "你肯定会以为我现在应该在陪女儿，但我有我的优先事项。";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "Ты, конечно, подумаешь, что сейчас я должен проводить время с дочерью, но у меня есть свои приоритеты.";
+}
+        }
+        if(sellers == -1 && mirais == 0)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "I can't even change the channel with this guilt. But I have to stay firm.";
+}
+if(idioma == "español")
+{
+    textsp2 = "Ni siquiera puedo cambiar de canal con esta culpa. Pero tengo que mantenerme firme.";
+}
+if(idioma == "frances")
+{
+    textsp2 = "Je n’arrive meme pas a changer de chaine avec cette culpabilite. Mais je dois rester ferme.";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Mit diesem schlechten Gewissen kann ich nicht einmal den Sender wechseln. Aber ich muss standhaft bleiben.";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Non riesco nemmeno a cambiare canale con questo senso di colpa. Ma devo restare fermo.";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Eu nem consigo mudar de canal com essa culpa. Mas preciso me manter firme.";
+}
+if(idioma == "japones")
+{
+    textsp2 = "この罪悪感じゃチャンネルすら変えられない。でも、心を強く持たないと。";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "이 죄책감 때문에 채널도 못 바꾸겠어. 그래도 흔들리면 안 돼.";
+}
+if(idioma == "chino")
+{
+    textsp2 = "带着这种愧疚感，我连换台都做不到。但我必须坚持住。";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "С таким чувством вины я даже не могу переключить канал. Но я должен оставаться твёрдым.";
+}
+        }
+        if(sellers == 1 && mirais == 0)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "Really? Does no one respect family night anymore?";
+}
+if(idioma == "español")
+{
+    textsp2 = "De verdad? Ya nadie respeta la noche familiar?";
+}
+if(idioma == "frances")
+{
+    textsp2 = "Vraiment ? Plus personne ne respecte la soiree en famille ?";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Wirklich? Respektiert niemand mehr den Familientag?";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Davvero? Ormai nessuno rispetta piu la serata in famiglia?";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Serio? Ninguem mais respeita a noite em familia?";
+}
+if(idioma == "japones")
+{
+    textsp2 = "本当に？もう家族の夜を誰も尊重しないの？";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "정말? 이제 가족의 밤을 아무도 존중하지 않는 거야?";
+}
+if(idioma == "chino")
+{
+    textsp2 = "真的吗？现在没人再尊重家庭之夜了吗？";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "Серьёзно? Никто больше не уважает семейный вечер?";
+}
+        }
+        if(sellers == 0 && mirais == -1)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "Ice cream has no place in this conversation.";
+}
+if(idioma == "español")
+{
+    textsp2 = "El helado no tiene lugar en esta conversación.";
+}
+if(idioma == "frances")
+{
+    textsp2 = "La glace n’a pas sa place dans cette conversation.";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Eis hat hier keinen Platz im Gesprach.";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Il gelato non ha posto in questa conversazione.";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Sorvete nao tem lugar nesta conversa.";
+}
+if(idioma == "japones")
+{
+    textsp2 = "この会話にアイスクリームは関係ない。";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "이 대화에 아이스크림은 어울리지 않아.";
+}
+if(idioma == "chino")
+{
+    textsp2 = "冰淇淋在这段对话中毫无意义。";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "Мороженое не имеет места в этом разговоре.";
+}
+        }
+         }
+
+         
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 157 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+
+            if(textorder == 158 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "ミライ";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "미라이";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "未来";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Мирай";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+
+         if(night == 6)
+         {
+        if(sellers == -1 && mirais == 0)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "Are you here to laugh? Why not take a picture while you're at it?";
+}
+if(idioma == "español")
+{
+    textsp2 = "Vienes a reirte? Por que no sacas una foto ya de paso?";
+}
+if(idioma == "frances")
+{
+    textsp2 = "Tu es la pour rire ? Pourquoi ne pas prendre une photo pendant que tu y es ?";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Kommst du hierher, um zu lachen? Warum machst du nicht gleich ein Foto dabei?";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Sei venuto a ridere? Perche non scatti anche una foto nel frattempo?";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Voce veio para rir? Por que nao tira uma foto enquanto esta nisso?";
+}
+if(idioma == "japones")
+{
+    textsp2 = "笑いに来たの？ついでに写真でも撮ったらどう？";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "웃으러 왔어? 그 김에 사진이라도 찍어볼래?";
+}
+if(idioma == "chino")
+{
+    textsp2 = "你是来笑的吗？顺便拍张照片吧？";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "Пришёл посмеяться? Почему бы не сделать заодно фото?";
+}
+        }
+        if(sellers == 0 && mirais == 1)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "Have you heard of privacy, you creep?";
+}
+if(idioma == "español")
+{
+    textsp2 = "Has oido hablar de la privacidad, acosador?";
+}
+if(idioma == "frances")
+{
+    textsp2 = "Tu connais la vie privee, espece de pervers ?";
+}
+if(idioma == "aleman")
+{
+    textsp2 = "Hast du schon mal von Privatsphare gehort, du Schleicher?";
+}
+if(idioma == "italiano")
+{
+    textsp2 = "Hai mai sentito parlare di privacy, schifoso?";
+}
+if(idioma == "portugues")
+{
+    textsp2 = "Voce ja ouviu falar em privacidade, seu bisbilhoteiro?";
+}
+if(idioma == "japones")
+{
+    textsp2 = "プライバシーって知ってる？変態！";
+}
+if(idioma == "coreano")
+{
+    textsp2 = "프라이버시라는 걸 들어봤어, 이 변태야?";
+}
+if(idioma == "chino")
+{
+    textsp2 = "你听说过隐私吗，你这个 creep？";
+}
+if(idioma == "ruso")
+{
+    textsp2 = "Ты слыхал о приватности, извращенец?";
+}
+        }
+         }
+
+             if(textorder == 159 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+         
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
 
         if (!bar.activeInHierarchy)
         {
@@ -16261,6 +16925,35 @@ if(idioma == "ruso")
 
 void OnTriggerEnter(Collider other2)
 {
+    if (other2.gameObject.CompareTag("l1"))
+    {
+       if(lant.activeInHierarchy)
+       {
+        if((night <= 5 || (night == 6 && !(sellers == -1 && mirais == -1) && !(sellers == 0 && mirais == 1) && !(sellers == -1 && mirais == 1) && !(sellers == 1 && mirais == -1))))
+        {
+        lant.SetActive(false);
+                    freeze = true;
+        rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+        texm = true;
+        textorder = 156;
+        }
+       }
+    }
+
+    if (other2.gameObject.CompareTag("l2"))
+    {
+       if(lant.activeInHierarchy)
+       {
+        if(night == 6 && ((sellers == 0 && mirais == 1) || (sellers == -1 && mirais == 0)))
+        {
+        lant.SetActive(false);
+                    freeze = true;
+        rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+        texm = true;
+        textorder = 158;
+        }
+       }
+    }
     if (other2.gameObject.CompareTag("interpay"))
     {
             freeze = true;
