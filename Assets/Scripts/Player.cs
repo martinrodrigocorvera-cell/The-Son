@@ -1201,7 +1201,6 @@ moving = false;
          textocl.text = "";
          textorl.text = "";
            rsp = false;
-            texm = true;
          }
          if(Input.GetKeyDown(KeyCode.X) || (Input.GetKeyDown(KeyCode.JoystickButton2) && playst == true) || (Input.GetKeyDown(KeyCode.JoystickButton2) && xbox == true))
          {
@@ -15599,49 +15598,6 @@ if(idioma == "ruso")
     textsp2 = "Ты, конечно, подумаешь, что сейчас я должен проводить время с дочерью, но у меня есть свои приоритеты.";
 }
         }
-        if(sellers == 1 && mirais == 1)
-        {
-if(idioma == "ingles")
-{
-    textsp2 = "You would sure think I would be spending time with my daughter now, but I have my priorities.";
-}
-if(idioma == "español")
-{
-    textsp2 = "Seguro pensarias que estaria pasando tiempo con mi hija ahora, pero tengo mis prioridades.";
-}
-if(idioma == "frances")
-{
-    textsp2 = "On pourrait croire que je passerais du temps avec ma fille maintenant, mais j’ai mes priorites.";
-}
-if(idioma == "aleman")
-{
-    textsp2 = "Man konnte meinen, ich wurde jetzt Zeit mit meiner Tochter verbringen, aber ich habe meine Prioritaten.";
-}
-if(idioma == "italiano")
-{
-    textsp2 = "Penseresti che ora starei passando del tempo con mia figlia, ma ho le mie priorita.";
-}
-if(idioma == "portugues")
-{
-    textsp2 = "Voce poderia pensar que eu estaria passando um tempo com minha filha agora, mas eu tenho minhas prioridades.";
-}
-if(idioma == "japones")
-{
-    textsp2 = "今は娘と過ごしていると思うだろうけど、これでもちゃんと優先順位があるんだ。";
-}
-if(idioma == "coreano")
-{
-    textsp2 = "지금쯤 딸이랑 시간을 보내고 있을 거라고 생각하겠지만, 나도 나름 우선순위가 있어.";
-}
-if(idioma == "chino")
-{
-    textsp2 = "你肯定会以为我现在应该在陪女儿，但我有我的优先事项。";
-}
-if(idioma == "ruso")
-{
-    textsp2 = "Ты, конечно, подумаешь, что сейчас я должен проводить время с дочерью, но у меня есть свои приоритеты.";
-}
-        }
         if(sellers == -1 && mirais == 0)
         {
 if(idioma == "ingles")
@@ -15967,7 +15923,7 @@ if(idioma == "coreano")
 }
 if(idioma == "chino")
 {
-    textsp2 = "你听说过隐私吗，你这个 creep？";
+    textsp2 = "你听说过隐私吗，你这个 跟踪者？";
 }
 if(idioma == "ruso")
 {
@@ -16660,6 +16616,7 @@ if ((idioma == "ruso"))
     void p3()
     {
       nod = false;
+      texm = true;
       textorder += 1;
     }
     void p2y()
