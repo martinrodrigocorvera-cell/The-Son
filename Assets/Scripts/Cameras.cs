@@ -104,6 +104,8 @@ public GameObject gameo;
 public GameObject setx;
 public GameObject norx;
 public bool crd;
+public AudioClip camsn;
+public AudioClip btn;
 
     // Start is called before the first frame update
     void Start()
@@ -224,6 +226,7 @@ block.SetActive(false);
 if((Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.JoystickButton2)) && credits.activeInHierarchy)
 {
 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+audioSource.PlayOneShot(btn);
 }
   if(credits.activeInHierarchy)
   {
@@ -507,6 +510,7 @@ snd = button.snd;
          }
               if ((Input.GetKeyDown(KeyCode.E) || (playst == true && Input.GetKeyDown(KeyCode.JoystickButton1)) || (xbox == true && Input.GetKeyDown(KeyCode.JoystickButton0))) && lockx == false && freeze == false)
               {
+               audioSource.PlayOneShot(btn);
                 llori.enabled = false;
                 llori2.enabled = false;
                 llori3.enabled = false;
@@ -603,18 +607,22 @@ al.enabled = true;
           if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.JoystickButton5)))
           {
              camy += 1;
+             audioSource.PlayOneShot(camsn);
           }
           if ((Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown(KeyCode.JoystickButton4)))
           {
              camy -= 1;
+             audioSource.PlayOneShot(camsn);
           }
           if (Input.GetKeyDown(KeyCode.LeftArrow))
           {
              camy -= 1;
+            audioSource.PlayOneShot(camsn);
           }
           if (Input.GetKeyDown(KeyCode.RightArrow))
           {
              camy += 1;
+            audioSource.PlayOneShot(camsn);
           }
 if(kitchb == true)
 {

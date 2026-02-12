@@ -33,6 +33,7 @@ public TMP_Text textocl;
 public TMP_Text textorl;
     public bool mexico;
     public Cameras cm;
+    public bool texz;
     public GameObject invk;
     public Animator cer2;
     public AudioClip harp;
@@ -375,6 +376,8 @@ public GameObject muf2;
 public bool ovr;
 public Animator mirr;
 public GameObject miraii;
+public AudioClip btnsn;
+public AudioClip portz;
 
 
     void Start()
@@ -531,6 +534,7 @@ nol.SetActive(true);
            crd2.SetTrigger("x3");
     audioSource.PlayOneShot(cardd2);
         Invoke("O2", 0.5f);
+        audioSource.PlayOneShot(btnsn);
               }
     if(texm == false)
     {
@@ -727,6 +731,15 @@ int layerMask = ~LayerMask.GetMask("Player");
      if(looking == false && paso1 == true)
      {
       paso2 = true;
+     }
+     if(texm == true && texz == false)
+     {
+    audioSource.PlayOneShot(btnsn);
+        texz = true;
+     }
+     if(texm == false)
+     {
+        texz = false;
      }
      if(looking == false && paso2x == true)
      {
@@ -1106,10 +1119,12 @@ if(home == false && zxm == false)
 if((Input.GetKeyDown(KeyCode.Return) || ((Input.GetKeyDown(KeyCode.JoystickButton0)) || (Input.GetKeyDown(KeyCode.JoystickButton1)))) && credits.activeInHierarchy)
 {
 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+audioSource.PlayOneShot(btnsn);
 }
 if((Input.GetKeyDown(KeyCode.Return) || ((Input.GetKeyDown(KeyCode.JoystickButton0)) || (Input.GetKeyDown(KeyCode.JoystickButton1)))) && skip == true)
 {
 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+audioSource.PlayOneShot(btnsn);
 }
 //Gameplay
 if(home == false)
@@ -1236,6 +1251,7 @@ moving = false;
          textokd.text = "";
          textocd.text = "";
          textord.text = "";
+         audioSource.PlayOneShot(btnsn);
              }
              if ((Input.GetKeyDown(KeyCode.Return) || ((Input.GetKeyDown(KeyCode.JoystickButton1) && playst == true) || (Input.GetKeyDown(KeyCode.JoystickButton1) && xbox == true))) && name == false && texm == true && nod == false && answer == true)
              {
@@ -17774,6 +17790,7 @@ parm = true;
     if (other2.CompareTag("portal2"))
     {
     parm = false;
+    audioSource.PlayOneShot(portz);
        audioSource3x.clip = null;
     trans3.SetActive(true);
      Invoke("zz1", 0.5f);
@@ -17793,6 +17810,7 @@ parm = true;
        msg4.SetActive(false);
      secwall.SetActive(true);
     trans3.SetActive(true);
+        audioSource.PlayOneShot(portz);
      Invoke("zz11", 0.5f);
      Invoke("zz22", 1f);
     }
