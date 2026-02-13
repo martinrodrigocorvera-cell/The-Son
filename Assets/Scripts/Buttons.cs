@@ -4768,7 +4768,90 @@ if(idiom == "ruso")
        }
        if(cnx4 == true)
        {
-         if(!wall.activeInHierarchy)
+                 if(play.alone == true)
+         {
+if(idioma == "ingles")
+{
+    texto.text = "How does it feel to walk without a heart in your chest?";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "español")
+{
+    texto.text = "Como se siente caminar sin un corazon en el pecho?";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "frances")
+{
+    texto.text = "Que ressent-on en marchant sans coeur dans la poitrine ?";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "aleman")
+{
+    texto.text = "Wie fuhlt es sich an, ohne ein Herz in der Brust zu gehen?";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "italiano")
+{
+    texto.text = "Come ci si sente a camminare senza un cuore nel petto?";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "portugues")
+{
+    texto.text = "Como e caminhar sem um coracao no peito?";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "japones")
+{
+    texto.text = "";
+    textoj.text = "胸に心臓がないまま歩くのは、どんな気分だ？";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "coreano")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "가슴에 심장도 없이 걷는 기분이 어떠냐?";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "chino")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "胸膛里没有心脏地行走，是种什么感觉？";
+    textor.text = "";
+}
+if(idioma == "ruso")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "Каково это — идти без сердца в груди?";
+}
+         }
+         if(!wall.activeInHierarchy && play.alone == false)
          {
          if(idiom == "ingles")
          {
@@ -4851,7 +4934,7 @@ if(idiom == "ruso")
          textor.text = "На данный момент...";
          }
          }
-         if(wall.activeInHierarchy)
+         if(wall.activeInHierarchy && play.alone == false)
          {
 if(idiom == "ingles")
 {
@@ -4937,7 +5020,90 @@ if(idiom == "ruso")
        }
        if(cnx3 == true)
        {
-         if(!wall.activeInHierarchy)
+                 if(play.alone == true)
+         {
+if(idioma == "ingles")
+{
+    texto.text = "If this was the ending you desired, if what you wanted was to break an already devastated family, then I only have one question.";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idioma == "español")
+{
+    texto.text = "Si este era el final que deseabas, si lo que querias era romper una familia ya devastada, entonces solo tengo una pregunta.";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idioma == "frances")
+{
+    texto.text = "Si c’était la fin que tu desirais, si ce que tu voulais était briser une famille deja devastee, alors je n’ai qu’une seule question.";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idioma == "aleman")
+{
+    texto.text = "Wenn dies das Ende war, das du dir gewunscht hast, wenn du eine bereits zerstorte Familie zerbrechen wolltest, dann habe ich nur eine Frage.";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idioma == "italiano")
+{
+    texto.text = "Se questo era il finale che desideravi, se volevi spezzare una famiglia gia devastata, allora ho solo una domanda.";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idioma == "portugues")
+{
+    texto.text = "Se este era o final que voce desejava, se o que queria era destruir uma familia ja devastada, entao so tenho uma pergunta.";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idioma == "japones")
+{
+    texto.text = "";
+    textoj.text = "これがお前の望んだ結末で、すでに壊れかけた家族を完全に引き裂くことが目的だったのなら、俺には一つだけ質問がある。";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idioma == "coreano")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "이것이 네가 바라던 결말이고, 이미 무너진 가족을 완전히 부수는 것이 목적이었다면, 나는 단 하나만 묻겠다.";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idioma == "chino")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "如果这就是你想要的结局，如果你的目的就是彻底摧毁一个早已支离破碎的家庭，那么我只有一个问题。";
+    textor.text = "";
+}
+if(idioma == "ruso")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "Если это был финал, которого ты желал, если ты хотел разрушить уже опустошённую семью, тогда у меня есть только один вопрос.";
+}
+         }
+         if(!wall.activeInHierarchy && play.alone == false)
          {
          if(idiom == "ingles")
          {
@@ -5020,7 +5186,7 @@ if(idiom == "ruso")
          textor.text = "Я знаю только что я в безопасности";
          }
          }
-         if(wall.activeInHierarchy)
+         if(wall.activeInHierarchy && play.alone == false)
          {
 if(idiom == "ingles")
 {
@@ -5106,7 +5272,90 @@ if(idiom == "ruso")
        }
        if(cnx2 == true)
        {
-         if(!wall.activeInHierarchy)
+                 if(play.alone == true)
+         {
+if(idioma == "ingles")
+{
+    texto.text = "If there is still a glimmer of humanity within you, then you must be remorseful.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "español")
+{
+    texto.text = "Si aun hay un atisbo de humanidad en tu ser, entonces debes estar arrepentido.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "frances")
+{
+    texto.text = "S’il reste encore une lueur d’humanite en toi, alors tu dois etre repentant.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "aleman")
+{
+    texto.text = "Wenn noch ein Hauch von Menschlichkeit in dir ist, dann musst du Reue empfinden.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "italiano")
+{
+    texto.text = "Se c’e ancora un barlume di umanita in te, allora devi essere pentito.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "portugues")
+{
+    texto.text = "Se ainda ha um vislumbre de humanidade em voce, entao deve estar arrependido.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "japones")
+{
+    texto.text = "";
+    textoj.text = "もしお前の中にまだ人間性のかけらが残っているのなら、後悔しているはずだ。";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "coreano")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "네 안에 아직 인간성이 조금이라도 남아 있다면, 분명 후회하고 있을 것이다.";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "chino")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "如果你体内还残留着一丝人性，那么你一定会感到悔恨。";
+    textor.text = "";
+}
+if(idioma == "ruso")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "Если в тебе ещё осталась хоть искра человечности, значит, ты должен раскаиваться.";
+}
+         }
+         if(!wall.activeInHierarchy && play.alone == false)
          {
          if(idiom == "ingles")
          {
@@ -5189,7 +5438,7 @@ if(idiom == "ruso")
          textor.text = "Она говорит что вероятно ее время в мире живых истекло и ее изгнали в ад";
          }
          }
-         if(wall.activeInHierarchy)
+         if(wall.activeInHierarchy && play.alone == false)
          {
 if(idiom == "ingles")
 {
@@ -5209,7 +5458,7 @@ if(idiom == "español")
 }
 if(idiom == "frances")
 {
-    texto.text = "Même si tu crois etre seul, meme si tu ne vois pas la lumiere au bout du tunnel";
+    texto.text = "Meme si tu crois etre seul, meme si tu ne vois pas la lumiere au bout du tunnel";
     textoj.text = "";
     textok.text = "";
     textoc.text = "";
@@ -5276,7 +5525,90 @@ if(idiom == "ruso")
 
        if(cnx1 == true)
        {
-         if(!wall.activeInHierarchy)
+                 if(play.alone == true)
+         {
+if(idioma == "ingles")
+{
+    texto.text = "I have nothing to say to someone like you.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "español")
+{
+    texto.text = "No tengo nada que decirle a alguien como tu.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "frances")
+{
+    texto.text = "Je n’ai rien a dire a quelqu’un comme toi.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "aleman")
+{
+    texto.text = "Ich habe jemandem wie dir nichts zu sagen.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "italiano")
+{
+    texto.text = "Non ho nulla da dire a qualcuno come te.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "portugues")
+{
+    texto.text = "Nao tenho nada a dizer a alguem como voce.";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "japones")
+{
+    texto.text = "";
+    textoj.text = "お前のような者に言うことは何もない。";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+}
+if(idioma == "coreano")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "너 같은 자에게 할 말은 없다.";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idioma == "chino")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "我没有什么话要对你这种人说。";
+    textor.text = "";
+}
+if(idioma == "ruso")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "Мне нечего сказать такому, как ты.";
+}
+         }
+         if(!wall.activeInHierarchy && play.alone == false)
          {
          if(idiom == "ingles")
          {
@@ -5360,7 +5692,7 @@ if(idiom == "ruso")
          }
          }
 
-         if(wall.activeInHierarchy)
+         if(wall.activeInHierarchy && play.alone == false)
          {
 if(idiom == "ingles")
 {

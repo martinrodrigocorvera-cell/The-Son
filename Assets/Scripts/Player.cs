@@ -17901,6 +17901,16 @@ arming2 = false;
        fls.SetActive(true);
        fls2.SetParent(null);
         Invoke("cn1", 2f);
+        if(alone == true)
+        {
+            Invoke("al1", 5f);
+            Invoke("al2", 12f);
+            Invoke("al3", 21f);
+            Invoke("al4", 30f);
+            Invoke("cnx2", 40f);
+        }
+        if(alone == false)
+        {
         if(mirais == 1 && sellers == 1)
         {
 trapspec.SetActive(true);
@@ -17914,12 +17924,367 @@ trapspec.SetActive(true);
         Invoke("cn2", 5f);
         Invoke("cn3", 7f);
         }
+        }
         if(klo == false)
         {
         klo = true;
         audioSource.PlayOneShot(sta);
         }
     }
+}
+public void al1()
+{
+        freeze = true;
+        rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+        thg.SetActive(true);
+        camyx.fieldOfView = 50;
+        cam2yx.fieldOfView = 50;
+if(idioma == "ingles")
+{
+    tx1.text = "This time, fate has abandoned you, just like it abandoned me";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "español")
+{
+    tx1.text = "Esta vez, el destino te ha abandonado, tal como me abandono a mi";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "frances")
+{
+    tx1.text = "Cette fois, le destin t’a abandonné, tout comme il m’a abandonne";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "aleman")
+{
+    tx1.text = "Dieses Mal hat dich das Schicksal verlassen, so wie es mich verlassen hat";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "italiano")
+{
+    tx1.text = "Questa volta il destino ti ha abbandonato, proprio come ha abbandonato me";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "portugues")
+{
+    tx1.text = "Desta vez, o destino te abandonou, assim como me abandonou";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "japones")
+{
+    tx1.text = "";
+    tx2.text = "今回は、運命が私を見捨てたように、あなたを見捨てた";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "coreano")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "이번에는 운명이 나를 버렸던 것처럼 너를 버렸다";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "chino")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "这一次，命运抛弃了你，就像它曾抛弃我一样";
+    tx5.text = "";
+}
+if(idioma == "ruso")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "На этот раз судьба оставила тебя так же, как оставила меня";
+}
+        Invoke("nullv", 4f);
+}
+public void al2()
+{
+        freeze = true;
+        rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+        thg.SetActive(true);
+            camyx.fieldOfView = 40;
+        cam2yx.fieldOfView = 40;
+if(idioma == "ingles")
+{
+    tx1.text = "The dark energy that dwells in your heart gives me the extra time I need";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "español")
+{
+    tx1.text = "La energia de la oscuridad que habita en tu corazon me da el tiempo extra que necesito";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "frances")
+{
+    tx1.text = "L’energie obscure qui habite dans ton coeur me donne le temps supplementaire dont j’ai besoin";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "aleman")
+{
+    tx1.text = "Die dunkle Energie, die in deinem Herzen wohnt, gibt mir die zusatzliche Zeit, die ich brauche";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "italiano")
+{
+    tx1.text = "L’energia oscura che dimora nel tuo cuore mi dà il tempo extra di cui ho bisogno";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "portugues")
+{
+    tx1.text = "A energia sombria que habita em seu coracao me da o tempo extra que preciso";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "japones")
+{
+    tx1.text = "";
+    tx2.text = "あなたの心に宿る闇のエネルギーが、私に必要な追加の時間を与えてくれる";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "coreano")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "네 마음에 깃든 어둠의 에너지가 내가 필요한 추가 시간을 준다";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "chino")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "栖息在你心中的黑暗能量给了我所需要的额外时间";
+    tx5.text = "";
+}
+if(idioma == "ruso")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "Тёмная энергия, обитающая в твоём сердце, даёт мне дополнительное время, которое мне нужно";
+}
+        Invoke("nullv", 6f);
+}
+public void al3()
+{
+        freeze = true;
+        rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+        thg.SetActive(true);
+            camyx.fieldOfView = 30;
+        cam2yx.fieldOfView = 30;
+if(idioma == "ingles")
+{
+    tx1.text = "Scream, pray, repent. No one will come to help you. Not after what you did.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "español")
+{
+    tx1.text = "Grita, reza, arrepientete. Nadie vendra a ayudarte. No despues de lo que hiciste.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "frances")
+{
+    tx1.text = "Crie, prie, repens-toi. Personne ne viendra t’aider. Pas apres ce que tu as fait.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "aleman")
+{
+    tx1.text = "Schrei, bete, bereue. Niemand wird kommen, um dir zu helfen. Nicht nach dem, was du getan hast.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "italiano")
+{
+    tx1.text = "Urla, prega, pentiti. Nessuno verra ad aiutarti. Non dopo quello che hai fatto.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "portugues")
+{
+    tx1.text = "Grita, reza, arrepende-te. Ninguem vira te ajudar. Nao depois do que voce fez.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "japones")
+{
+    tx1.text = "";
+    tx2.text = "叫べ、祈れ、悔い改めろ。誰もお前を助けに来ない。お前がしたことの後ではな。";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "coreano")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "소리쳐라, 기도해라, 회개해라. 아무도 너를 도우러 오지 않는다. 네가 저지른 일 이후로는.";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "chino")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "尖叫吧，祈祷吧，忏悔吧。没有人会来救你。不会在你做了那件事之后。";
+    tx5.text = "";
+}
+if(idioma == "ruso")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "Кричи, молись, кайся. Никто не придёт тебе на помощь. Не после того, что ты сделал.";
+}
+        Invoke("nullv", 6f);
+}
+public void al4()
+{
+        freeze = true;
+        rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+        thg.SetActive(true);
+if(idioma == "ingles")
+{
+    tx1.text = "The world is an unfair place, don't you think? The moment you do something wrong, God abandons you to your fate. So if we are both going to be condemned, I might as well be the one who ascends.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "español")
+{
+    tx1.text = "El mundo es un lugar injusto, no crees? En el momento en el que haces algo mal, Dios te abandona a tu suerte. Asi que si ambos vamos a estar condenados, mejor que al menos yo pueda ascender.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "frances")
+{
+    tx1.text = "Le monde est un endroit injuste, tu ne trouves pas ? Au moment ou tu fais quelque chose de mal, Dieu t’abandonne a ton sort. Alors si nous devons tous les deux etre condamnes, autant que ce soit moi qui m’eleve.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "aleman")
+{
+    tx1.text = "Die Welt ist ein ungerechter Ort, findest du nicht? In dem Moment, in dem du etwas Falsches tust, überlässt Gott dich deinem Schicksal. Wenn wir also beide verdammt sein werden, dann sollte wenigstens ich aufsteigen.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "italiano")
+{
+    tx1.text = "Il mondo e un posto ingiusto, non credi? Nel momento in cui fai qualcosa di sbagliato, Dio ti abbandona al tuo destino. Quindi se dobbiamo essere entrambi condannati, tanto vale che almeno io possa ascendere.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "portugues")
+{
+    tx1.text = "O mundo e um lugar injusto, nao acha? No momento em que voce faz algo errado, Deus te abandona a propria sorte. Entao, se ambos vamos ser condenados, que pelo menos eu possa ascender.";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "japones")
+{
+    tx1.text = "";
+    tx2.text = "世界は不公平な場所だと思わないか？悪いことをした瞬間に、神はお前を運命に委ねて見捨てる。だから、もし俺たちが二人とも堕ちるのなら、せめて俺だけでも昇らせてもらう。";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "coreano")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "세상은 불공평한 곳이지 않나? 잘못을 저지르는 순간, 신은 너를 운명에 맡기고 버린다. 그렇다면 우리 둘 다 저주받을 운명이라면, 적어도 나만이라도 올라서겠다.";
+    tx4.text = "";
+    tx5.text = "";
+}
+if(idioma == "chino")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "这个世界是不公平的，不是吗？当你做错事的那一刻，上帝就把你交给命运，不再眷顾你。所以如果我们注定都要被诅咒，至少也该让我升上去。";
+    tx5.text = "";
+}
+if(idioma == "ruso")
+{
+    tx1.text = "";
+    tx2.text = "";
+    tx3.text = "";
+    tx4.text = "";
+    tx5.text = "Мир — несправедливое место, не так ли? В тот момент, когда ты совершаешь ошибку, Бог оставляет тебя на произвол судьбы. Так что если нам обоим суждено быть проклятыми, пусть хотя бы я смогу вознестись.";
+}
+        Invoke("nullv", 10f);
 }
 void OnTriggerStay(Collider other2)
 {
@@ -20961,7 +21326,7 @@ if(idioma == "ruso")
     {
 if(idioma == "ingles")
 {
-    tx1.text = "I ve missed you.";
+    tx1.text = "I've missed you.";
     tx2.text = "";
     tx3.text = "";
     tx4.text = "";
