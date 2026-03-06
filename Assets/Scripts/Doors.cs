@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 
 public class Doors : MonoBehaviour
 {
+[Range(0f, 1f)] public float probabilidad = 0.1f;
 public Player play;
 public bool freeze;
 public TMP_Text texto;
@@ -34,6 +35,10 @@ public bool stick;
 public bool xbox;
 public bool playst;
 public GameObject llor;
+public float num;
+public GameObject jump;
+public GameObject jump2;
+public Llorona llo;
 
     // Start is called before the first frame update
     void Start()
@@ -394,6 +399,46 @@ public GameObject llor;
 freeze = play.freeze;
               if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) && ing == false && freeze == false)
               {
+                float rng = Random.value;
+                if(rng <= probabilidad)
+                {
+                if(num == 2 && play.ubi == "salon" && llo.ubi != "sotano" && llo.ubi != "cocina")
+                {
+                jump2.SetActive(true);
+                }
+                }
+                float rng2 = Random.value;
+                if(rng2 <= probabilidad)
+                {
+                if(num == 1 && play.safe == true && llo.ubi != "salon" && llo.ubi != "cocina")
+                {
+                jump.SetActive(true);
+                }
+                if(num == 2 && play.ubi == "salon" && llo.ubi != "sotano" && llo.ubi != "cocina")
+                {
+                jump.SetActive(true);
+                }
+                if(num == 3 && play.ubi == "salon" && llo.ubi != "baño1" && llo.ubi != "salon")
+                {
+                jump.SetActive(true);
+                }
+                if(num == 4 && play.ubi != "baño2" && llo.ubi != "baño2" && llo.ubi != "pasillo")
+                {
+                jump.SetActive(true);
+                }
+                if(num == 5 && play.ubi != "oficina" && llo.ubi != "oficina" && llo.ubi != "pasillo")
+                {
+                jump.SetActive(true);
+                }
+                if(num == 6 && play.ubi != "micuarto" && llo.ubi != "micuarto" && llo.ubi != "pasillo")
+                {
+                jump.SetActive(true);
+                }
+                if(num == 7 && play.ubi != "invitados" && llo.ubi != "invitados" && llo.ubi != "pasillo")
+                {
+                jump.SetActive(true);
+                }
+                }
                     float animSpeed = 1f;
     anim.speed = animSpeed;
                audioSource.PlayOneShot(opend);
@@ -408,6 +453,7 @@ freeze = play.freeze;
                anim.SetTrigger("op1");
                }
                Invoke("openx", 1f);
+             Invoke("closyx", 10f);
               }
 
               }
@@ -673,6 +719,11 @@ freeze = play.freeze;
               }
               if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1)) && ing == false)
               {
+        jump.SetActive(false);
+        if(num == 2)
+        {
+            jump2.SetActive(false);
+        }
     float animSpeed = 1f;
     anim.speed = animSpeed;
                audioSource.PlayOneShot(closd);
@@ -710,13 +761,11 @@ if (other.gameObject.CompareTag("llorona") && sp == false)
     }
     if (llorona.mode == 2)
     {
-        audioSource.PlayOneShot(opend);
         animSpeed = 1.5f;
         openDelay = 0.5f;
     }
     if (llorona.mode == 1)
     {
-        audioSource.PlayOneShot(opend);
         animSpeed = 1f;
         openDelay = 1f;
     }
@@ -763,5 +812,26 @@ public void closex()
     sound.SetActive(false);
     ing = false;
     open = false;
+}
+public void closyx()
+{
+    jump.SetActive(false);
+        if(num == 2)
+        {
+            jump2.SetActive(false);
+        }
+    float animSpeed = 1f;
+    anim.speed = animSpeed;
+               sound.SetActive(true);
+               ing = true;
+               if(open = true)
+               {
+               anim.SetTrigger("cl1");
+               }
+                if(open = false)
+               {
+               anim.SetTrigger("op1");
+               }
+               Invoke("closex", 1f);
 }
 }

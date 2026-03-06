@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 
 public class Cameras : MonoBehaviour
 {
+public GameObject jumpy;
 [Range(0f, 1f)] public float probabilidad = 0.1f;
 [Range(0f, 1f)] public float probabilidad2 = 0.2f;
 public GameObject port;
@@ -510,6 +511,11 @@ snd = button.snd;
          }
               if ((Input.GetKeyDown(KeyCode.E) || (playst == true && Input.GetKeyDown(KeyCode.JoystickButton1)) || (xbox == true && Input.GetKeyDown(KeyCode.JoystickButton0))) && lockx == false && freeze == false)
               {
+    float rngg = Random.value;
+    if(rngg <= probabilidad)
+    {
+      jumpy.SetActive(true);
+    }
                audioSource.PlayOneShot(btn);
                 llori.enabled = false;
                 llori2.enabled = false;
@@ -518,7 +524,10 @@ snd = button.snd;
                 float rng = Random.value;
         if (rng <= probabilidad && night >= 5)
         {
+         if(player.btl2 == false)
+         {
             port.SetActive(true);
+         }
         }
                 zxn = false;
                 if(zxn == false)

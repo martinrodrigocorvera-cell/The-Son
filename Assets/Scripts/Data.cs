@@ -29,6 +29,7 @@ public AudioSource audio15;
 public AudioSource audio16;
 public AudioSource audio17;
 public AudioSource audio18;
+public AudioSource audio19;
 public bool z;
 public SystemLanguage currentLanguage;
 public int defaultt;
@@ -96,6 +97,8 @@ sel = PlayerPrefs.GetInt("sel");
          audio15.volume = savedVolume;
          audio16.volume = savedVolume;
          audio17.volume = savedVolume;
+         audio18.volume = savedVolume;
+         audio19.volume = savedVolume;
                   audio18.volume = savedVolume;
          tn = audio.volume / 5;
     }
@@ -314,6 +317,7 @@ PlayerPrefs.Save();
     audio16.volume -= tn;
     audio17.volume -= tn;
         audio18.volume -= tn;
+        audio19.volume -= tn;
       }
       if(rp >= 6)
       {
@@ -335,6 +339,7 @@ PlayerPrefs.Save();
     audio16.volume += tn;
     audio17.volume += tn;
         audio18.volume += tn;
+        audio19.volume += tn;
       }
     }
 

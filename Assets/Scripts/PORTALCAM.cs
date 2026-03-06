@@ -8,7 +8,7 @@ public class PORTALCAM : MonoBehaviour
     public Transform portal;
     public Transform otherPortal;
 private Vector3 localOffset;
-    public float zFactor = -0.5f;
+    public float zFactor;
 
 
     void Start()

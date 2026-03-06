@@ -37,6 +37,10 @@ Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
     // Update is called once per frame
     void Update()
     {
+        if (Input.anyKeyDown)
+        {
+            vn();
+        }
 if (!audioSource.isPlaying)
 {
  audioSource.Play();

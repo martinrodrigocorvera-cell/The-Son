@@ -7,12 +7,17 @@ using UnityEngine.Video;
 
 public class Llorona : MonoBehaviour
 {
+public bool trappx;
+public Transform trapped;
+public AudioClip fire;
 [Range(0f, 1f)] public float probabilidad = 0.1f;
 [Range(0f, 1f)] public float probabilidad2 = 0.15f;
 [Range(0f, 1f)] public float probabilidad3 = 0.2f;
     public CharacterController cc;
     public GameObject e1;
     public bool ññk;
+    public GameObject chase;
+    public bool invisible;
     public bool ñas;
     public bool ññp;
     public bool hgu;
@@ -115,9 +120,18 @@ public Image pen;
 public float lastSeenTime = -Mathf.Infinity;
 public float loseSightDelay = 2f;
 public bool zmm;
+public bool prf;
+public Material mat;
+public float speed = 0.5f;
+private float dissolvePercent = 0f;
+bool reconstruyendo = false;
+float topY;
+float bottomY;
+public GameObject disp;
+
     void Start()
     {
-
+        dissolvePercent = 0;
     }
     // Update is called once per frame
 void OnEnable()
@@ -135,7 +149,17 @@ events = 0;
 }
     void Update()
     {
+invisible = play.invisible;
+if(trappx == true)
+{
+    agent.Warp(trapped.position);
+    trappx = false;
+}
 timestop = play.timestop;
+if(timestop == true)
+{
+    audioSource3.clip = null;
+}
 gua = dt.gua;
    loseSightDelay = (night * 1.5f);
         safe = play.safe;
@@ -143,9 +167,73 @@ if(timestop == true)
 {
 agent.enabled = false;
 }
+
+
 if(timestop == false)
 {
         agent.enabled = true;
+if(prf == true && reconstruyendo == false)
+{
+audioSource.clip = fire;
+mode = 3;
+    disp.SetActive(true);
+        Debug.Log("Wall");
+        dissolvePercent += Time.deltaTime * 0.5f;
+        mat.SetFloat("_DissolvePercent", dissolvePercent);
+
+    if (dissolvePercent >= 0.9f)
+    {
+    audioSource.clip = null;
+        modef = 1;
+        mode = 1;
+        if (ubi == "baño2")
+        {
+            agent.Warp(sal.position);
+        }
+        if (ubi == "oficina")
+        {
+            agent.Warp(ba1.position);
+        }
+        if (ubi == "sotano")
+        {
+            agent.Warp(of.position);
+        }
+        if (ubi == "cocina")
+        {
+            agent.Warp(inv.position);
+        }
+        if (ubi == "baño1")
+        {
+            agent.Warp(ba2.position);
+        }
+        if (ubi == "salon")
+        {
+            agent.Warp(mi.position);
+        }
+        if (ubi == "invitados")
+        {
+            agent.Warp(sot.position);
+        }
+        if (ubi == "micuarto")
+        {
+            agent.Warp(coc.position);
+        }
+disp.SetActive(false);
+        reconstruyendo = true;
+    }
+
+}
+if (reconstruyendo == true)
+{
+        dissolvePercent -= Time.deltaTime * 0.5f;
+        mat.SetFloat("_DissolvePercent", dissolvePercent);
+
+    if (dissolvePercent <= 0)
+    {
+        prf = false;
+        reconstruyendo = false;
+    }
+}
 if(seee == true && mode == 3)
 {
         agent.SetDestination(player.position);
@@ -213,7 +301,7 @@ if (insideFrustum &&
 {
     if (hit.transform == target || hit.transform.root == target.root)
     {
-if (safe == false)
+if (safe == false && invisible == false)
 {
     lastSeenTime = Time.time;
     seee = true;
@@ -236,10 +324,24 @@ else
     }
 }
 
+if(chase.activeInHierarchy)
+{
+    if (!audioSource3.isPlaying && copy == false)
+    {
+        audioSource3.PlayOneShot(scr);
+        audioSource3.clip = pers;
+        audioSource3.Play();
+    }
+}
+if(!chase.activeInHierarchy && (safe == true || invisible == true))
+{
+    audioSource3.clip = null;
+}
 
 if(modef == 2 && ñas == false)
 {
 //Desbugueate por dios
+x = false;
  Invoke("st2", 20f);
 ñas = true;
 }
@@ -298,7 +400,7 @@ tut = false;
         {
           mode = 69;
         }
-        if(safe == true && mode == 3)
+        if((safe == true || invisible == true) && mode == 3)
         {
           mode = 1;
        audioSource3.clip = null;
@@ -351,12 +453,13 @@ tut = false;
         Vector3 directionToPlayer = player.position - transform.position;
         float distanceToPlayer = directionToPlayer.magnitude;
 
-        if(ubi == spawn && copy == false)
+        if(ubi == spawn && copy == false && mode == 2)
         {
          if(ññp == false)
          {
          if(ubi == "cocina")
          {
+//Aqui
          if(blood1.activeInHierarchy)
          {
          x = false;
@@ -372,7 +475,7 @@ tut = false;
          {
          if(blood2.activeInHierarchy)
          {
-         x = false;
+
          ññp = true;
          modef = 1;
          }
@@ -385,7 +488,7 @@ tut = false;
          {
          if(blood3.activeInHierarchy)
          {
-         x = false;
+
          ññp = true;
          modef = 1;
          }
@@ -398,7 +501,7 @@ tut = false;
          {
          if(blood4.activeInHierarchy)
          {
-         x = false;
+
          ññp = true;
          modef = 1;
          }
@@ -411,7 +514,7 @@ tut = false;
          {
          if(blood5.activeInHierarchy)
          {
-         x = false;
+
          ññp = true;
          modef = 1;
          }
@@ -424,7 +527,7 @@ tut = false;
          {
          if(blood6.activeInHierarchy)
          {
-         x = false;
+
          ññp = true;
          modef = 1;
          }
@@ -437,7 +540,7 @@ tut = false;
          {
          if(blood7.activeInHierarchy)
          {
-         x = false;
+
          ññp = true;
          modef = 1;
          }
@@ -450,7 +553,7 @@ tut = false;
          {
          if(blood8.activeInHierarchy)
          {
-         x = false;
+
          ññp = true;
          modef = 1;
          }
@@ -656,7 +759,7 @@ else
     }
     void random2()
     {
-     if(safe == false)
+     if(safe == false && invisible == false)
      {
         mode = 3;
      }
@@ -2222,7 +2325,7 @@ void OnTriggerEnter(Collider other)
         Debug.Log("EL PROBLEMA ES CALM");
      }
     }
-    if (other.CompareTag("sound") && safe == false)
+    if (other.CompareTag("sound") && safe == false && invisible == false)
     {
        mode = 3;
 if (!audioSource3.isPlaying)
@@ -2233,7 +2336,7 @@ if (!audioSource3.isPlaying)
 }
        hear = true;
     }
-    if (other.CompareTag("sound2") && safe == false)
+    if (other.CompareTag("sound2") && safe == false && invisible == false)
     {
     agent.SetDestination(other.transform.position);
     }
@@ -2243,6 +2346,10 @@ void OnCollisionEnter(Collision other)
     if (other.gameObject.CompareTag("kitchen"))
     {
        ubi = "cocina";
+    }
+    if (other.gameObject.CompareTag("pasillo"))
+    {
+       ubi = "pasillo";
     }
     if (other.gameObject.CompareTag("salon"))
     {

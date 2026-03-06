@@ -14,6 +14,44 @@ public class Player : MonoBehaviour
 {
 [Range(0f, 1f)] public float probabilidad = 0.02f;
 
+public AudioClip fr;
+public bool envy;
+public bool invisible;
+public AudioClip newa2;
+public Animator animfz;
+public GameObject trapfz;
+public GameObject partrn;
+public Invisible invisi1;
+public Invisible invisi2;
+public GameObject rnn;
+public GameObject rn1;
+public GameObject rn2;
+public GameObject rn3;
+public GameObject rn4;
+public AudioClip mex;
+public GameObject dizzy;
+public float shakeIntensity = 0.08f;
+public float shakeDuration;
+public float shakeSpeed = 25f;
+private bool  isShaking = false;
+private Vector3 cameraShakeOrigin;
+public Llorona llory;
+public Llorona llory2;
+public Llorona llory3;
+public bool jumpy2;
+public GameObject objetoJumpy;
+public GameObject dr1;
+public GameObject antiflash;
+public AudioClip metal;
+public GameObject chase;
+public bool falsy3;
+public bool blu;
+public bool blu2;
+public bool blu3;
+public bool lx;
+public AudioClip thrw;
+public AudioClip newa;
+public GameObject hly;
 public GameObject hng;
 public GameObject end;
 public GameObject ox1;
@@ -378,10 +416,73 @@ public Animator mirr;
 public GameObject miraii;
 public AudioClip btnsn;
 public AudioClip portz;
-
+public bool hly2;
+public TMP_Text textoh;
+public TMP_Text textojh;
+public TMP_Text textokh;
+public TMP_Text textoch;
+public TMP_Text textorh;
+public bool rdy;
+public GameObject textth;
+public Rigidbody rbdh;
+public GameObject hly22;
+public Transform hly222;
+public GameObject hly3;
+public bool prf;
+public GameObject prf1;
+public GameObject prf2;
+public GameObject prf3;
+public GameObject prf4;
+public GameObject prf5;
+public GameObject prf6;
+public GameObject prf7;
+public GameObject prf8;
+public GameObject prf9;
+public GameObject prf10;
+public GameObject prf11;
+public GameObject prf12;
+public GameObject prf13;
+public GameObject prf14;
+public GameObject prf15;
+public GameObject prf16;
+public GameObject prf17;
+public GameObject prf18;
+public GameObject prf19;
+public GameObject prf20;
+public GameObject prf21;
+public GameObject prf22;
+public GameObject prf23;
+public string impc;
+public Water2 water2;
+public bool btl;
+public bool btl2;
+public bool btl3;
+public bool btl4;
+public float slot;
+public bool nowy;
+public bool falsy;
+public bool falsy2;
+public bool falasy;
+public AudioClip impa;
+public GameObject jumpy3;
+public float konami;
+public Transform safepoint;
+public bool ñka;
+public bool invy;
+public GameObject rnx1;
+public GameObject rnx2;
+public GameObject rnx3;
+public GameObject rnx4;
+public GameObject rnx5;
+public GameObject rnx6;
+public GameObject rnx7;
+public GameObject rnx8;
+public GameObject rnx9;
+public GameObject rnx10;
 
     void Start()
     {
+        slot = PlayerPrefs.GetFloat("slot");
                             mirr.SetTrigger("mirai1");
             hellock = PlayerPrefs.GetFloat("Plus1");
         cursorPos = new Vector2(Screen.width / 2, Screen.height / 2);
@@ -399,9 +500,218 @@ mirai = PlayerPrefs.GetInt("mir");
 seller = PlayerPrefs.GetInt("sel");
     }
 
-
+public void spl()
+{
+    prf = false;
+        audioSource.PlayOneShot(newa);
+}
+public void spl2()
+{
+        int rng = Random.Range(1, 11);
+        if (rng == 1)
+        {
+rnx1.SetActive(true);
+        }
+        if (rng == 2)
+        {
+rnx2.SetActive(true);
+        }
+        if (rng == 3)
+        {
+rnx3.SetActive(true);
+        }
+        if (rng == 4)
+        {
+rnx4.SetActive(true);
+        }
+if (rng == 5)
+{
+rnx5.SetActive(true);
+}
+if (rng == 6)
+{
+rnx6.SetActive(true);
+}
+if (rng == 7)
+{
+rnx7.SetActive(true);
+}
+if (rng == 8)
+{
+rnx8.SetActive(true);
+}
+if (rng == 9)
+{
+rnx9.SetActive(true);
+}
+if (rng == 10)
+{
+rnx10.SetActive(true);
+}
+        audioSource.PlayOneShot(newa2);
+}
     void Update()
     {
+    if(ñka == false && night >= 2)
+    {
+        spl2();
+        ñka = true;
+    }
+        if(home == true)
+        {
+bool dpadUp   = Gamepad.current != null && Gamepad.current.dpad.up.wasPressedThisFrame;
+bool dpadDown = Gamepad.current != null && Gamepad.current.dpad.down.wasPressedThisFrame;
+bool dpadLeft = Gamepad.current != null && Gamepad.current.dpad.left.wasPressedThisFrame;
+bool dpadRight= Gamepad.current != null && Gamepad.current.dpad.right.wasPressedThisFrame;
+
+if (konami == 0 && (Input.GetKeyDown(KeyCode.UpArrow)    || Input.GetKeyDown(KeyCode.W) || dpadUp))    konami = 1;
+if (konami == 1 && (Input.GetKeyDown(KeyCode.UpArrow)    || Input.GetKeyDown(KeyCode.W) || dpadUp))    konami = 2;
+if (konami == 2 && (Input.GetKeyDown(KeyCode.DownArrow)  || Input.GetKeyDown(KeyCode.S) || dpadDown))  konami = 3;
+if (konami == 3 && (Input.GetKeyDown(KeyCode.DownArrow)  || Input.GetKeyDown(KeyCode.S) || dpadDown))  konami = 4;
+if (konami == 4 && (Input.GetKeyDown(KeyCode.LeftArrow)  || Input.GetKeyDown(KeyCode.A) || dpadLeft))  konami = 5;
+if (konami == 5 && (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || dpadRight)) konami = 6;
+if (konami == 6 && (Input.GetKeyDown(KeyCode.LeftArrow)  || Input.GetKeyDown(KeyCode.A) || dpadLeft))  konami = 7;
+if (konami == 7 && (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || dpadRight)) konami = 8;
+if (konami == 8 && (Input.GetKeyDown(KeyCode.B)          || Input.GetKeyDown(KeyCode.JoystickButton1))) konami = 9;
+if (konami == 9 && (Input.GetKeyDown(KeyCode.A)          || Input.GetKeyDown(KeyCode.JoystickButton0))) konami = 10;
+if (konami == 10&& (Input.GetKeyDown(KeyCode.Return)     || Input.GetKeyDown(KeyCode.JoystickButton7)))
+{
+    konami = 11;
+    audioSource.clip = mex;
+}
+        }
+
+    if(port.activeInHierarchy)
+    {
+        dr1.SetActive(false);
+    }
+    if(!port.activeInHierarchy)
+    {
+        dr1.SetActive(true);
+    }
+if(falsy2 == true && falsy3 == false)
+{
+    texm = false;
+    trapspec.SetActive(false);
+Invoke("trapyy", 5f);
+    falsy3 = true;
+}
+if(btl4 == true)
+{
+       freeze = true;
+       rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+       texm = true;
+       textorder = 160;
+    btl4 = false;
+}
+    if(btl2 == true)
+    {
+    parm = false;
+    audioSource.PlayOneShot(portz);
+       audioSource3x.clip = null;
+     trans3.SetActive(true);
+     Invoke("zz1", 0.5f);
+     Invoke("zz2", 1f);
+     btl3 = true;
+     btl2 = false;
+    }
+    if(prf == false && night >= 2)
+    {
+        int rng = Random.Range(1, 24);
+        if (rng == 1)
+        {
+prf1.SetActive(true);
+        }
+        if (rng == 2)
+        {
+prf2.SetActive(true);
+        }
+        if (rng == 3)
+        {
+prf3.SetActive(true);
+        }
+        if (rng == 4)
+        {
+prf4.SetActive(true);
+        }
+if (rng == 5)
+{
+prf5.SetActive(true);
+}
+if (rng == 6)
+{
+prf6.SetActive(true);
+}
+if (rng == 7)
+{
+prf7.SetActive(true);
+}
+if (rng == 8)
+{
+prf8.SetActive(true);
+}
+if (rng == 9)
+{
+prf9.SetActive(true);
+}
+if (rng == 10)
+{
+prf10.SetActive(true);
+}
+if (rng == 11)
+{
+prf11.SetActive(true);
+}
+if (rng == 12)
+{
+prf12.SetActive(true);
+}
+if (rng == 13)
+{
+prf13.SetActive(true);
+}
+if (rng == 14)
+{
+prf14.SetActive(true);
+}
+if (rng == 15)
+{
+prf15.SetActive(true);
+}
+if (rng == 16)
+{
+prf16.SetActive(true);
+}
+if (rng == 17)
+{
+prf17.SetActive(true);
+}
+if (rng == 18)
+{
+prf18.SetActive(true);
+}
+if (rng == 19)
+{
+prf19.SetActive(true);
+}
+if (rng == 20)
+{
+prf20.SetActive(true);
+}
+if (rng == 21)
+{
+prf21.SetActive(true);
+}
+if (rng == 22)
+{
+prf22.SetActive(true);
+}
+if (rng == 23)
+{
+prf23.SetActive(true);
+}
+        prf = true;
+    }
     if(night == 1)
     {
         selob.SetActive(false);
@@ -409,6 +719,1367 @@ seller = PlayerPrefs.GetInt("sel");
     if(!mirob.activeInHierarchy)
     {
         miraii.SetActive(false);
+    }
+    if(texm == true)
+    {
+        textth.SetActive(false);
+    }
+    if(texm == false)
+    {
+        textth.SetActive(true);
+    }
+    if(((freeze == false && !fls.activeInHierarchy) || (freeze == true && fls.activeInHierarchy && !thg.activeInHierarchy && alone == true) || (freeze == true && fls.activeInHierarchy && alone == false && hell.activeInHierarchy) || (freeze == true && texm == false && fls.activeInHierarchy && alone == false && nowy == true)) && rdy == true && ((xbox == false && playst == false && Input.GetKeyDown(KeyCode.Z)) || (playst == true && Gamepad.current.leftTrigger.wasPressedThisFrame) || (xbox == true && Gamepad.current.leftTrigger.wasPressedThisFrame)) )
+    {
+        if(hly3.activeInHierarchy)
+        {
+                audioSource.PlayOneShot(thrw);
+      hly222.SetParent(null);
+      hly22.SetActive(true);
+      hly3.SetActive(false);
+Vector3 centroCamara = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 10f)); 
+Vector3 direccion = (centroCamara - rbdh.transform.position).normalized;
+rbdh.AddForce(direccion * 15f, ForceMode.Impulse);
+rbdh.AddForce(Vector3.up * 1.5f, ForceMode.Impulse);
+      rdy = false;
+        Invoke("spl", 30f);
+        falasy = false;
+        }
+    }
+    if(rnn.activeInHierarchy && freeze == false && ((xbox == false && playst == false && Input.GetKeyDown(KeyCode.Z)) || (playst == true && Gamepad.current.leftTrigger.wasPressedThisFrame) || (xbox == true && Gamepad.current.leftTrigger.wasPressedThisFrame)))
+    {
+
+      if(rn1.activeInHierarchy)
+      {
+      rnn.SetActive(false);
+interz.SetActive(true);
+    Invoke("intf", 0.5f);
+    parm = false;
+     Invoke("zzx1", 0.5f);
+     Invoke("zz2", 1f);
+      }
+      if(rn2.activeInHierarchy)
+      {
+invisible = true;
+invisi1.active = true;
+invisi2.active = true;
+Invoke("visi", 30f);
+      }
+      if(rn3.activeInHierarchy)
+      {
+trapfz.SetActive(true);
+llory.trappx = true;
+llory2.trappx = true;
+llory3.trappx = true;
+animfz.Play("anim1", 0, 1f / animfz.GetCurrentAnimatorStateInfo(0).length);
+Invoke("visi3", 30.29f);
+Invoke("visi", 0.01f);
+      }
+      if(rn4.activeInHierarchy)
+      {
+llory.blood1.SetActive(false);
+llory.blood2.SetActive(false);
+llory.blood3.SetActive(false);
+llory.blood4.SetActive(false);
+llory.blood5.SetActive(false);
+llory.blood6.SetActive(false);
+llory.blood7.SetActive(false);
+llory.blood8.SetActive(false);
+llory.events = 0;
+penta.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+Invoke("visi", 0.01f);
+      }
+        Invoke("spl2", 45f);
+    }
+    if((!hly3.activeInHierarchy && !rnn.activeInHierarchy) || freeze == true)
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(rnn.activeInHierarchy && freeze == false && invisi1.active == false)
+    {
+        if(falasy == false)
+        {
+        audioSource.PlayOneShot(btnsn);
+        falasy = true;
+        }
+if(rn4.activeInHierarchy)
+{
+    if(xbox == false && playst == false)
+    {
+        if(idioma == "ingles")
+        {
+            textoh.text = "Purify All <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "español")
+        {
+            textoh.text = "Purificar todo <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "frances")
+        {
+            textoh.text = "Purifier tout <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "aleman")
+        {
+            textoh.text = "Alles reinigen <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "italiano")
+        {
+            textoh.text = "Purificare tutto <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "portugues")
+        {
+            textoh.text = "Purificar tudo <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "japones")
+        {
+            textoh.text = "";
+            textojh.text = "すべて浄化する <sprite name=\"Z\">";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "coreano")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "모두 정화하기 <sprite name=\"Z\">";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "chino")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "净化全部 <sprite name=\"Z\">";
+            textorh.text = "";
+        }
+        if(idioma == "ruso")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "Очистить всё <sprite name=\"Z\">";
+        }
+    }
+
+    if(xbox == true)
+    {
+        if(idioma == "ingles")
+        {
+            textoh.text = "Purify All <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "español")
+        {
+            textoh.text = "Purificar todo <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "frances")
+        {
+            textoh.text = "Purifier tout <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "aleman")
+        {
+            textoh.text = "Alles reinigen <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "italiano")
+        {
+            textoh.text = "Purificare tutto <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "portugues")
+        {
+            textoh.text = "Purificar tudo <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "japones")
+        {
+            textoh.text = "";
+            textojh.text = "すべて浄化する <sprite name=\"LT\">";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "coreano")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "모두 정화하기 <sprite name=\"LT\">";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "chino")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "净化全部 <sprite name=\"LT\">";
+            textorh.text = "";
+        }
+        if(idioma == "ruso")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "Очистить всё <sprite name=\"LT\">";
+        }
+    }
+
+    if(playst == true)
+    {
+        if(idioma == "ingles")
+        {
+            textoh.text = "Purify All <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "español")
+        {
+            textoh.text = "Purificar todo <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "frances")
+        {
+            textoh.text = "Purifier tout <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "aleman")
+        {
+            textoh.text = "Alles reinigen <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "italiano")
+        {
+            textoh.text = "Purificare tutto <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "portugues")
+        {
+            textoh.text = "Purificar tudo <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "japones")
+        {
+            textoh.text = "";
+            textojh.text = "すべて浄化する <sprite name=\"L2\">";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "coreano")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "모두 정화하기 <sprite name=\"L2\">";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "chino")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "净化全部 <sprite name=\"L2\">";
+            textorh.text = "";
+        }
+        if(idioma == "ruso")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "Очистить всё <sprite name=\"L2\">";
+        }
+    }
+}
+if(rn3.activeInHierarchy)
+{
+    if(xbox == false && playst == false)
+    {
+        if(idioma == "ingles")
+        {
+            textoh.text = "Seal Llorona <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "español")
+        {
+            textoh.text = "Encerrar Llorona <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "frances")
+        {
+            textoh.text = "Enfermer Llorona <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "aleman")
+        {
+            textoh.text = "Llorona einsperren <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "italiano")
+        {
+            textoh.text = "Rinchiudere Llorona <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "portugues")
+        {
+            textoh.text = "Aprisionar Llorona <sprite name=\"Z\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "japones")
+        {
+            textoh.text = "";
+            textojh.text = "ジョローナを封じる <sprite name=\"Z\">";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "coreano")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "요로나를 봉인하기 <sprite name=\"Z\">";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "chino")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "封印哭泣女妖 <sprite name=\"Z\">";
+            textorh.text = "";
+        }
+        if(idioma == "ruso")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "Запечатать Льорону <sprite name=\"Z\">";
+        }
+    }
+
+    if(xbox == true)
+    {
+        if(idioma == "ingles")
+        {
+            textoh.text = "Seal Llorona <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "español")
+        {
+            textoh.text = "Encerrar Llorona <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "frances")
+        {
+            textoh.text = "Enfermer Llorona <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "aleman")
+        {
+            textoh.text = "Llorona einsperren <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "italiano")
+        {
+            textoh.text = "Rinchiudere Llorona <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "portugues")
+        {
+            textoh.text = "Aprisionar Llorona <sprite name=\"LT\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "japones")
+        {
+            textoh.text = "";
+            textojh.text = "ジョローナを封じる <sprite name=\"LT\">";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "coreano")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "요로나를 봉인하기 <sprite name=\"LT\">";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "chino")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "封印哭泣女妖 <sprite name=\"LT\">";
+            textorh.text = "";
+        }
+        if(idioma == "ruso")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "Запечатать Льорону <sprite name=\"LT\">";
+        }
+    }
+
+    if(playst == true)
+    {
+        if(idioma == "ingles")
+        {
+            textoh.text = "Seal Llorona <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "español")
+        {
+            textoh.text = "Encerrar Llorona <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "frances")
+        {
+            textoh.text = "Enfermer Llorona <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "aleman")
+        {
+            textoh.text = "Llorona einsperren <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "italiano")
+        {
+            textoh.text = "Rinchiudere Llorona <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "portugues")
+        {
+            textoh.text = "Aprisionar Llorona <sprite name=\"L2\">";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "japones")
+        {
+            textoh.text = "";
+            textojh.text = "ジョローナを封じる <sprite name=\"L2\">";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "coreano")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "요로나를 봉인하기 <sprite name=\"L2\">";
+            textoch.text = "";
+            textorh.text = "";
+        }
+        if(idioma == "chino")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "封印哭泣女妖 <sprite name=\"L2\">";
+            textorh.text = "";
+        }
+        if(idioma == "ruso")
+        {
+            textoh.text = "";
+            textojh.text = "";
+            textokh.text = "";
+            textoch.text = "";
+            textorh.text = "Запечатать Льорону <sprite name=\"L2\">";
+        }
+    }
+}
+        if(rn2.activeInHierarchy)
+        {
+        if(xbox == false && playst == false)
+         {
+if(idioma == "ingles")
+    {
+        textoh.text = "Become Invisible <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "español")
+    {
+        textoh.text = "Volverse invisible <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "frances")
+    {
+        textoh.text = "Devenir invisible <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "aleman")
+    {
+        textoh.text = "Unsichtbar werden <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "italiano")
+    {
+        textoh.text = "Diventare invisibile <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "portugues")
+    {
+        textoh.text = "Tornar-se invisivel <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "japones")
+    {
+        textoh.text = "";
+        textojh.text = "透明になる <sprite name=\"Z\">";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "coreano")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "투명해지기 <sprite name=\"Z\">";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "chino")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "变得隐形 <sprite name=\"Z\">";
+        textorh.text = "";
+    }
+    if(idioma == "ruso")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "Стать невидимым <sprite name=\"Z\">";
+    }
+         }
+         if(xbox == true)
+         {
+    if(idioma == "ingles")
+    {
+        textoh.text = "Become Invisible <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "español")
+    {
+        textoh.text = "Volverse invisible <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "frances")
+    {
+        textoh.text = "Devenir invisible <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "aleman")
+    {
+        textoh.text = "Unsichtbar werden <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "italiano")
+    {
+        textoh.text = "Diventare invisibile <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "portugues")
+    {
+        textoh.text = "Tornar-se invisivel <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "japones")
+    {
+        textoh.text = "";
+        textojh.text = "透明になる <sprite name=\"LT\">";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "coreano")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "투명해지기 <sprite name=\"LT\">";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "chino")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "变得隐形 <sprite name=\"LT\">";
+        textorh.text = "";
+    }
+    if(idioma == "ruso")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "Стать невидимым <sprite name=\"LT\">";
+    }
+         }
+if(playst == true)
+{
+    if(idioma == "ingles")
+    {
+        textoh.text = "Become Invisible <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "español")
+    {
+        textoh.text = "Volverse invisible <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "frances")
+    {
+        textoh.text = "Devenir invisible <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "aleman")
+    {
+        textoh.text = "Unsichtbar werden <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "italiano")
+    {
+        textoh.text = "Diventare invisibile <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "portugues")
+    {
+        textoh.text = "Tornar-se invisivel <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "japones")
+    {
+        textoh.text = "";
+        textojh.text = "透明になる <sprite name=\"L2\">";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "coreano")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "투명해지기 <sprite name=\"L2\">";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "chino")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "变得隐形 <sprite name=\"L2\">";
+        textorh.text = "";
+    }
+    if(idioma == "ruso")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "Стать невидимым <sprite name=\"L2\">";
+    }
+}
+}
+if(rn1.activeInHierarchy)
+{
+if(xbox == false && playst == false)
+{
+if(idioma == "ingles")
+{
+    textoh.text = "Escape <sprite name=\"Z\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "español")
+{
+    textoh.text = "Escapar <sprite name=\"Z\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "frances")
+{
+    textoh.text = "S'échapper <sprite name=\"Z\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "aleman")
+{
+    textoh.text = "Fliehen <sprite name=\"Z\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "italiano")
+{
+    textoh.text = "Fuggire <sprite name=\"Z\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "portugues")
+{
+    textoh.text = "Escapar <sprite name=\"Z\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "japones")
+{
+    textoh.text = "";
+    textojh.text = "脱出する <sprite name=\"Z\">";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "coreano")
+{
+    textoh.text = "";
+    textojh.text = "";
+    textokh.text = "탈출하기 <sprite name=\"Z\">";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "chino")
+{
+    textoh.text = "";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "逃离 <sprite name=\"Z\">";
+    textorh.text = "";
+}
+if(idioma == "ruso")
+{
+    textoh.text = "";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "Сбежать <sprite name=\"Z\">";
+}
+}
+if(xbox == true)
+{
+if(idioma == "ingles")
+{
+    textoh.text = "Escape <sprite name=\"LT\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "español")
+{
+    textoh.text = "Escapar <sprite name=\"LT\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "frances")
+{
+    textoh.text = "S'échapper <sprite name=\"LT\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "aleman")
+{
+    textoh.text = "Fliehen <sprite name=\"LT\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "italiano")
+{
+    textoh.text = "Fuggire <sprite name=\"LT\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "portugues")
+{
+    textoh.text = "Escapar <sprite name=\"LT\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "japones")
+{
+    textoh.text = "";
+    textojh.text = "脱出する <sprite name=\"LT\">";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "coreano")
+{
+    textoh.text = "";
+    textojh.text = "";
+    textokh.text = "탈출하기 <sprite name=\"LT\">";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "chino")
+{
+    textoh.text = "";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "逃离 <sprite name=\"LT\">";
+    textorh.text = "";
+}
+if(idioma == "ruso")
+{
+    textoh.text = "";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "Сбежать <sprite name=\"LT\">";
+}
+}
+if(playst == true)
+{
+if(idioma == "ingles")
+{
+    textoh.text = "Escape <sprite name=\"L2\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "español")
+{
+    textoh.text = "Escapar <sprite name=\"L2\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "frances")
+{
+    textoh.text = "S'échapper <sprite name=\"L2\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "aleman")
+{
+    textoh.text = "Fliehen <sprite name=\"L2\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "italiano")
+{
+    textoh.text = "Fuggire <sprite name=\"L2\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "portugues")
+{
+    textoh.text = "Escapar <sprite name=\"L2\">";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "japones")
+{
+    textoh.text = "";
+    textojh.text = "脱出する <sprite name=\"L2\">";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "coreano")
+{
+    textoh.text = "";
+    textojh.text = "";
+    textokh.text = "탈출하기 <sprite name=\"L2\">";
+    textoch.text = "";
+    textorh.text = "";
+}
+if(idioma == "chino")
+{
+    textoh.text = "";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "逃离 <sprite name=\"L2\">";
+    textorh.text = "";
+}
+if(idioma == "ruso")
+{
+    textoh.text = "";
+    textojh.text = "";
+    textokh.text = "";
+    textoch.text = "";
+    textorh.text = "Сбежать <sprite name=\"L2\">";
+}
+}
+}
+    }
+    if(hly3.activeInHierarchy && freeze == false)
+    {
+        rdy = true;
+        if(falasy == false)
+        {
+        audioSource.PlayOneShot(btnsn);
+        falasy = true;
+        }
+        if(xbox == false && playst == false)
+         {
+    if(idioma == "ingles")
+    {
+        textoh.text = "Throw <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "español")
+    {
+        textoh.text = "Lanzar <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "frances")
+    {
+        textoh.text = "Lancer <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "aleman")
+    {
+        textoh.text = "Werfen <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "italiano")
+    {
+        textoh.text = "Lanciare <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "portugues")
+    {
+        textoh.text = "Lancar <sprite name=\"Z\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "japones")
+    {
+        textoh.text = "";
+        textojh.text = "投げる <sprite name=\"Z\">";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "coreano")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "던지다 <sprite name=\"Z\">";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "chino")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "投掷 <sprite name=\"Z\">";
+        textorh.text = "";
+    }
+    if(idioma == "ruso")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "Бросить <sprite name=\"Z\">";
+    }
+         }
+         if(xbox == true)
+         {
+    if(idioma == "ingles")
+    {
+        textoh.text = "Throw <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "español")
+    {
+        textoh.text = "Lanzar <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "frances")
+    {
+        textoh.text = "Lancer <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "aleman")
+    {
+        textoh.text = "Werfen <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "italiano")
+    {
+        textoh.text = "Lanciare <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "portugues")
+    {
+        textoh.text = "Lancar <sprite name=\"LT\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "japones")
+    {
+        textoh.text = "";
+        textojh.text = "投げる <sprite name=\"LT\">";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "coreano")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "던지다 <sprite name=\"LT\">";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "chino")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "投掷 <sprite name=\"LT\">";
+        textorh.text = "";
+    }
+    if(idioma == "ruso")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "Бросить <sprite name=\"LT\">";
+    }
+         }
+if(playst == true)
+{
+    if(idioma == "ingles")
+    {
+        textoh.text = "Throw <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "español")
+    {
+        textoh.text = "Lanzar <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "frances")
+    {
+        textoh.text = "Lancer <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "aleman")
+    {
+        textoh.text = "Werfen <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "italiano")
+    {
+        textoh.text = "Lanciare <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "portugues")
+    {
+        textoh.text = "Lancar <sprite name=\"L2\">";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "japones")
+    {
+        textoh.text = "";
+        textojh.text = "投げる <sprite name=\"L2\">";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "coreano")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "던지다 <sprite name=\"L2\">";
+        textoch.text = "";
+        textorh.text = "";
+    }
+    if(idioma == "chino")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "投掷 <sprite name=\"L2\">";
+        textorh.text = "";
+    }
+    if(idioma == "ruso")
+    {
+        textoh.text = "";
+        textojh.text = "";
+        textokh.text = "";
+        textoch.text = "";
+        textorh.text = "Бросить <sprite name=\"L2\">";
+    }
+}
     }
 if(night == 5 && mirai == 0)
 {
@@ -570,7 +2241,7 @@ nol.SetActive(true);
     taco = but.taco;
     burr = but.burr;
     tam = but.tam;
-            if(night >= 4)
+            if(night >= 4 && slot != 1f)
             {
              imp2.SetActive(true);
              traga.SetActive(true);
@@ -728,6 +2399,20 @@ int layerMask = ~LayerMask.GetMask("Player");
              looking = false;
             }
         }
+RaycastHit jumpyHit;
+if (Physics.Raycast(ray, out jumpyHit, detectDistance, layerMask, QueryTriggerInteraction.Ignore))
+{
+    if (jumpyHit.collider.CompareTag("jumpy"))
+    {
+        objetoJumpy = jumpyHit.collider.gameObject;
+        Invoke(nameof(Jumpy), 0.1f);
+    if(jumpy2 == false)
+    {
+    audioSource.PlayOneShot(impa);
+    jumpy2 = true;
+    }
+    }
+}
      if(looking == false && paso1 == true)
      {
       paso2 = true;
@@ -1023,8 +2708,10 @@ rbd.linearVelocity = Vector3.zero;
          }
          if(xbox == false && playst == false)
          {
-         if(Input.GetKeyDown(KeyCode.Q) && penta.activeInHierarchy && fls.activeInHierarchy && !menu.activeInHierarchy)
+         if((Input.GetKeyDown(KeyCode.Q) && penta.activeInHierarchy && fls.activeInHierarchy && !menu.activeInHierarchy) || (falsy == true))
          {
+            antiflash.SetActive(false);
+                thg.SetActive(false);
             hellock = 1f;
             PlayerPrefs.SetFloat("Plus1", hellock);
             PlayerPrefs.Save();
@@ -1062,6 +2749,11 @@ rbd.linearVelocity = Vector3.zero;
          {
          if(((Input.GetKeyDown(KeyCode.JoystickButton0) && playst == true) || (Input.GetKeyDown(KeyCode.JoystickButton2) && xbox == true)) && penta.activeInHierarchy && fls.activeInHierarchy && !menu.activeInHierarchy)
          {
+            antiflash.SetActive(false);
+                thg.SetActive(false);
+            hellock = 1f;
+            PlayerPrefs.SetFloat("Plus1", hellock);
+            PlayerPrefs.Save();
          penta.SetActive(false);
         if (rawImage != null)
             rawImage.enabled = false;
@@ -1134,7 +2826,7 @@ if(home == false)
   Cl.SetActive(true);
 if(porm == true)
 {
-        por.transform.position += Vector3.right * velocidad * Time.deltaTime;
+        por.transform.position += Vector3.right * velocidad * 1.18f * Time.deltaTime;
 }
 if(parm == true)
 {
@@ -5250,6 +6942,8 @@ shop1.SetActive(false);
         Invoke("in1", 5f);
         Invoke("in11", 3.3f);
          fdt.clip = harp;
+shakeDuration = 3.3f;
+    StartCoroutine(EarthquakeShake());
 fdt.Play();
              }
 
@@ -7532,7 +9226,7 @@ if(option == "D")
 mirai -= 1f;
 if(idioma == "ingles")
 {
-    textsp2 = "... ... Mirai. That’s my name. M-i-r-a-i. You’d better remember it, or my next prediction is a punch to the face—and I’m always right. ... Now this is usually the part where humans say their name, weirdo.";
+    textsp2 = "... ... Mirai. That’s my name. M-i-r-a-i. You’d better remember it, or my next prediction is a punch to the face, and I’m always right. ... Now this is usually the part where humans say their name, weirdo.";
 }
 if(idioma == "español")
 {
@@ -14522,61 +16216,7 @@ opi2 = false;
              writing = false;
              }
 
-             if(textorder == 142 && writing == false)
-             {
-         texto.text = "";
-         textoj.text = "";
-         textok.text = "";
-         textoc.text = "";
-         textor.text = "";
-if(idioma == "ingles")
-{
-    textsp2 = "I couldn't hate the one who listened to my predictions just because it was me who spoke them";
-}
-if(idioma == "español")
-{
-    textsp2 = "No pude odiar a aquel que escuchaba mis predicciones solo porque era yo quien las decía";
-}
-if(idioma == "frances")
-{
-    textsp2 = "Je n'ai pas pu hair celui qui ecoutait mes predictions juste parce que c'etait moi qui les disais";
-}
-if(idioma == "aleman")
-{
-    textsp2 = "Ich konnte denjenigen nicht hassen, der meinen Vorhersagen zuhorte, nur weil ich es war, die sie aussprach";
-}
-if(idioma == "italiano")
-{
-    textsp2 = "Non sono riuscita a odiare colui che ascoltava le mie previsioni solo perche ero io a pronunciarle";
-}
-if(idioma == "portugues")
-{
-    textsp2 = "Nao consegui odiar aquele que ouvia minhas previsoes so porque era eu quem as dizia";
-}
-if(idioma == "japones")
-{
-    textsp2 = "私の予言を聞いてくれた人を、ただそれが私からの言葉だからといって憎むことはできなかった";
-}
-if(idioma == "coreano")
-{
-    textsp2 = "내가 말했기 때문에 내 예언을 들어주는 사람을 미워할 수 없었어";
-}
-if(idioma == "chino")
-{
-    textsp2 = "我无法去恨那个仅仅因为是我说的而听我的预言的人";
-}
-if(idioma == "ruso")
-{
-    textsp2 = "Я не смогла возненавидеть того, кто слушал мои предсказания только потому, что это была я, кто их говорила";
-}
-
-opi = false;
-opi2 = false;
-             StartCoroutine(writex());
-             writing = true;
-             }
-
-             if(textorder == 143 && writing == true)
+             if(textorder == 142 && writing == true)
              {
          texto.text = "";
          textoj.text = "";
@@ -14630,7 +16270,7 @@ opi2 = false;
              writing = false;
              }
 
-             if(textorder == 144 && writing == false)
+             if(textorder == 143 && writing == false)
              {
          texto.text = "";
          textoj.text = "";
@@ -14684,7 +16324,7 @@ opi2 = false;
              writing = true;
              }
 
-             if(textorder == 145 && writing == true)
+             if(textorder == 144 && writing == true)
              {
          texto.text = "";
          textoj.text = "";
@@ -14738,7 +16378,7 @@ opi2 = false;
              writing = false;
              }
 
-             if(textorder == 146 && writing == false)
+             if(textorder == 145 && writing == false)
              {
          texto.text = "";
          textoj.text = "";
@@ -14792,7 +16432,7 @@ opi2 = false;
              writing = true;
              }
 
-             if(textorder == 147 && writing == true)
+             if(textorder == 146 && writing == true)
              {
              freeze = false;
            rbd.constraints = RigidbodyConstraints.FreezeRotation;
@@ -15947,6 +17587,11 @@ if(idioma == "ruso")
 }
         }
          }
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
 
              if(textorder == 159 && writing == true)
              {
@@ -15964,12 +17609,3783 @@ if(idioma == "ruso")
          timestop = false;
              }
 
-         
+             if(textorder == 160 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Nooo! What have you done?! It still had a long warranty ahead... So many people left to scam...";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Nooo! Que has hecho?! Aun le quedaba una gran garantia por delante... Tantas personas que estafar...";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Nooo ! Qu’est-ce que tu as fait ?! Il lui restait encore une longue garantie... Tant de personnes a arnaquer...";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Nooo! Was hast du getan?! Es hatte noch eine lange Garantie vor sich... So viele Menschen, die man noch betrügen konnte...";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Nooo! Che hai fatto?! Aveva ancora una lunga garanzia davanti... Tante persone da truffare...";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Nooo! O que voce fez?! Ainda tinha uma longa garantia pela frente... Tantas pessoas para enganar...";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "いやだ！何をしたの？！ まだ長い保証が残っていたのに... まだまだ騙せる人がたくさんいたのに...";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "안 돼! 무슨 짓을 한 거야?! 아직 긴 보증 기간이 남아 있었는데... 아직 속일 사람이 그렇게 많았는데...";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "不要啊！你做了什么？！ 还有很长的保修期在前面... 还有那么多人可以骗...";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Нееет! Что ты наделал?! Впереди была ещё долгая гарантия... Столько людей ещё можно было обмануть...";
+}
 
 opi = false;
 opi2 = false;
              StartCoroutine(writex());
              writing = true;
+             }
+
+             if(textorder == 161 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+             if(textorder == 162 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Uhhh... Yeah... That won't work with me. It only works with evil energy, you know? Do you think all spirits are evil? That's kinda racist.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Uhhh... Si... Eso no funcionara conmigo. Solo funciona con energia maligna, sabes? Crees que todos los espiritus son malos? Eso es un poco racista.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Euhh... Ouais... Ca ne marchera pas avec moi. Ca ne fonctionne qu’avec une energie malefique, tu sais ? Tu penses que tous les esprits sont mauvais ? C’est un peu raciste.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Uhhh... Ja... Das funktioniert bei mir nicht. Es wirkt nur mit boser Energie, weißt du? Denkst du, alle Geister sind bose? Das ist irgendwie rassistisch.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Uhhh... Gia... Con me non funzionera. Funziona solo con energia malvagia, sai? Pensi che tutti gli spiriti siano malvagi? E un po’ razzista.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Uhhh... E... Isso nao vai funcionar comigo. So funciona com energia maligna, sabe? Voce acha que todos os espiritos sao malignos? Isso e meio racista.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "うーん... うん... それは私には効かないよ。悪いエネルギーにしか効かないんだ、分かる？すべての霊が悪いと思ってるの？ちょっと差別的じゃない？";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "음... 그래... 그건 나한테는 안 통해. 악한 에너지에만 통하는 거야, 알지? 모든 영혼이 다 악하다고 생각해? 그건 좀 차별적인데.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "呃...是啊...那对我没用。它只对邪恶能量有效，你知道吗？你觉得所有灵魂都是邪恶的吗？那有点种族歧视吧。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Эм... Да... Со мной это не сработает. Это работает только с злой энергией, понимаешь? Ты думаешь, что все духи злые? Это немного расистски.";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 163 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+             if(textorder == 164 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Nope, letting you use a slot machine doesn't make me evil. I have a mouth to feed, you know? You would know what I mean if you weren't unemployed.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "No. Dejarte usar una maquina tragamonedas no me hace malvado. Tengo una boca que alimentar, sabes? Sabrias a que me refiero si no estuvieras desempleado.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Non. Te laisser utiliser une machine a sous ne fait pas de moi quelqu’un de mauvais. J’ai une bouche a nourrir, tu sais ? Tu saurais ce que je veux dire si tu n’etais pas au chomage.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Nein. Dich einen Spielautomaten benutzen zu lassen, macht mich nicht bose. Ich habe jemanden zu ernahren, weißt du? Du würdest verstehen, was ich meine, wenn du nicht arbeitslos warst.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "No. Lasciarti usare una slot machine non mi rende malvagio. Ho una bocca da sfamare, sai? Sapresti cosa intendo se non fossi disoccupato.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Nao. Deixar voce usar uma maquina caca-niquel nao me torna malvado. Tenho uma boca para alimentar, sabia? Voce saberia o que quero dizer se nao estivesse desempregado.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "いや、スロットマシンを使わせたくらいで俺が悪人になるわけじゃない。養わなきゃいけない人がいるんだ、わかるだろ？失業してなければ意味がわかるはずさ。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "아니, 슬롯머신을 쓰게 했다고 내가 악한 건 아니야. 먹여 살려야 할 사람이 있다고, 알겠어? 네가 실업자가 아니라면 무슨 말인지 알 텐데.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "不，让你玩老虎机并不代表我很邪恶。我也有要养活的人，你知道吗？如果你不是失业的话，你就会明白我的意思。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Нет, то, что я позволил тебе воспользоваться игровым автоматом, не делает меня злодеем. Мне тоже нужно кого-то кормить, понимаешь? Ты бы понял, о чём я, если бы не был безработным.";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 165 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+             if(textorder == 166 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Come on man, first the slot machine and now this? You're really making my day here.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Vamos, hombre, primero la maquina tragaperras y ahora esto? De verdad me estas alegrando el dia.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Allez mec, d'abord la machine a sous et maintenant ca ? Tu es vraiment en train d’illuminer ma journee.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Komm schon, Mann, erst der Spielautomat und jetzt das? Du machst mir wirklich den Tag.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Dai amico, prima la slot machine e adesso questo? Mi stai davvero migliorando la giornata.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Ah qual e, cara, primeiro a maquina caca-niquel e agora isso? Voce esta mesmo melhorando o meu dia.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "おいおい、最初はスロットマシンで、今度はこれ？本当に最高の一日にしてくれるね。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "아니 진짜, 처음엔 슬롯머신이더니 이제는 이거야? 오늘 제대로네, 정말.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "拜托，兄弟，先是老虎机，现在又这样？你真是让我“开心”到不行啊。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Ну давай, сначала игровой автомат, а теперь это? Ты прям делаешь мой день.";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+
+             if(textorder == 167 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+             if(textorder == 168 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Hey! Only my daughter can do that to me!";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Oye! Solo mi hija puede hacerme eso!";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "He ! Seule ma fille peut me faire ca !";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Hey! Nur meine Tochter kann mir das antun!";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Ehi! Solo mia figlia puo farmi questo!";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Ei! So minha filha pode fazer isso comigo!";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "ねえ！こんなことができるのは娘だけだよ！";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "이런 건 오직 내 딸만 나한테 할 수 있어!";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "嘿！只有我女儿才能这样对我！";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Эй! Только моя дочь может так со мной поступать!";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 169 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+             if(textorder == -999 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "ミライ";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "미라이";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "未来";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Мирай";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Wha... Why did you... ... Is this for a Steam achievement?";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Que...? Por que hiciste...? ... Es esto por un logro de Steam?";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Quoi...? Pourquoi as-tu...? ... C'est pour un succes Steam ?";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Was...? Warum hast du...? ... Ist das fur einen Steam-Erfolg?";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Cosa...? Perche hai...? ... E per un obiettivo di Steam?";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "O que...? Por que voce...? ... Isso e por uma conquista da Steam?";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "なに…？なんで…？… これってSteamの実績のため？";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "뭐…? 왜 그랬어…? … 이거 스팀 도전과제 때문이야?";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "什…？你为什么…？… 这是为了Steam成就吗？";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Что...? Почему ты...? ... Это ради достижения в Steam?";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == -998 && writing == true)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "ミライ";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "미라이";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "未来";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Мирай";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Y-Yeah, I... I just saw the Steam thingy in the bottom right corner... You just sold our asses for digital recognition?";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "S-Si, yo... yo solo vi la cosita de Steam en la esquina inferior derecha... Acabas de vender nuestro trasero por reconocimiento digital?";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "O-Oui, je... j'ai juste vu le truc Steam dans le coin en bas a droite... Tu viens vraiment de vendre nos fesses pour une reconnaissance numerique ?";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "J-Ja, ich... ich habe nur dieses Steam-Ding unten rechts gesehen... Hast du gerade unsere Hintern fur digitale Anerkennung verkauft?";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "S-Si, io... ho solo visto quella cosa di Steam nell'angolo in basso a destra... Hai appena venduto i nostri sedere per un riconoscimento digitale?";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "S-Sim, eu... eu so vi aquele negocio da Steam no canto inferior direito... Voce acabou de vender nossas bundas por reconhecimento digital?";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "う、うん... 右下のSteamの通知を見ただけで... デジタルの称号のために俺たちのケツを売ったのか？";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "ㅇ-응, 나... 그냥 오른쪽 아래에 뜬 스팀 알림을 봤을 뿐인데... 디지털 인정 하나 때문에 우리 엉덩이를 판 거야?";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "是-是啊，我...我只是看到右下角的Steam提示... 你刚刚为了数字荣誉把我们的屁股卖了吗？";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Д-Да, я... я просто увидел эту штуку Steam в правом нижнем углу... Ты только что продал наши задницы ради цифрового признания?";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = false;
+             }
+
+             if(textorder == -997 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Llorona";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Llorona";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Llorona";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Llorona";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Llorona";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Llorona";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "ジョローナ";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "요로나";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "洛罗娜";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Льорона";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Low hit, bro. Low hit.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Golpe bajo, bro. Golpe bajo.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Coup bas, mec. Coup bas.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Tiefschlag, Bruder. Tiefschlag.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Colpo basso, fratello. Colpo basso.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Golpe baixo, mano. Golpe baixo.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "それは卑怯だよ、兄弟。卑怯だ。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "비겁한 수야, 형제. 비겁해.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "这太卑鄙了，兄弟。太卑鄙了。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Удар ниже пояса, брат. Ниже пояса.";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == -996 && writing == true)
+             {
+            Badend7();
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+             if(textorder == 170 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Saying goodbye isn’t really your thing, huh?";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "No se te dan muy bien las despedidas, verdad?";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Les adieux ne sont pas vraiment ton fort, hein ?";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Abschiede liegen dir wohl nicht so, oder?";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Non sei molto bravo con gli addii, vero?";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Voce nao e muito bom em despedidas, ne?";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "別れはあまり得意じゃないんだね？";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "작별 인사는 잘 못하잖아, 그렇지?";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "你不太擅长说再见，对吧？";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Прощания — это явно не твоя сильная сторона, да?";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 171 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+             if(textorder == 172 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+        if(sellers == 1 && mirais == 1)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "You know, where I come from we have other ways of saying 'Congratulations!'";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Sabes, de donde vengo tenemos otras formas de decir 'Felicidades!'";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Tu sais, la d’ou je viens, nous avons d’autres facons de dire 'Felicitations !'";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Weißt du, wo ich herkomme, gibt es andere Moglichkeiten, 'Herzlichen Gluckwunsch!' zu sagen.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Sai, da dove vengo abbiamo altri modi per dire 'Congratulazioni!'";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Sabe, de onde eu venho temos outras formas de dizer 'Parabens!'";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "知ってるかい、私の故郷では「おめでとう」を言う別の方法があるんだ。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "있잖아, 내가 온 곳에서는 '축하해!'라고 말하는 다른 방법이 있어.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "你知道吗，我来自的地方有其他方式说“恭喜！”";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Знаешь, там, откуда я родом, есть другие способы сказать 'Поздравляю!'";
+}
+        }
+        if(sellers == 0 && mirais == 0)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "Jokes on you, I'm using your free Wi-Fi. Next time put a password.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Te salio el tiro por la culata, estoy usando tu Wi-Fi gratis. La proxima vez pon una clave.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "C'est toi qui rigoles, j'utilise ton Wi-Fi gratuit. La prochaine fois, mets un mot de passe.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Der Witz geht auf dich, ich benutze dein kostenloses WLAN. Beim nachsten Mal setz ein Passwort.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Scherzi a parte, sto usando il tuo Wi-Fi gratuito. La prossima volta metti una password.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "A piada e contigo, estou usando seu Wi-Fi gratis. Da proxima vez, coloque uma senha.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "笑わせるな、無料Wi-Fiを使ってるぞ。次はパスワードを設定しろ。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "장난치냐, 난 네 무료 와이파이 쓰고 있어. 다음엔 비밀번호 걸어라.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "开玩笑吧，我在用你的免费Wi-Fi。下次设置密码吧。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Шутки с тобой, я пользуюсь твоим бесплатным Wi-Fi. В следующий раз поставь пароль.";
+}
+        }
+        if(sellers == -1 && mirais == 0)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "I wish I also had the legal permission to punish you.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Ojala tuviera el permiso legal de castigarte tambien.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Si seulement j'avais aussi la permission legale de te punir.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Wenn ich auch die gesetzliche Erlaubnis hatte, dich zu bestrafen.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Magari avessi anche il permesso legale di punirti.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Quem me dera tambem ter a permissao legal para te punir.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "私も君を罰すための法的な許可があればいいのに。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "나도 너를 벌줄 법적 권한이 있었으면 좋겠다.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "要是我也有合法惩罚你的权限就好了。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Хотел бы я также иметь законное разрешение наказать тебя.";
+}
+        }
+        if(sellers == 1 && mirais == 0)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "I knew I should have stayed watching TV today.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Sabia que deberia haberme quedado viendo la tele hoy.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Je savais que j'aurais du rester s regarder la tele aujourd'hui.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Ich wusste, dass ich heute zu Hause fernsehen hatte sollen.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Sapevo che avrei dovuto restare a guardare la TV oggi.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Eu sabia que deveria ter ficado assistindo TV hoje.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "今日はテレビを見ていればよかったと分かっていた。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "오늘 TV나 보면서 있어야 했다는 걸 알았어.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "我就知道今天应该待在家看电视。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Я знал, что сегодня следовало остаться дома и смотреть телевизор.";
+}
+        }
+        if(sellers == 0 && mirais == 1)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "And I thought that the things my daughter forces me to watch hurt.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Y pensaba que las cosas que mi hija me obliga a ver duelen.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Et je pensais que les choses que ma fille me force a regarder faisaient mal.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Und ich dachte, dass die Dinge, die meine Tochter mich zwingen zu sehen, wehtun.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "E pensavo che le cose che mia figlia mi costringe a guardare facessero male.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "E eu pensava que as coisas que minha filha me obriga a ver doiam.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "そして、娘に見せられるものが痛いと思っていた。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "그리고 딸이 억지로 보여주는 것들이 아프다고 생각했어.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "我还以为我女儿强迫我看的东西会让我难受。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "И я думал, что вещи, которые моя дочь заставляет меня смотреть, причиняют боль.";
+}
+        }
+        if(sellers == 0 && mirais == -1)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "That hurt. If only I had some ice cream to soothe the pain.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Eso dolio. Si tan solo tuviera un poco de helado para calmar el dolor.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Ca a fait mal. Si seulement j'avais de la glace pour apaiser la douleur.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Das tat weh. Wenn ich nur etwas Eis hatte, um den Schmerz zu lindern.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Fa male. Se solo avessi un po’ di gelato per alleviare il dolore.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Isso doeu. Se ao menos eu tivesse um pouco de sorvete para aliviar a dor.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "痛かった。せめてアイスクリームがあれば、この痛みを和らげられるのに。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "아팠어. 이 고통을 달래기 위해 아이스크림이라도 있었으면 좋겠어.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "那真痛。如果我有些冰淇淋来缓解疼痛就好了。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Больно. Если бы у меня было немного мороженого, чтобы облегчить боль.";
+}
+        }
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 173 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+             if(textorder == 174 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "ミライ";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "미라이";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "未来";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Мирай";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+    if(mirais == 1 && sellers == 1)
+    {
+if(idioma == "ingles")
+{
+    textsp2 = "Sleep with one eye open.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Duerme con un ojo abierto.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Dors avec un oeil ouvert.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Schlaf mit einem offenen Auge.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Dormi con un occhio aperto.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Dorme com um olho aberto.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "片目を開けて寝ろ。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "한쪽 눈 뜨고 자라.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "睁着一只眼睛睡觉。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Спи с одним открытым глазом.";
+}
+    }
+    if(mirais == 0 && sellers == 1)
+    {
+if(idioma == "ingles")
+{
+    textsp2 = "That hurt! Worst part is that it wasn't even enough to knock me out, so I still have to watch this!";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Eso dolio! Lo peor es que ni siquiera fue suficiente para noquearme, asi que todavia tengo que ver esto!";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Ca a fait mal ! Le pire, c'est que ce n'etait meme pas assez pour m'assommer, donc je dois encore regarder ca !";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Das tat weh! Das Schlimmste ist, dass es nicht einmal genug war, um mich auszuschalten, also muss ich das immer noch ansehen!";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Fa male! La parte peggiore e che non e nemmeno stato abbastanza per stendermi, quindi devo ancora guardare questo!";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Isso doeu! A pior parte e que nem foi suficiente para me nocautear, entao ainda tenho que assistir a isso!";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "痛かった！最悪なのは、これで気絶するほどでもなく、まだこれを見なければならないことだ！";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "아팠어! 최악인 건, 이걸로도 기절할 만큼 충분하지 않아서 아직도 이걸 봐야 한다는 거야!";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "好痛！最糟的是，这甚至不足以让我晕过去，所以我还得看这个！";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Больно! Худшее то, что этого даже не хватило, чтобы меня выбило, так что мне всё равно приходится это смотреть!";
+}
+    }
+    if(mirais == 1 && sellers == 0)
+    {
+if(idioma == "ingles")
+{
+    textsp2 = "Don't give me those scares in this movie! Ghosts are so scary, I hope I never find one.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "No me asustes asi en esta pelicula! Los fantasmas dan mucho miedo, espero nunca encontrarme con uno.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Ne me fais pas peur comme ca dans ce film ! Les fantomes sont tellement effrayants, j'espere n'en jamais croiser un.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Erschreck mich in diesem Film nicht so! Geister sind so gruselig, ich hoffe, ich treffe nie auf einen.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Non farmi spaventare così in questo film! I fantasmi sono cosi spaventosi, spero di non incontrarne mai uno.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Nao me assuste assim neste filme! Fantasmas sao tao assustadores, espero nunca encontrar um.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "この映画でそんな怖がらせないで！幽霊はとても怖い、絶対に会いたくない。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "이 영화에서 그렇게 놀라게 하지 마! 유령은 정말 무서워, 절대 만나고 싶지 않아.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "别在这部电影里吓我！鬼魂太可怕了，我希望永远都不会遇到一个。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Не пугай меня так в этом фильме! Привидения такие страшные, надеюсь, я никогда не встречу одного.";
+}
+    }
+    if(mirais == 0 && sellers == -1)
+    {
+if(idioma == "ingles")
+{
+    textsp2 = "At least I'm not the only one here who longs for parental love.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Al menos no soy la unica aqui que anhela amor parental.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Au moins, je ne suis pas la seule ici a desirer l'amour parental.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Zumindest bin ich hier nicht die Einzige, die sich nach elterlicher Liebe sehnt.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Almeno non sono l'unica qui che desidera amore genitoriale.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Pelo menos nao sou a unica aqui que anseia por amor parental.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "少なくとも、ここで親の愛を切望しているのは私だけじゃない。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "적어도 여기서 부모의 사랑을 갈망하는 건 나만은 아니야.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "至少在这里渴望父母之爱的不只是我一个人。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "По крайней мере, я здесь не единственная, кто жаждет родительской любви.";
+}
+    }
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 175 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+             if(textorder == 176 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         if(night == 4)
+         {
+if(idioma == "ingles")
+{
+    textsp2 = "If being glued to the screen were a reason to use holy water, you would need an exorcist.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Si estar pegado a la pantalla fuera motivo de usar agua bendita, tu necesitarias un exorcista.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Si etre colle a l’ecran etait une raison d’utiliser de l’eau benite, tu aurais besoin d’un exorciste.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Wenn am Bildschirm kleben ein Grund fur Weihwasser ware, wurdest du einen Exorzisten brauchen.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Se stare incollato allo schermo fosse un motivo per usare l’acqua santa, avresti bisogno di un esorcista.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Se ficar grudado na tela fosse motivo para usar agua benta, voce precisaria de um exorcista.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "もし画面に張り付くことが聖水を使う理由になるなら、君は悪魔祓いが必要だろう。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "화면에 붙어 있는 게 성수를 써야 할 이유라면, 너는 엑소시스트가 필요할 거야.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "如果黏在屏幕上需要用圣水，你就得请个驱魔人了。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Если бы быть приклеенным к экрану было поводом использовать святую воду, тебе понадобился бы экзорцист.";
+}
+         }
+         if(night == 5)
+         {
+if(idioma == "ingles")
+{
+    textsp2 = "Hey! It was getting interesting!";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Hey! Se estaba poniendo interesante!";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "He! Ca devenait interessant!";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Hey! Es wurde gerade interessant!";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Ehi! Stava diventando interessante!";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Ei! Estava ficando interessante!";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "おい！面白くなってきたところだったのに！";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "야! 이제 막 재미있어지고 있었는데!";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "嘿！正变得有意思呢！";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Эй! Становилось интересно!";
+}
+         }
+         if(night == 6)
+         {
+        if(sellers == 1 && mirais == 1)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "You know what? Today is a happy day. It's fine, it's fine, it's NOT fine.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Sabes que? Hoy es un dia feliz. Esta bien, esta bien, NO esta bien.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Tu sais quoi ? Aujourd’hui est un jour heureux. Ca va, ca va, ca ne va PAS.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Weißt du was? Heute ist ein glücklicher Tag. Es ist in Ordnung, es ist in Ordnung, es ist NICHT in Ordnung.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Sai una cosa? Oggi e un giorno felice. Va bene, va bene, NON va bene.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Sabe de uma coisa? Hoje e um dia feliz. Esta tudo bem, esta tudo bem, NAO esta tudo bem.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "ねえ、聞いて？今日は幸せな日だよ。大丈夫、大丈夫、全然大丈夫じゃない。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "있잖아? 오늘은 행복한 날이야. 괜찮아, 괜찮아, 전혀 괜찮지 않아.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "你知道吗？今天是快乐的一天。没事，没事，根本没事才怪。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Знаешь что? Сегодня счастливый день. Всё нормально, всё нормально, всё СОВСЕМ не нормально.";
+}
+        }
+        if(sellers == 0 && mirais == 0)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "Some things never change.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Algunas cosas nunca cambian.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Certaines choses ne changent jamais.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Manche Dinge ändern sich nie.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Alcune cose non cambiano mai.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Algumas coisas nunca mudam.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "変わらないものもある。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "어떤 것들은 절대 변하지 않아.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "有些事情永远不会改变。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Некоторые вещи никогда не меняются.";
+}
+        }
+        if(sellers == -1 && mirais == 0)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "What was that for? - Oh, yeah. My daughter. I guess I deserve it.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Para que fue eso? - Oh, si. Mi hija. Supongo que lo merezco.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "C'etait pour quoi ? - Oh, oui. Ma fille. Je suppose que je le merite.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Wofur war das? - Ach ja. Meine Tochter. Ich schatze, ich habe es verdient.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Per cosa era quello? - Oh, sì. Mia figlia. Credo di meritarmelo.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Para que foi isso? - Ah, sim. Minha filha. Acho que mereco.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "それは何のため？ - ああ、そうだ。娘のせいだ。仕方ないな。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "그게 뭐야? - 아, 맞다. 내 딸이야. 내가 받을 만한 거지.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "那是干什么的？-哦，对了，我女儿。我想我活该。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Зачем это было? - Ах да. Моя дочь. Думаю, я это заслужил.";
+}
+        }
+        if(sellers == 0 && mirais == 1)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "Seriously? And daughter, don’t you think this movie where they hunt ghosts is very violent?";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Es en serio? Y hija, no crees que esta pelicula donde cazan fantasmas es muy violenta?";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Serieusement ? Et ma fille, tu ne trouves pas que ce film ou ils chassent les fantomes est tres violent ?";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Im Ernst? Und Tochter, findest du nicht, dass dieser Film, in dem sie Geister jagen, sehr gewalttatig ist?";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Sul serio? E figlia, non pensi che questo film in cui cacciano i fantasmi sia molto violento?";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Serio? E filha, voce nao acha que este filme em que cacam fantasmas e muito violento?";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "本気？そして娘よ、幽霊を狩るこの映画はとても暴力的だと思わない？";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "진심이야? 그리고 딸아, 유령을 사냥하는 이 영화가 너무 폭력적이라고 생각하지 않니?";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "真的假的？女儿，你不觉得这部抓鬼的电影很暴力吗？";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Серьёзно? И дочка, разве тебе не кажется, что этот фильм, где охотятся на призраков, слишком жестокий?";
+}
+        }
+        if(sellers == 1 && mirais == 0)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "Daughter, cover your ears, dad is about to say very bad words.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Hija, tapate los oidos, papa esta a punto de decir palabras muy malas.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Fille, couvre-toi les oreilles, papa est sur le point de dire de tres vilains mots.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Tochter, halte dir die Ohren zu, Papa wird gleich sehr schlimme Worte sagen.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Figlia, copriti le orecchie, papa sta per dire parole molto cattive.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Filha, tapa os ouvidos, papai está prestes a dizer palavras muito feias.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "娘よ、耳をふさいで、パパはとても悪い言葉を言おうとしている。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "딸아, 귀를 막아, 아빠가 아주 나쁜 말을 하려 해.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "女儿，捂住耳朵，爸爸马上要说非常坏的话了。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Дочка, закрой уши, папа собирается сказать очень плохие слова.";
+}
+        }
+        if(sellers == 0 && mirais == -1)
+        {
+if(idioma == "ingles")
+{
+    textsp2 = "Well, someone just lost a free ice cream.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Bueno, alguien acaba de perder un helado gratis.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Eh bien, quelqu'un vient de perdre une glace gratuite.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Nun, jemand hat gerade ein kostenloses Eis verloren.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Beh, qualcuno ha appena perso un gelato gratis.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Bem, alguem acabou de perder um sorvete gratis.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "さて、誰かが無料のアイスクリームを失ったばかりだ。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "자, 누군가가 무료 아이스크림을 막 잃었어.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "好吧，有人刚刚错过了免费的冰淇淋。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Ну что ж, кто-то только что потерял бесплатное мороженое.";
+}
+        }
+         }
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 177 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+
+             if(textorder == 178 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "ミライ";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "미라이";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "未来";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Мирай";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+    if(night == 4)
+    {
+if(blu == false)
+{
+if(idioma == "ingles")
+{
+    textsp2 = "You do that again and there will be two ghosts here.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Haz eso otra vez y aqui habra dos fantasmas.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Refais ca encore une fois et il y aura deux fantomes ici.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Mach das noch einmal und hier wird es zwei Geister geben.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Fallo di nuovo e qui ci saranno due fantasmi.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Faca isso de novo e havera dois fantasmas aqui.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "もう一度やったら、ここには幽霊が二人になるぞ。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "다시 그러면 여기엔 유령이 둘이 될 거야.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "你再那样做，这里就会有两个鬼。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Сделаешь это снова — здесь будет два призрака.";
+}
+}
+if(blu == true)
+{
+if(idioma == "ingles")
+{
+    textsp2 = "Forewarned is forearmed.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "El que avisa no es traidor.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Un homme averti en vaut deux.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Vorgewarnt ist gewappnet.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Uomo avvisato mezzo salvato.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Homem prevenido vale por dois.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "忠告した者は裏切り者ではない。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "미리 경고한 사람은 배신자가 아니다.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "事先提醒的人不是叛徒。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Предупреждён — значит вооружён.";
+}
+blu2 = true;
+}
+    }
+    if(night == 5)
+    {
+if(!hng.activeInHierarchy)
+{
+if(idioma == "ingles")
+{
+    textsp2 = "Hey! You just won a free prediction! I see you going to hell in the near future!";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Hey! Acabas de ganar una prediccion gratis! Veo que te vas al infierno en un futuro cercano!";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "He ! Tu viens de gagner une prediction gratuite ! Je te vois aller en enfer dans un futur proche !";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Hey! Du hast gerade eine kostenlose Vorhersage gewonnen! Ich sehe dich in naher Zukunft in der Holle landen!";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Ehi! Hai appena vinto una previsione gratuita! Ti vedo andare all'inferno in un futuro prossimo!";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Ei! Voce acabou de ganhar uma previsao gratis! Vejo voce indo para o inferno em um futuro proximo!";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "おい！無料の予言を当てたぞ！近いうちに地獄へ行くのが見える！";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "야! 무료 예언에 당첨됐어! 가까운 미래에 지옥에 가는 게 보여!";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "嘿！你刚赢得一次免费预言！我看到你在不久的将来会下地狱！";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Эй! Ты только что выиграл бесплатное предсказание! Я вижу, как ты отправляешься в ад в ближайшем будущем!";
+}
+}
+if(hng.activeInHierarchy)
+{
+if(idioma == "ingles")
+{
+    textsp2 = "... ... How about you stick the next bottle up your-";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "... ... Que tal si te metes la proxima botella por el-";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "... ... Et si tu te mettais la prochaine bouteille dans le-";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "... ... Wie ware es, wenn du dir die nachste Flasche in den-";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "... ... Che ne dici di infilarti la prossima bottiglia nel-";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "... ... Que tal enfiar a proxima garrafa no-";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "... ... 次のボトルを自分の―に突っ込んだらどうだ-";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "... ... 다음 병을 네―에 꽂아 보는 건 어때-";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "... ... 不如把下一瓶塞进你的-";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "... ... Может, ты засунeшь следующую бутылку себе в-";
+}
+blu3 = true;
+}
+    }
+    if(night == 6)
+    {
+    if(mirais == 0 && sellers == 0)
+    {
+if(idioma == "ingles")
+{
+    textsp2 = "I have a paper on my face that says 'Make my life a living hell'?";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Tengo un papel en la cara que dice 'Haz de mi vida un infierno'?";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "J'ai un papier sur le visage qui dit 'Fais de ma vie un enfer' ?";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Ich habe ein Papier im Gesicht, auf dem steht: 'Mach mein Leben zur Hölle'?";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Ho un foglio sulla faccia che dice 'Rendi la mia vita un inferno'?";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Tenho um papel no rosto que diz 'Faca da minha vida um inferno'?";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "顔に「私の人生を地獄にしろ」と書かれた紙がある？";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "내 얼굴에 '내 인생을 지옥으로 만들어라'라고 쓰인 종이가 있어?";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "我脸上有一张写着“把我的生活变成地狱”的纸吗？";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "У меня на лице бумажка с надписью 'Сделай мою жизнь адом'?";
+}
+    }
+    if(mirais == 1 && sellers == 1)
+    {
+if(idioma == "ingles")
+{
+    textsp2 = "I swear to... I mean... Welcome Yace! Please, next time use your own head for aim practice!";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Juro por... quiero decir... Bienvenido Yace! Por favor, la proxima vez usa tu propia cabeza para practicar la punteria.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Je jure par... je veux dire... Bienvenue Yace ! S'il te plait, la prochaine fois utilise ta propre tête pour t'entrainer au tir !";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Ich schwore bei... ich meine... Willkommen Yace! Bitte benutze das nachste Mal deinen eigenen Kopf zum Zielubungen!";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Lo giuro su... voglio dire... Benvenuto Yace! Per favore, la prossima volta usa la tua testa per esercitarti a mirare!";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Eu juro por... quer dizer... Bem-vindo, Yace! Por favor, da proxima vez use sua propria cabeca para pratica de mira!";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "誓うよ...つまり...ようこそ、ヤス！お願い、次は自分の頭を射撃練習に使ってね！";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "맹세하건대... 그러니까... 환영해, 예수! 부탁이야, 다음에는 조준 연습에 자기 머리를 쓰지 마!";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "我发誓...我是说...欢迎你，叶苏！请下次练习瞄准时用你自己的脑袋！";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Клянусь... то есть... Добро пожаловать, Яс! Пожалуйста, в следующий раз используй свою голову для прицельной практики!";
+}
+    }
+    if(mirais == 0 && sellers == 1)
+    {
+if(idioma == "ingles")
+{
+    textsp2 = "If you hit me a bit harder it will be a bit closer to the feeling of watching classic movies with dad.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Si me pegas un poco mas fuerte, sera un poco mas cercano a la sensación de ver peliculas clasicas con papa.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Si tu me frappes un peu plus fort, ce sera un peu plus proche de la sensation de regarder des films classiques avec papa.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Wenn du mich ein bisschen harter triffst, kommt es dem Gefuhl, klassische Filme mit Papa zu sehen, ein bisschen naher.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Se mi colpisci un po' piu forte, sara un po' piu vicino alla sensazione di guardare film classici con papa.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Se voce me bater um pouco mais forte, sera um pouco mais proximo da sensacao de assistir filmes classicos com o pai.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "もう少し強く叩いてくれれば、パパとクラシック映画を観る時の感覚に少し近づく。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "조금 더 세게 때리면 아빠와 함께 클래식 영화를 보는 느낌에 조금 더 가까워질 거야.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "如果你打我稍微用力一点，就会稍微接近和爸爸一起看经典电影的感觉。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Если ты ударишь меня чуть сильнее, это будет немного ближе к ощущению, как при просмотре классических фильмов с папой.";
+}
+    }
+    if(mirais == 1 && sellers == 0)
+    {
+if(idioma == "ingles")
+{
+    textsp2 = "Up up, down down, left right, left right B A start. Hm, what a shame, no bat appears to give you a beating.";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Arriba arriba, abajo abajo, izquierda derecha, izquierda derecha B A start. Hm, que pena, no sale un bate con el que darte una paliza.";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Haut haut, bas bas, gauche droite, gauche droite B A start. Hm, dommage, aucune batte n'apparait pour te passer un savon.";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Oben oben, unten unten, links rechts, links rechts B A start. Hm, schade, kein Schlager erscheint, um dir eine Abreibung zu verpassen.";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Su su, giu giu, sinistra destra, sinistra destra B A start. Hm, che peccato, non appare una mazza per darti una bella lezione.";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Cima cima, baixo baixo, esquerda direita, esquerda direita B A start. Hm, que pena, nenhum taco aparece para te dar uma surra.";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "上上、下下、左右、左右、B Aスタート。うーん、残念、攻撃するためのバットは出てこない。";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "위 위, 아래 아래, 왼쪽 오른쪽, 왼쪽 오른쪽 B A 스타트. 흠, 아쉽다, 때릴 수 있는 방망이가 안 나와.";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "上上，下下，左右，左右 B A 开始。唔，可惜，没有棒球棒出现来打你一顿。";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Вверх вверх, вниз вниз, влево вправо, влево вправо B A старт. Хм, как жаль, бита для того, чтобы тебя отлупили, не появляется.";
+}
+    }
+    if(mirais == -1 && sellers == 0)
+    {
+if(idioma == "ingles")
+{
+    textsp2 = "Go away with dad to eat ice cream, come on!";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Largate con papa a comer helado, anda!";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Va-t'en avec papa manger de la glace, allez !";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Geh mit Papa Eis essen, komm schon!";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Vai via con papa a mangiare il gelato, dai!";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Vai com o papai comer sorvete, vamos!";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "パパと一緒にアイスを食べに行って、さあ！";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "아빠랑 같이 아이스크림 먹으러 가, 어서!";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "快去和爸爸一起吃冰淇淋吧！";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Иди с папой есть мороженое, давай!";
+}
+    }
+    if(mirais == -1 && sellers == 1)
+    {
+if(idioma == "ingles")
+{
+    textsp2 = "... ... ... Huh?... Sorry, you did something?";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "... ... ... Eh?... Perdon, hiciste algo?";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "... ... ... Hein ?... Pardon, tu as fait quelque chose ?";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "... ... ... Hah?... Entschuldigung, hast du etwas gemacht?";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "... ... ... Eh?... Scusa, hai fatto qualcosa?";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "... ... ... Hein?... Desculpa, voce fez alguma coisa?";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "... ... ... え？… ごめん、何かしたの？";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "... ... ... 어?... 미안, 너 뭐 했어?";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "... ... ... 咦？... 对不起，你做了什么吗？";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "... ... ... А?.. Прости, ты что-то сделал?";
+}
+    }
+             }
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+
+             if(textorder == 179 && writing == true)
+             {
+            if(blu3 == false)
+            {
+            if(night == 4)
+            {
+                blu = true;
+            }
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+            writing = false;
+         timestop = false;
+         if(blu2 == true)
+         {
+            texm = false;
+            Badend7();
+         }
+            }
+            if(blu3 == true)
+            {
+                textorder += 1;
+            }
+             }
+
+             if(textorder == 180 && writing == true)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Language!";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Lenguaje!";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Langage !";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Sprache!";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Linguaggio!";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Linguagem!";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "言葉に気をつけて！";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "말 조심해!";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "注意你的用词！";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Следи за языком!";
+}
+
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = false;
+             }
+             if(textorder == 183 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Vendor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Vendeur";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Verkaufer";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Venditore";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Vendedor";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "売り手";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "판매자";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "卖家";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Продавец";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Eh?! Where did you come from?! My eye for finding customers is infallible!";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Eh?! De donde has salido?! Mi vista para encontrar clientes es infalible!";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Hein?! D'ou es-tu sorti?! Mon oeil pour trouver des clients est infaillible!";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Eh?! Wo kommst du denn her?! Mein Blick zum Finden von Kunden ist unfehlbar!";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Eh?! Da dove sei uscito?! Il mio occhio per trovare clienti e infallibile!";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Eh?! De onde voce saiu?! Meu olho para encontrar clientes e infalivel!";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "えっ？！どこから出てきたの？！客を見つける私の目は絶対よ！";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "어?! 어디서 나온 거야?! 손님을 찾는 내 눈은 절대 틀리지 않아!";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "诶？！你从哪里冒出来的？！我找顾客的眼光是绝对不会错的！";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "А?! Откуда ты взялся?! Мой глаз на поиск клиентов безошибочен!";
+}
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+             if(textorder == 184 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
+             }
+             if(textorder == 181 && writing == false)
+             {
+if(idioma == "ingles")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "español")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "frances")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "aleman")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "italiano")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "portugues")
+{
+    textoq.text = "Mirai";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "japones")
+{
+    textoq.text = "";
+    textojq.text = "ミライ";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "coreano")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "미라이";
+    textocq.text = "";
+    textorq.text = "";
+}
+if(idioma == "chino")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "未来";
+    textorq.text = "";
+}
+if(idioma == "ruso")
+{
+    textoq.text = "";
+    textojq.text = "";
+    textokq.text = "";
+    textocq.text = "";
+    textorq.text = "Мирай";
+}
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+if(idioma == "ingles")
+{
+    textsp2 = "Sorry, dad!";
+}
+
+if(idioma == "español")
+{
+    textsp2 = "Perdon, papa!";
+}
+
+if(idioma == "frances")
+{
+    textsp2 = "Desole, papa !";
+}
+
+if(idioma == "aleman")
+{
+    textsp2 = "Sorry, Papa!";
+}
+
+if(idioma == "italiano")
+{
+    textsp2 = "Scusa, papa!";
+}
+
+if(idioma == "portugues")
+{
+    textsp2 = "Desculpa, pai!";
+}
+
+if(idioma == "japones")
+{
+    textsp2 = "ごめんね、パパ！";
+}
+
+if(idioma == "coreano")
+{
+    textsp2 = "미안해, 아빠!";
+}
+
+if(idioma == "chino")
+{
+    textsp2 = "对不起，爸爸！";
+}
+
+if(idioma == "ruso")
+{
+    textsp2 = "Прости, папа!";
+}
+opi = false;
+opi2 = false;
+             StartCoroutine(writex());
+             writing = true;
+             }
+             if(textorder == 182 && writing == true)
+             {
+             freeze = false;
+           rbd.constraints = RigidbodyConstraints.FreezeRotation;
+             arming2 = false;
+         shop1.SetActive(false);
+         texto.text = "";
+         textoj.text = "";
+         textok.text = "";
+         textoc.text = "";
+         textor.text = "";
+         texm = false;
+         writing = false;
+         timestop = false;
              }
 
 
@@ -16004,7 +21420,10 @@ opi2 = false;
         alphaStep = 1f / 255;
         }  
 
-        if(pen.color.a <= 0)
+        if((pen.color.a <= 0) || btl == true)
+        {
+        impc = water2.impc;
+        if(btl == false)
         {
          if(ubi == "cocina")
          {
@@ -16038,6 +21457,9 @@ opi2 = false;
          {
            blood8.SetActive(false);
          }
+        }
+        if(ubi == impc)
+        {
          Color c = pen.color;
          c.a = 1f;
          pen.color = c;
@@ -16047,6 +21469,8 @@ opi2 = false;
          textok.text = "";
          textoc.text = "";
          textor.text = "";
+        }
+         btl = false;
         }
         if(playst == false && xbox == false)
         {
@@ -16895,9 +22319,41 @@ if(idioma == "ruso")
 }
          }
     }
-
+public void jumpy33()
+{
+    jumpy3.SetActive(false);
+}
 void OnTriggerEnter(Collider other2)
 {
+    if (other2.gameObject.CompareTag("pasillo"))
+    {
+    float rngg = Random.value;
+    if(rngg <= probabilidad)
+    {
+    if(ubi == "salon" && llory.ubi != "pasillo" && llory.ubi != "baño2" && llory.ubi != "salon")
+    {
+    jumpy3.SetActive(true);
+    audioSource.PlayOneShot(impa);
+        Invoke("jumpy33", 0.25f);
+    }
+    }
+    }
+    if (other2.gameObject.CompareTag("chase"))
+    {
+        float rng = Random.value;
+        if(rng <= (probabilidad * 2))
+        {
+        chase.SetActive(true);
+        Invoke("chs2", 0.5f);
+        Invoke("chs2", 1.5f);
+        Invoke("chs2", 2.5f);
+        Invoke("chs2", 4f);
+        Invoke("chs2", 5.5f);
+        Invoke("chs2", 6.5f);
+        Invoke("chs2", 8.5f);
+        Invoke("chs", 12f);
+        }
+    }
     if (other2.gameObject.CompareTag("l1"))
     {
        if(lant.activeInHierarchy)
@@ -16941,6 +22397,7 @@ mexico = true;
     }
     if (other2.gameObject.CompareTag("shop2"))
     {
+                shop2.SetActive(false);
         CharacterController cc = GetComponent<CharacterController>();
         cc.enabled = false;
         Quaternion desiredRotation = Quaternion.Euler(
@@ -17058,6 +22515,7 @@ if(idioma == "ruso")
     }
     if (other2.gameObject.CompareTag("shop3"))
     {
+                shop3.SetActive(false);
 if(night == 5 && mirais == 1 && sellers == -1)
 {
 hng.SetActive(true);
@@ -17175,6 +22633,7 @@ if(idioma == "ruso")
     }
     if (other2.gameObject.CompareTag("shop1"))
     {
+                shop1.SetActive(false);
         CharacterController cc = GetComponent<CharacterController>();
         cc.enabled = false;
         Quaternion desiredRotation = Quaternion.Euler(
@@ -17422,7 +22881,7 @@ if(idioma == "frances")
 }
 if(idioma == "aleman")
 {
-    tx1.text = "Als ich ihn fragte, was er damit gewinne, sagte er: 'Ich bin das personifizierte Böse; gibt es ein großeres ubel als jenes, das keinen Grund hat, keinerlei Rechtfertigung?'";
+    tx1.text = "Als ich ihn fragte, was er damit gewinne, sagte er: 'Ich bin das personifizierte Bose; gibt es ein großeres ubel als jenes, das keinen Grund hat, keinerlei Rechtfertigung?'";
     tx2.text = "";
     tx3.text = "";
     tx4.text = "";
@@ -17430,7 +22889,7 @@ if(idioma == "aleman")
 }
 if(idioma == "italiano")
 {
-    tx1.text = "Quando gli chiesi cosa ci guadagnasse, mi disse: 'Io sono il male incarnato; esiste forse un male più grande di quello che non ha causa, che non ha alcuna giustificazione?'";
+    tx1.text = "Quando gli chiesi cosa ci guadagnasse, mi disse: 'Io sono il male incarnato; esiste forse un male piu grande di quello che non ha causa, che non ha alcuna giustificazione?'";
     tx2.text = "";
     tx3.text = "";
     tx4.text = "";
@@ -17765,6 +23224,15 @@ if(idioma == "ruso")
        polt = true;
         }
     }
+    if (other2.gameObject.CompareTag("diz"))
+    {
+        float rng = Random.value;
+        if(rng <= probabilidad && night >= 2)
+        {
+       dizzy.SetActive(true);
+        Invoke("thh", 30f);
+        }
+    }
     if (other2.gameObject.CompareTag("trap"))
     {
         audioSource.PlayOneShot(trapsn);
@@ -17833,7 +23301,6 @@ parm = true;
         );
         transform.position = newPos;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, 360f);
-
         cc.enabled = true;
     }
     if (other2.gameObject.CompareTag("secret1"))
@@ -17842,6 +23309,7 @@ parm = true;
     }
     if (other2.gameObject.CompareTag("kill"))
     {
+    chase.SetActive(false);
     penta.SetActive(false);
 arming2 = false;
     texto.text = "";
@@ -17865,6 +23333,14 @@ arming2 = false;
         }
         if(night == 6 && hour == 5)
         {
+           blood1.SetActive(false);
+           blood2.SetActive(false);
+           blood3.SetActive(false);
+           blood4.SetActive(false);
+           blood5.SetActive(false);
+           blood6.SetActive(false);
+           blood7.SetActive(false);
+           blood8.SetActive(false);
      audioSourcex.clip = null;
          audioSource3x.clip = meet;
         Badend();
@@ -17903,6 +23379,7 @@ arming2 = false;
         Invoke("cn1", 2f);
         if(alone == true)
         {
+            //te mata
             Invoke("al1", 5f);
             Invoke("al2", 12f);
             Invoke("al3", 21f);
@@ -17913,6 +23390,7 @@ arming2 = false;
         {
         if(mirais == 1 && sellers == 1)
         {
+            //poder de la amistad
 trapspec.SetActive(true);
         Invoke("cn1b", 4.5f);
         Invoke("cn2b", 5f);
@@ -17921,6 +23399,7 @@ trapspec.SetActive(true);
         }
         if(mirais != 1 || sellers != 1)
         {
+            // fuego
         Invoke("cn2", 5f);
         Invoke("cn3", 7f);
         }
@@ -17934,6 +23413,8 @@ trapspec.SetActive(true);
 }
 public void al1()
 {
+    if(falsy == false)
+    {
         freeze = true;
         rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
         thg.SetActive(true);
@@ -18019,10 +23500,13 @@ if(idioma == "ruso")
     tx4.text = "";
     tx5.text = "На этот раз судьба оставила тебя так же, как оставила меня";
 }
+    }
         Invoke("nullv", 4f);
 }
 public void al2()
 {
+    if(falsy == false)
+    {
         freeze = true;
         rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
         thg.SetActive(true);
@@ -18108,10 +23592,13 @@ if(idioma == "ruso")
     tx4.text = "";
     tx5.text = "Тёмная энергия, обитающая в твоём сердце, даёт мне дополнительное время, которое мне нужно";
 }
+    }
         Invoke("nullv", 6f);
 }
 public void al3()
 {
+    if(falsy == false)
+    {
         freeze = true;
         rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
         thg.SetActive(true);
@@ -18197,10 +23684,13 @@ if(idioma == "ruso")
     tx4.text = "";
     tx5.text = "Кричи, молись, кайся. Никто не придёт тебе на помощь. Не после того, что ты сделал.";
 }
+    }
         Invoke("nullv", 6f);
 }
 public void al4()
 {
+    if(falsy == false)
+    {
         freeze = true;
         rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
         thg.SetActive(true);
@@ -18284,13 +23774,19 @@ if(idioma == "ruso")
     tx4.text = "";
     tx5.text = "Мир — несправедливое место, не так ли? В тот момент, когда ты совершаешь ошибку, Бог оставляет тебя на произвол судьбы. Так что если нам обоим суждено быть проклятыми, пусть хотя бы я смогу вознестись.";
 }
+    }
         Invoke("nullv", 10f);
 }
 void OnTriggerStay(Collider other2)
 {
+    if (other2.gameObject.CompareTag("invy"))
+    {
+     envy = true;
+    }
     if (other2.gameObject.CompareTag("xlight"))
     {
        lant.SetActive(false);
+       lx = true;
     }
     if (other2.gameObject.CompareTag("nolev"))
     {
@@ -20367,12 +25863,17 @@ if(idioma == "ruso")
 }
 void OnTriggerExit(Collider other2)
 {
+    if (other2.gameObject.CompareTag("envy"))
+    {
+     envy = false;
+    }
     if (other2.gameObject.CompareTag("nolev"))
     {
        nolev = false;
     }
     if (other2.gameObject.CompareTag("xlight"))
     {
+        lx = false;
        lant.SetActive(true);
     }
     if (other2.gameObject.CompareTag("notp"))
@@ -20561,12 +26062,14 @@ table.SetActive(false);
 
 void cn5b()
 {
+nowy = true;
 texm = true;
 textorder = 108;
 }
 
 void cn3()
 {
+    antiflash.SetActive(true);
          if(zxh == false)
          {
 
@@ -20863,6 +26366,17 @@ credits.SetActive(true);
         CharacterController cc = GetComponent<CharacterController>();
         cc.enabled = false;
         transform.position = kitsp.transform.position;
+        cc.enabled = true;
+         lant.SetActive(true);
+         ef.enabled = false;
+    }
+    public void zzx1()
+    {
+    porm = false;
+    port.SetActive(false);
+        CharacterController cc = GetComponent<CharacterController>();
+        cc.enabled = false;
+        transform.position = safepoint.position;
         cc.enabled = true;
          lant.SetActive(true);
          ef.enabled = false;
@@ -22812,12 +28326,19 @@ if(idioma == "ruso")
    public void sellx()
    {
         fdt.PlayOneShot(hit);
+shakeDuration = 1f;
+    StartCoroutine(EarthquakeShake());
         imp2.SetActive(true);
    }
    public void O1()
    {
            crd2.SetTrigger("x1");
     audioSource.PlayOneShot(cardd);
+   }
+   public void trappy()
+   {
+textorder = -999;
+texm = true;
    }
    public void O22()
    {
@@ -23125,10 +28646,92 @@ arming2 = false;
    }
    public void mus()
    {
-  if(!gameo.activeInHierarchy && mexico == false)
+  if(!gameo.activeInHierarchy && mexico == false && konami != 11)
   {
      audioSource.clip = tns;
      audioSource.loop = true;
   }
    }
+   public void chs()
+   {
+chase.SetActive(false);
+   }
+   public void chs2()
+   {
+    audioSource.PlayOneShot(metal);
+   }
+void Jumpy()
+{
+        objetoJumpy.SetActive(false);
+        jumpy2 = false;
+}
+private IEnumerator EarthquakeShake()
+{
+    if (isShaking) yield break;
+    isShaking = true;
+
+    cameraShakeOrigin = playerCamera.transform.localPosition;
+
+    float elapsed  = 0f;
+    float seedX    = Random.Range(0f, 100f);
+    float seedY    = Random.Range(0f, 100f);
+
+    while (elapsed < shakeDuration)
+    {
+        float fade      = 1f - Mathf.Pow(elapsed / shakeDuration, 2f);
+        float intensity = shakeIntensity * fade;
+
+        float t    = elapsed * shakeSpeed;
+        float offX = (Mathf.PerlinNoise(seedX + t, 0f) - 0.5f) * 2f * intensity;
+        float offY = (Mathf.PerlinNoise(0f, seedY + t) - 0.5f) * 2f * intensity;
+
+        playerCamera.transform.localPosition = cameraShakeOrigin + new Vector3(offX, offY, 0f);
+
+        elapsed += Time.deltaTime;
+        yield return null;
+    }
+
+    playerCamera.transform.localPosition = cameraShakeOrigin;
+    isShaking = false;
+}
+public void StopEarthquake()
+{
+    if (!isShaking) return;
+    StopCoroutine(EarthquakeShake());
+    playerCamera.transform.localPosition = cameraShakeOrigin;
+    isShaking = false;
+}
+public void thh()
+{
+    dizzy.SetActive(false);
+}
+public void visi()
+{
+audioSource.PlayOneShot(fr);
+if(envy == true && freeze == false && rn2.activeInHierarchy)
+{
+    freeze = true;
+    rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+    texm = true;
+    textorder = 183;
+}
+invisible = false;
+invisi1.active = false;
+invisi2.active = false;
+rn1.SetActive(false);
+rn2.SetActive(false);
+rn3.SetActive(false);
+rn4.SetActive(false);
+partrn.SetActive(true);
+Invoke("visi2", 0.25f);
+}
+public void visi2()
+{
+    partrn.SetActive(false);
+      rnn.SetActive(false);
+}
+public void visi3()
+{
+    trapfz.SetActive(false);
+}
 }

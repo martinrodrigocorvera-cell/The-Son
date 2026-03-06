@@ -1,4 +1,4 @@
-Shader "Retro1/RetroPostProcess"
+Shader "Retro1/Retro1"
 {
     Properties
     {
@@ -46,11 +46,9 @@ Shader "Retro1/RetroPostProcess"
 
             float4 frag (v2f i) : SV_Target
             {
-                // Pixelado
                 float2 pixelUV = floor(i.uv * _PixelSize) / _PixelSize;
                 float4 col = tex2D(_MainTex, pixelUV);
 
-                // Reducción de color
                 col.rgb = floor(col.rgb * _ColorLevels) / _ColorLevels;
 
                 return col;

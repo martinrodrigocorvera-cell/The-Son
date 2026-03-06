@@ -98,6 +98,7 @@ public class Buttons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public bool cnx3;
     public bool cnx4;
     public bool cnx5;
+    public bool cr;
     public bool cr1;
     public bool cr2;
     public bool cr3;
@@ -4600,6 +4601,89 @@ if(idiom == "ruso")
     textor.text = "Далее";
 }
        }
+       if(cr == true)
+       {
+if(idiom == "ingles")
+{
+    texto.text = "Director";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idiom == "español")
+{
+    texto.text = "Director";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idiom == "frances")
+{
+    texto.text = "Directeur";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idiom == "aleman")
+{
+    texto.text = "Direktor";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idiom == "italiano")
+{
+    texto.text = "Direttore";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idiom == "portugues")
+{
+    texto.text = "Diretor";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idiom == "japones")
+{
+    texto.text = "";
+    textoj.text = "監督";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idiom == "coreano")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "감독";
+    textoc.text = "";
+    textor.text = "";
+}
+if(idiom == "chino")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "导演";
+    textor.text = "";
+}
+if(idiom == "ruso")
+{
+    texto.text = "";
+    textoj.text = "";
+    textok.text = "";
+    textoc.text = "";
+    textor.text = "Режиссёр";
+}
+       }
        if(cr1 == true)
        {
 if(idiom == "ingles")
@@ -7448,6 +7532,7 @@ PlayerPrefs.SetInt("tam", 0);
 PlayerPrefs.SetInt("gua", 0);
 PlayerPrefs.SetInt("mir", 0);
 PlayerPrefs.SetInt("sel", 0);
+PlayerPrefs.SetFloat("Slot", 0f);
 PlayerPrefs.Save();
         Cursor.visible = false;
     Cursor.lockState = CursorLockMode.Locked;
@@ -7641,7 +7726,6 @@ void OnUserChangedLanguage(int newLang)
     PlayerPrefs.SetInt("Language", newLang);
     PlayerPrefs.Save();
 }
-
 void UpdateTextosIdioma()
 {
     switch (lang)
@@ -7676,6 +7760,8 @@ void UpdateTextosIdioma()
             }
     home = play.home = home;
       home = false;
+    play.freeze = true;
+       play.rbd.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
     camm.SetActive(true);
     canvi.SetActive(false);
     canvii.SetActive(true);
@@ -7748,6 +7834,11 @@ PlayerPrefs.Save();
     void t2()
     {
      trans.SetActive(false);
+     if(play.night != 1)
+     {
+    play.freeze = false;
+play.rbd.constraints = RigidbodyConstraints.FreezeRotation;
+     }
     }
     void c3()
     {

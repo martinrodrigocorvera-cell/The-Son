@@ -57,6 +57,23 @@ TagManager:
   - cards
   - l1
   - l2
+  - candles
+  - trapp
+  - ojjo
+  - porty
+  - porty2
+  - tragy
+  - vendy
+  - miray2
+  - vendy2
+  - miray
+  - falsona
+  - trapy2
+  - chase
+  - jumpy
+  - pasillo
+  - diz
+  - invy
   layers:
   - Default
   - TransparentFX
@@ -70,9 +87,9 @@ TagManager:
   - xlight
   - xshadow
   - top
-  - 
-  - 
-  - 
+  - top2
+  - jumpy
+  - Player
   - 
   - 
   - 

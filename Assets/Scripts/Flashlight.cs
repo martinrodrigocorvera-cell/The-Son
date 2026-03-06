@@ -15,28 +15,35 @@ public class Flashlight : MonoBehaviour
     public EffectFeature ef;
     public bool unc;
 
-    void Update()
-    {
-      freeze = player.freeze;
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        
-        if (Physics.Raycast(ray, out RaycastHit hit, rayDistance, layerMask))
-        {
-            transform.LookAt(hit.point);
-        }
-        else
-        {
-            Vector3 pointAhead = ray.origin + ray.direction * rayDistance;
-            transform.LookAt(pointAhead);
-        }
+void Update()
+{
+    freeze = player.freeze;
+    Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
-    if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.JoystickButton4)) && (!home.activeInHierarchy) && freeze == false && unc == false)
+    Vector3 targetPoint;
+
+    if (Physics.Raycast(ray, out RaycastHit hit, rayDistance, layerMask))
+    {
+        targetPoint = hit.point;
+    }
+    else
+    {
+        targetPoint = ray.origin + ray.direction * rayDistance;
+    }
+
+    Vector3 originalScale = transform.localScale;
+
+    transform.LookAt(targetPoint);
+
+    transform.localScale = originalScale;
+
+    if ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.JoystickButton4)) 
+        && (!home.activeInHierarchy) && freeze == false && unc == false && player.lx == false)
     {
         on = !on;
         lightx.SetActive(on);
     }
-
-    }
+}
 void OnTriggerEnter(Collider other2)
 {
     if (other2.CompareTag("Finish"))

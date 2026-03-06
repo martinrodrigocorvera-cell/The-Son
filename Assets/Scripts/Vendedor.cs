@@ -1,8 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 public class Vendedor : MonoBehaviour
 {
+    public Material outlineMaterial;
+    private List<GameObject> outlineObjects = new List<GameObject>();
+private Dictionary<MeshRenderer, Material[]> originalMaterials = new Dictionary<MeshRenderer, Material[]>();
+GameObject outlineRoot;
+public GameObject pack;
 public Transform player;
     public float offsetZ = 0f;
     public float suavizado = 1.5f;
@@ -3139,6 +3146,7 @@ if(idioma == "ruso")
 
 if(food == true && ring == false)
 {
+        ApplyOutline();
 if(playst == true)
 {
 if(idioma == "ingles")
@@ -3427,6 +3435,8 @@ void OnTriggerEnter(Collider other)
 }
 void OnTriggerExit(Collider other)
 {
+        RemoveOutline();
+        RestoreOriginalChildren();
 msg.SetActive(false);
         intering = false;
     texto.text = "";
@@ -3519,5 +3529,123 @@ public void ringxx2()
                 jing5 = false;
                 sh5.jing = jing5;
                 }
+}
+void ApplyOutline()
+{
+    if (outlineRoot != null) return;
+
+    MeshRenderer[] renderers = pack.GetComponentsInChildren<MeshRenderer>(true);
+
+    if (renderers.Length == 0) return;
+
+    Bounds combinedBounds = renderers[0].bounds;
+
+    for (int i = 1; i < renderers.Length; i++)
+    {
+        if (!renderers[i].gameObject.activeInHierarchy) continue;
+        combinedBounds.Encapsulate(renderers[i].bounds);
+    }
+
+    Vector3 modelCenter = combinedBounds.center;
+
+    outlineRoot = new GameObject("OutlineRoot");
+    outlineRoot.transform.SetParent(pack.transform);
+
+    outlineRoot.transform.position = modelCenter;
+    outlineRoot.transform.rotation = pack.transform.rotation;
+    outlineRoot.transform.localScale = Vector3.one * 1.05f;
+
+    int brightLayer = LayerMask.NameToLayer("bright");
+    outlineRoot.layer = brightLayer;
+
+    MeshFilter[] meshFilters = pack.GetComponentsInChildren<MeshFilter>(true);
+
+    foreach (MeshFilter mf in meshFilters)
+    {
+        if (!mf.gameObject.activeInHierarchy)
+            continue;
+
+        string nameLower = mf.gameObject.name.ToLower();
+
+        if (nameLower.Contains("group_2_15277357") ||
+            nameLower.Contains("group_3_15277357") ||
+            nameLower.Contains("cube"))
+            continue;
+
+        GameObject newChild = new GameObject("Outline_" + mf.name);
+        newChild.transform.SetParent(outlineRoot.transform);
+
+        newChild.transform.position = mf.transform.position;
+        newChild.transform.rotation = mf.transform.rotation;
+        newChild.transform.localScale = mf.transform.lossyScale;
+
+        newChild.layer = brightLayer;
+
+        MeshFilter newMF = newChild.AddComponent<MeshFilter>();
+        newMF.mesh = mf.mesh;
+
+        MeshRenderer newMR = newChild.AddComponent<MeshRenderer>();
+        Material newMat = new Material(outlineMaterial);
+        newMat.SetColor("_MainColor", Color.black);
+
+        newMR.material = newMat;
+        newMR.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        newMR.receiveShadows = false;
+
+        mf.gameObject.SetActive(false);
+    }
+}
+    void ClearOutlineObjects()
+    {
+        foreach (GameObject obj in outlineObjects)
+        {
+            if (obj != null)
+                Destroy(obj);
+        }
+
+        outlineObjects.Clear();
+    }
+        void RemoveOutline()
+    {
+        if (outlineRoot != null)
+            Destroy(outlineRoot);
+
+        outlineRoot = null;
+    }
+
+void RestoreOriginalChildren()
+{
+    if (pack == null) return;
+
+    Transform activeRoot = null;
+
+    // Buscar el único hijo activo (ignorar outlineRoot)
+    foreach (Transform child in pack.transform)
+    {
+        if (outlineRoot != null && child == outlineRoot.transform)
+            continue;
+
+        if (child.gameObject.activeSelf)
+        {
+            activeRoot = child;
+            break;
+        }
+    }
+
+    if (activeRoot == null) return;
+
+    // Reactivar todo su árbol interno
+    ReactivateRecursively(activeRoot);
+}
+
+void ReactivateRecursively(Transform parent)
+{
+    if (!parent.gameObject.activeSelf)
+        parent.gameObject.SetActive(true);
+
+    foreach (Transform child in parent)
+    {
+        ReactivateRecursively(child);
+    }
 }
 }

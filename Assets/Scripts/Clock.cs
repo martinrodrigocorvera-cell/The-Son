@@ -12,6 +12,7 @@ public class Clock : MonoBehaviour
 {
 [Range(0f, 1f)] public float probabilidad = 0.2f;
 public Transform spawnpl;
+public GameObject wat;
 public GameObject spawnxx;
 public bool demo;
 public bool dm2;
@@ -173,7 +174,7 @@ home = player.home;
     if (night == 1 && er == false && tut == true)
     {
       power -= 1f + ((events/1.5f) * diff);
-      diff = 1.6f;
+      diff = 1.8f;
       er = true;
       if(zxkl == false)
       {
@@ -184,7 +185,7 @@ home = player.home;
     if (night == 2 && er == false)
     {
       power -= 1f + ((events/1.5f) * diff);
-      diff = 1.5f;
+      diff = 1.7f;
       er = true;
       if(zxkl == false)
       {
@@ -195,7 +196,7 @@ home = player.home;
     if (night == 3 && er == false)
     {
       power -= 1f + ((events/1.5f) * diff);
-      diff = 1.4f;
+      diff = 1.6f;
       er = true;
       if(zxkl == false)
       {
@@ -206,7 +207,7 @@ home = player.home;
     if (night == 4 && er == false)
     {
       power -= 1f + ((events/1.5f) * diff);
-      diff = 1.2f;
+      diff = 1.4f;
       er = true;
       if(zxkl == false)
       {
@@ -217,7 +218,7 @@ home = player.home;
     if (night == 5 && er == false)
     {
       power -= 1f + ((events/1.5f) * diff);
-      diff = 1f;
+      diff = 1.2f;
       er = true;
       if(zxkl == false)
       {
@@ -228,7 +229,7 @@ home = player.home;
     if (night == 6 && er == false)
     {
       power -= 1f + ((events/1.5f) * diff);
-      diff = 0.8f;
+      diff = 1f;
       er = true;
       if(zxkl == false)
       {
@@ -383,66 +384,37 @@ ef.enabled = true;
     }
   void x1()
   {
-      if(xs == false)
-      {
       audio.PlayOneShot(hoursn);
-      xs = true;
-      }
    hour = 1;
    texto.text = "1:00";
   }
   void x2()
   {
-      if(xs2 == false)
-      {
       audio.PlayOneShot(hoursn);
-      xs2 = true;
-      xs = false;
-      }
    hour = 2;
    texto.text = "2:00";
   }
   void x3()
   {
-      if(xs == false)
-      {
       audio.PlayOneShot(hoursn);
-      xs = true;
-      xs2 = false;
-      }
    hour = 3;
    texto.text = "3:00";
   }
   void x4()
   {
-      if(xs2 == false)
-      {
       audio.PlayOneShot(hoursn);
-      xs2 = true;
-      xs = false;
-      }
    hour = 4;
    texto.text = "4:00";
   }
   void x5()
   {
-      if(xs == false)
-      {
       audio.PlayOneShot(hoursn);
-      xs = true;
-      xs2 = false;
-      }
    hour = 5;
    texto.text = "5:00";
   }
   void x6()
   {
-      if(xs2 == false)
-      {
       audio.PlayOneShot(hoursn);
-      xs2 = true;
-      xs = false;
-      }
    hour = 6;
    texto.text = "6:00";
   }
@@ -519,6 +491,7 @@ filter2.SetActive(false);
      t6.SetActive(false);
      t7.SetActive(false);
      t8.SetActive(false);
+     wat.SetActive(false);
         cc.enabled = false;
         playerx.transform.position = spawnpl.transform.position;
         cc.enabled = true;
@@ -534,7 +507,12 @@ timet += 1;
 }
 void nigc()
 {
+    if(night != 6)
+    {
     night += 1;
+        PlayerPrefs.SetFloat("Night", night);
+    PlayerPrefs.Save();
+    }
 }
 void weaker()
 {
